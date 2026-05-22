@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purics AI — Engineering Powered by AI</title>
+  <meta name="description" content="AI-Powered Software Development & Flexible Engineering Support. Build Faster. Scale Smarter. Stay Supported." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: { blue: '#4F8EF7', purple: '#8B5CF6', dark: '#0a0f1e', card: '#111827' },
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.6s ease-out forwards',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            fadeUp: { '0%': { opacity: 0, transform: 'translateY(24px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { background: #0a0f1e; font-family: 'Inter', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #4F8EF7 0%, #8B5CF6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-bg { background: linear-gradient(135deg, #4F8EF7 0%, #8B5CF6 100%); }
+    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+    .glass-hover { transition: all 0.3s ease; }
+    .glass-hover:hover { background: rgba(255,255,255,0.07); border-color: rgba(79,142,247,0.3); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(79,142,247,0.1); }
+    .glow { box-shadow: 0 0 40px rgba(79,142,247,0.15), 0 0 80px rgba(139,92,246,0.08); }
+    .hero-grid { background-image: radial-gradient(rgba(79,142,247,0.08) 1px, transparent 1px); background-size: 40px 40px; }
+    .nav-blur { background: rgba(10,15,30,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .badge { background: rgba(79,142,247,0.12); border: 1px solid rgba(79,142,247,0.25); color: #4F8EF7; }
+    .popular-badge { background: linear-gradient(135deg, #4F8EF7, #8B5CF6); }
+    .check-icon::before { content: '✓'; }
+    @media (prefers-reduced-motion: reduce) { .glass-hover:hover { transform: none; } }
+  </style>
+</head>
+<body class="text-white antialiased">
+
+  <!-- NAV -->
+  <nav class="nav-blur fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <span class="text-xl font-bold gradient-text">Purics AI</span>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+        <a href="#services" class="hover:text-white transition-colors">Services</a>
+        <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+        <a href="#why" class="hover:text-white transition-colors">Why Us</a>
+        <a href="#consult" class="hover:text-white transition-colors">Consult</a>
+      </div>
+      <a href="#consult" class="gradient-bg text-white text-sm font-semibold px-5 py-2 rounded-full hover:opacity-90 transition-opacity">
+        Free Consultation →
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-grid min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+      <span class="badge inline-block text-xs font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wider uppercase">AI-Powered Engineering</span>
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6">
+        Build <span class="gradient-text">Faster.</span><br/>
+        Scale <span class="gradient-text">Smarter.</span><br/>
+        Stay <span class="gradient-text">Supported.</span>
+      </h1>
+      <p class="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        Experienced software engineers, AI specialists &amp; dedicated support teams — on a flexible subscription designed for startups, enterprises, and founders who move fast.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#consult" class="gradient-bg text-white font-bold px-8 py-4 rounded-xl hover:opacity-90 transition-all hover:scale-105 text-sm">
+          Start Free Consultation
+        </a>
+        <a href="#pricing" class="glass text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-all text-sm">
+          View Pricing Plans
+        </a>
+      </div>
+      <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto">
+        <div class="text-center"><div class="text-3xl font-black gradient-text">AI</div><div class="text-gray-500 text-xs mt-1">Agents & Automation</div></div>
+        <div class="text-center"><div class="text-3xl font-black gradient-text">24/7</div><div class="text-gray-500 text-xs mt-1">Engineering Support</div></div>
+        <div class="text-center"><div class="text-3xl font-black gradient-text">3</div><div class="text-gray-500 text-xs mt-1">Flexible Plans</div></div>
+        <div class="text-center"><div class="text-3xl font-black gradient-text">$0</div><div class="text-gray-500 text-xs mt-1">First Consultation</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="badge inline-block text-xs font-semibold px-4 py-1.5 rounded-full mb-4 tracking-wider uppercase">What We Offer</span>
+        <h2 class="text-4xl sm:text-5xl font-black mb-4">Full-Spectrum <span class="gradient-text">Engineering</span></h2>
+        <p class="text-gray-400 max-w-xl mx-auto">End-to-end support across every layer of your product — from idea to production.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Service cards -->
+        <div class="glass glass-hover rounded-2xl p-6">
+          <div class="text-3xl mb-4">🖥️</div>
+          <h3 class="font-bold text-lg mb-2">Full Stack Development</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Frontend, backend, databases — we handle the complete stack with modern frameworks and scalable architecture.</p>
+        </div>
+        <div class="glass glass-hover rounded-2xl p-6">
+          <div class="text-3xl mb-4">⚙️</div>
+          <h3 class="font-bold text-lg mb-2">Backend Systems & APIs</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">High-performance REST and GraphQL APIs, microservices, event-driven systems, and rock-solid backend infrastructure.</p>
+        </div>
+        <div class="glass glass-hover rounded-2xl p-6">
+          <div class="text-3xl mb-4">📱</div>
+          <h3 class="font-bold text-lg mb-2">Mobile Applications</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Cross-platform and native mobile apps that delight users and scale gracefully with your growth.</p>
+        </div>
+        <div class="glass glass-hover rounded-2xl p-6">
+          <div class="text-3xl mb-4">☁️</div>
+          <h3 class="font-bold text-lg mb-2">Cloud & DevOps</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">CI/CD pipelines, Kubernetes, infrastructure-as-code, and multi-cloud deployments engineered for reliability.</p>
+        </div>
+        <div class="glass glass-hover rounded-2xl p-6 border border-purple-500/20">
+          <div class="text-3xl mb-4">🤖</div>
+          <h3 class="font-bold text-lg mb-2">AI Agent Development</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Custom AI agents, RAG systems, LLM integrations, and intelligent automation tailored to your business workflows.</p>
+        </div>
+        <div class="glass glass-hover rounded-2xl p-6">
+          <div class="text-3xl mb-4">🧠</div>
+          <h3 class="font-bold text-lg mb-2">ML Model Deployment</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">From research to production — model fine-tuning, serving infrastructure, monitoring, and continuous improvement.</p>
+        </div>
+        <div class="glass glass-hover rounded-2xl p-6">
+          <div class="text-3xl mb-4">🏗️</div>
+          <h3 class="font-bold text-lg mb-2">System Architecture</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Scalable design blueprints, technical roadmaps, and architecture reviews to future-proof your product.</p>
+        </div>
+        <div class="glass glass-hover rounded-2xl p-6">
+          <div class="text-3xl mb-4">🔧</div>
+          <h3 class="font-bold text-lg mb-2">Product Maintenance</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Ongoing support, bug fixes, performance optimization, and scaling assistance as your user base grows.</p>
+        </div>
+        <div class="glass glass-hover rounded-2xl p-6">
+          <div class="text-3xl mb-4">💡</div>
+          <h3 class="font-bold text-lg mb-2">Technical Consulting</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Strategic guidance on technology choices, AI strategy, product decisions, and technical planning sessions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="badge inline-block text-xs font-semibold px-4 py-1.5 rounded-full mb-4 tracking-wider uppercase">Flexible Plans</span>
+        <h2 class="text-4xl sm:text-5xl font-black mb-4">Simple, <span class="gradient-text">Transparent</span> Pricing</h2>
+        <p class="text-gray-400 max-w-xl mx-auto">No surprises. No lock-ins. Just engineering that scales with you.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+
+        <!-- Starter -->
+        <div class="glass rounded-2xl p-8 flex flex-col glass-hover">
+          <div class="mb-6">
+            <p class="text-gray-400 text-sm font-medium mb-1">Starter Support</p>
+            <div class="flex items-end gap-2 mb-1">
+              <span class="text-5xl font-black">$999</span>
+              <span class="text-gray-400 mb-2">/month</span>
+            </div>
+            <p class="text-blue-400 text-sm font-semibold">8 Hours / Month</p>
+          </div>
+          <p class="text-gray-400 text-sm mb-6">Best for small teams needing reliable maintenance and technical guidance without the full-time overhead.</p>
+          <ul class="space-y-3 text-sm mb-8 flex-1">
+            <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Small fixes & bug resolution</li>
+            <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Product maintenance</li>
+            <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Technical guidance</li>
+            <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Minor feature development</li>
+            <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Code reviews</li>
+            <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Hour-wise work tracking</li>
+          </ul>
+          <a href="#consult" class="glass border border-white/10 text-white text-sm font-semibold py-3 px-6 rounded-xl text-center hover:bg-white/10 transition-all">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Growth - Popular -->
+        <div class="rounded-2xl p-px glow relative" style="background: linear-gradient(135deg, #4F8EF7, #8B5CF6);">
+          <div class="bg-brand-card rounded-2xl p-8 h-full flex flex-col" style="background: #111827;">
+            <div class="popular-badge text-white text-xs font-bold px-3 py-1 rounded-full w-fit mb-4">⭐ Most Popular</div>
+            <div class="mb-6">
+              <p class="text-gray-400 text-sm font-medium mb-1">Growth Support</p>
+              <div class="flex items-end gap-2 mb-1">
+                <span class="text-5xl font-black">$1,599</span>
+                <span class="text-gray-400 mb-2">/month</span>
+              </div>
+              <p class="text-blue-400 text-sm font-semibold">8 Hours / Week</p>
+            </div>
+            <p class="text-gray-400 text-sm mb-6">For startups and growing products that need consistent weekly velocity and agile feature delivery.</p>
+            <ul class="space-y-3 text-sm mb-8 flex-1">
+              <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Ongoing development</li>
+              <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Startup engineering support</li>
+              <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Weekly feature delivery</li>
+              <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Agile product improvements</li>
+              <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Direct developer access</li>
+              <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Weekly feedback sessions</li>
+              <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Transparent work tracking</li>
+            </ul>
+            <a href="#consult" class="gradient-bg text-white text-sm font-bold py-3 px-6 rounded-xl text-center hover:opacity-90 transition-opacity">
+              Get Started →
+            </a>
+          </div>
+        </div>
+
+        <!-- AI & Dedicated -->
+        <div class="glass rounded-2xl p-8 flex flex-col glass-hover">
+          <div class="mb-6">
+            <p class="text-gray-400 text-sm font-medium mb-1">AI & Dedicated Engineering</p>
+            <div class="flex items-end gap-2 mb-1">
+              <span class="text-5xl font-black">$2,999</span>
+              <span class="text-gray-400 mb-2">/month</span>
+            </div>
+            <p class="text-purple-400 text-sm font-semibold">Flexible Daily Support</p>
+          </div>
+          <p class="text-gray-400 text-sm mb-6">For companies serious about AI — dedicated engineering with full AI development capabilities.</p>
+          <ul class="space-y-3 text-sm mb-8 flex-1">
+            <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> AI Agent Development</li>
+            <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Model Development & Deployment</li>
+            <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Advanced Automation</li>
+            <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Dedicated Engineering Support</li>
+            <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Software Design & Creation</li>
+            <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> RAG Systems & LLM Integration</li>
+            <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Developer replacement guarantee</li>
+          </ul>
+          <a href="#consult" class="glass border border-purple-500/30 text-purple-300 text-sm font-semibold py-3 px-6 rounded-xl text-center hover:bg-purple-500/10 transition-all">
+            Get Started
+          </a>
+        </div>
+
+      </div>
+      <p class="text-center text-gray-500 text-sm mt-8">All plans include hour-wise tracking · Payments via Razorpay · Cancel anytime</p>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why" class="py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="badge inline-block text-xs font-semibold px-4 py-1.5 rounded-full mb-4 tracking-wider uppercase">Why Purics AI</span>
+        <h2 class="text-4xl sm:text-5xl font-black mb-4">Built for <span class="gradient-text">Builders</span></h2>
+        <p class="text-gray-400 max-w-xl mx-auto">We're not a typical dev shop. We're your extended engineering team — transparent, fast, and AI-native.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+        <div class="glass glass-hover rounded-2xl p-6 text-center">
+          <div class="text-4xl mb-4">🔍</div>
+          <h3 class="font-bold mb-2">Full Transparency</h3>
+          <p class="text-gray-400 text-sm">Hour-wise tracking, task updates, pending work visibility — always know exactly what's happening.</p>
+        </div>
+        <div class="glass glass-hover rounded-2xl p-6 text-center">
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="font-bold mb-2">Fast Iterative Delivery</h3>
+          <p class="text-gray-400 text-sm">Agile sprints, continuous feedback loops, and weekly delivery cycles that actually ship.</p>
+        </div>
+        <div class="glass glass-hover rounded-2xl p-6 text-center">
+          <div class="text-4xl mb-4">👨‍💻</div>
+          <h3 class="font-bold mb-2">Dedicated Developers</h3>
+          <p class="text-gray-400 text-sm">Domain-matched experts assigned to your project. Request replacements if needed — no hard feelings.</p>
+        </div>
+        <div class="glass glass-hover rounded-2xl p-6 text-center">
+          <div class="text-4xl mb-4">🚀</div>
+          <h3 class="font-bold mb-2">Startup to Enterprise</h3>
+          <p class="text-gray-400 text-sm">Whether you're an MVP founder or scaling to millions of users, our plans grow with you.</p>
+        </div>
+      </div>
+      <!-- AI Capabilities Highlight -->
+      <div class="glass rounded-2xl p-8 md:p-12" style="background: linear-gradient(135deg, rgba(79,142,247,0.06), rgba(139,92,246,0.06));">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <span class="badge inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 tracking-wider uppercase">AI-Powered</span>
+            <h3 class="text-3xl font-black mb-4">We Actively Build <span class="gradient-text">AI Systems</span></h3>
+            <p class="text-gray-400 mb-6 leading-relaxed">This isn't just buzzword compliance. Our team ships real AI products — agents, pipelines, and intelligent automation that solves actual business problems.</p>
+            <a href="#consult" class="gradient-bg text-white text-sm font-bold px-6 py-3 rounded-xl inline-block hover:opacity-90 transition-opacity">
+              Discuss Your AI Needs →
+            </a>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="glass rounded-xl p-4 text-center"><div class="text-2xl mb-2">🤖</div><div class="text-sm font-semibold">AI Agents</div></div>
+            <div class="glass rounded-xl p-4 text-center"><div class="text-2xl mb-2">📚</div><div class="text-sm font-semibold">RAG Systems</div></div>
+            <div class="glass rounded-xl p-4 text-center"><div class="text-2xl mb-2">🔗</div><div class="text-sm font-semibold">LLM Integrations</div></div>
+            <div class="glass rounded-xl p-4 text-center"><div class="text-2xl mb-2">⚙️</div><div class="text-sm font-semibold">AI Automation</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULT CTA -->
+  <section id="consult" class="py-24 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="glass rounded-3xl p-12 md:p-16 glow relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="relative z-10">
+          <span class="badge inline-block text-xs font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wider uppercase">Start Today</span>
+          <h2 class="text-4xl sm:text-5xl font-black mb-4">First Consultation <span class="gradient-text">is Free</span></h2>
+          <p class="text-gray-400 text-lg mb-4 max-w-2xl mx-auto leading-relaxed">
+            Share a brief overview of your project and schedule a meeting at your preferred time. Our experts will help with requirement understanding, architecture discussion, technical planning, and AI strategy.
+          </p>
+          <p class="text-gray-500 text-sm mb-8">Need a focused deep-dive after? Book a 1-hour expert session for just <span class="text-white font-semibold">$299</span>.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="mailto:hello@purics.ai" class="gradient-bg text-white font-bold px-10 py-4 rounded-xl hover:opacity-90 transition-all hover:scale-105 text-sm">
+              Book Free Consultation
+            </a>
+            <a href="#pricing" class="glass text-white font-semibold px-10 py-4 rounded-xl hover:bg-white/10 transition-all text-sm">
+              View Plans First
+            </a>
+          </div>
+          <p class="text-gray-600 text-xs mt-6">Scheduling via Calendly · Flexible timings · Work with your timezone</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 py-12 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div>
+          <span class="text-xl font-black gradient-text">Purics AI</span>
+          <p class="text-gray-500 text-sm mt-1">Engineering Powered by AI.</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
+          <a href="#services" class="hover:text-white transition-colors">Services</a>
+          <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+          <a href="#why" class="hover:text-white transition-colors">Why Us</a>
+          <a href="#consult" class="hover:text-white transition-colors">Consultation</a>
+          <a href="mailto:hello@purics.ai" class="hover:text-white transition-colors">Contact</a>
+        </div>
+        <div class="text-gray-600 text-xs text-center md:text-right">
+          <p>Payments secured by Razorpay</p>
+          <p class="mt-1">© 2025 Purics AI. All rights reserved.</p>
+        </div>
+      </div>
+      <div class="mt-10 pt-8 border-t border-white/5 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+        <p class="text-gray-500 text-sm italic">"Engineering Powered by AI."</p>
+        <p class="text-gray-500 text-sm italic">"Your Extended Software Team."</p>
+        <p class="text-gray-500 text-sm italic">"From Software to AI — We Build Everything."</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
