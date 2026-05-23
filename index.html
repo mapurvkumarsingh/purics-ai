@@ -80,14 +80,6 @@
       80%  { transform: translateY(-1px) scale(0.99); }
       100% { opacity: 1; transform: translateY(0)    scale(1); }
     }
-    @keyframes logoFloat {
-      0%, 100% { transform: translateY(0px);   }
-      50%       { transform: translateY(-3px);  }
-    }
-    @keyframes logoGlow {
-      0%, 100% { filter: drop-shadow(0 0 6px rgba(79,142,247,0.35)) drop-shadow(0 2px 12px rgba(139,92,246,0.2)); }
-      50%       { filter: drop-shadow(0 0 14px rgba(79,142,247,0.65)) drop-shadow(0 4px 24px rgba(139,92,246,0.35)); }
-    }
     .logo-wrap {
       display: inline-flex;
       align-items: center;
@@ -98,23 +90,13 @@
       height: 44px;
       width: auto;
       display: block;
-      animation: logoFloat 5s ease-in-out 0.8s infinite;
-      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
-                  filter  0.35s ease;
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), filter 0.35s ease;
       filter: drop-shadow(0 0 0px rgba(79,142,247,0));
-      will-change: transform, filter;
     }
     .logo-wrap:hover .logo-img {
-      animation-play-state: paused;
-      transform: scale(1.08) translateY(-2px);
-      filter: drop-shadow(0 0 10px rgba(79,142,247,0.6))
-              drop-shadow(0 4px 22px rgba(139,92,246,0.35))
-              drop-shadow(0 8px 32px rgba(79,142,247,0.2));
-    }
-    /* Subtle idle glow pulse when not hovering (after reveal) */
-    .logo-img:not(:hover) {
-      animation: logoFloat 5s ease-in-out 0.8s infinite,
-                 logoGlow  4s ease-in-out 1.5s infinite;
+      transform: scale(1.06);
+      filter: drop-shadow(0 0 10px rgba(79,142,247,0.55))
+              drop-shadow(0 4px 20px rgba(139,92,246,0.3));
     }
     /* Footer logo — static, no float */
     .logo-footer {
@@ -127,6 +109,46 @@
     .logo-footer:hover {
       opacity: 1;
       filter: drop-shadow(0 0 8px rgba(79,142,247,0.45));
+    }
+
+    /* ── Hero neural-network animation ──────────────────────────────── */
+    .ai-anim-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      height: 90px;
+      position: relative;
+    }
+    /* Nodes pulse in/out */
+    @keyframes nodePulse {
+      0%,100% { r: 5;   opacity: .9; }
+      50%      { r: 7.5; opacity: 1;  }
+    }
+    /* Center node glows larger */
+    @keyframes coreGlow {
+      0%,100% { r: 7;  opacity: .95; }
+      50%      { r: 10; opacity: 1;  }
+    }
+    /* Dash travel along path */
+    @keyframes dashFlow {
+      to { stroke-dashoffset: 0; }
+    }
+    /* Dot bead races along path */
+    @keyframes beadTravel {
+      0%   { offset-distance: 0%;   opacity: 0; }
+      5%   { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { offset-distance: 100%; opacity: 0; }
+    }
+    /* Whole SVG fades up on load */
+    @keyframes svgReveal {
+      from { opacity:0; transform: translateY(10px); }
+      to   { opacity:1; transform: translateY(0);    }
+    }
+    .ai-anim-svg {
+      animation: svgReveal 1s cubic-bezier(0.22,1,0.36,1) 0.3s both;
+      overflow: visible;
     }
   </style>
 </head>
@@ -165,6 +187,100 @@
       <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl"></div>
     </div>
     <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
+
+      <!-- AI neural-network animation above badge -->
+      <div class="ai-anim-wrap" aria-hidden="true">
+        <!--
+          Layout (5 nodes):
+                 [L2]          [R2]
+            [L1]      [CTR]        [R1]
+          Coordinates on a 320×90 viewBox.
+        -->
+        <svg class="ai-anim-svg" viewBox="0 0 320 90" width="320" height="90" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Glow filter -->
+            <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="3.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="glowSoft" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="6" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+
+            <!-- Bead motion paths (must match line coords) -->
+            <path id="p-l1-ctr" d="M80,55 L160,45"/>
+            <path id="p-l2-ctr" d="M110,22 L160,45"/>
+            <path id="p-r1-ctr" d="M240,55 L160,45"/>
+            <path id="p-r2-ctr" d="M210,22 L160,45"/>
+            <path id="p-l1-l2"  d="M80,55 L110,22"/>
+            <path id="p-r1-r2"  d="M240,55 L210,22"/>
+          </defs>
+
+          <!-- ── Connection lines with travelling dash ── -->
+          <!-- L1 → CTR -->
+          <line x1="80" y1="55" x2="160" y2="45" stroke="#4F8EF7" stroke-width="1" stroke-opacity="0.25"/>
+          <line x1="80" y1="55" x2="160" y2="45" stroke="#4F8EF7" stroke-width="1.2" stroke-opacity="0.7"
+                stroke-dasharray="8 80" stroke-dashoffset="88"
+                style="animation: dashFlow 2.4s linear infinite;"/>
+          <!-- L2 → CTR -->
+          <line x1="110" y1="22" x2="160" y2="45" stroke="#8B5CF6" stroke-width="1" stroke-opacity="0.25"/>
+          <line x1="110" y1="22" x2="160" y2="45" stroke="#8B5CF6" stroke-width="1.2" stroke-opacity="0.7"
+                stroke-dasharray="8 60" stroke-dashoffset="68"
+                style="animation: dashFlow 2s linear 0.6s infinite;"/>
+          <!-- R1 → CTR -->
+          <line x1="240" y1="55" x2="160" y2="45" stroke="#4F8EF7" stroke-width="1" stroke-opacity="0.25"/>
+          <line x1="240" y1="55" x2="160" y2="45" stroke="#4F8EF7" stroke-width="1.2" stroke-opacity="0.7"
+                stroke-dasharray="8 80" stroke-dashoffset="88"
+                style="animation: dashFlow 2.4s linear 1.2s infinite;"/>
+          <!-- R2 → CTR -->
+          <line x1="210" y1="22" x2="160" y2="45" stroke="#8B5CF6" stroke-width="1" stroke-opacity="0.25"/>
+          <line x1="210" y1="22" x2="160" y2="45" stroke="#8B5CF6" stroke-width="1.2" stroke-opacity="0.7"
+                stroke-dasharray="8 60" stroke-dashoffset="68"
+                style="animation: dashFlow 2s linear 1.8s infinite;"/>
+          <!-- L1 — L2 side wing -->
+          <line x1="80" y1="55" x2="110" y2="22" stroke="#6EA8FE" stroke-width="0.7" stroke-opacity="0.18"/>
+          <!-- R1 — R2 side wing -->
+          <line x1="240" y1="55" x2="210" y2="22" stroke="#6EA8FE" stroke-width="0.7" stroke-opacity="0.18"/>
+
+          <!-- ── Travelling bead dots ── -->
+          <circle r="2.5" fill="#93C5FD" filter="url(#glow)" style="offset-path:path('M80,55 L160,45'); animation:beadTravel 2.4s linear infinite;">
+            <animateMotion dur="2.4s" repeatCount="indefinite" begin="0s"><mpath href="#p-l1-ctr"/></animateMotion>
+          </circle>
+          <circle r="2.5" fill="#C4B5FD" filter="url(#glow)" style="offset-path:path('M110,22 L160,45'); animation:beadTravel 2s linear 0.6s infinite;">
+            <animateMotion dur="2s" repeatCount="indefinite" begin="0.6s"><mpath href="#p-l2-ctr"/></animateMotion>
+          </circle>
+          <circle r="2.5" fill="#93C5FD" filter="url(#glow)">
+            <animateMotion dur="2.4s" repeatCount="indefinite" begin="1.2s"><mpath href="#p-r1-ctr"/></animateMotion>
+          </circle>
+          <circle r="2.5" fill="#C4B5FD" filter="url(#glow)">
+            <animateMotion dur="2s" repeatCount="indefinite" begin="1.8s"><mpath href="#p-r2-ctr"/></animateMotion>
+          </circle>
+
+          <!-- ── Nodes ── -->
+          <!-- L1 (bottom-left) -->
+          <circle cx="80" cy="55" r="5" fill="#4F8EF7" filter="url(#glow)" opacity="0.9"
+                  style="animation: nodePulse 2.4s ease-in-out infinite;"/>
+          <circle cx="80" cy="55" r="2.5" fill="#EFF6FF"/>
+          <!-- L2 (top-left) -->
+          <circle cx="110" cy="22" r="5" fill="#8B5CF6" filter="url(#glow)" opacity="0.9"
+                  style="animation: nodePulse 2s ease-in-out 0.4s infinite;"/>
+          <circle cx="110" cy="22" r="2.5" fill="#F5F3FF"/>
+          <!-- CTR (center — largest) -->
+          <circle cx="160" cy="45" r="7" fill="#4F8EF7" filter="url(#glowSoft)" opacity="0.95"
+                  style="animation: coreGlow 3s ease-in-out infinite;"/>
+          <circle cx="160" cy="45" r="3.5" fill="#FFFFFF"/>
+          <!-- R2 (top-right) -->
+          <circle cx="210" cy="22" r="5" fill="#8B5CF6" filter="url(#glow)" opacity="0.9"
+                  style="animation: nodePulse 2s ease-in-out 1.0s infinite;"/>
+          <circle cx="210" cy="22" r="2.5" fill="#F5F3FF"/>
+          <!-- R1 (bottom-right) -->
+          <circle cx="240" cy="55" r="5" fill="#4F8EF7" filter="url(#glow)" opacity="0.9"
+                  style="animation: nodePulse 2.4s ease-in-out 1.6s infinite;"/>
+          <circle cx="240" cy="55" r="2.5" fill="#EFF6FF"/>
+        </svg>
+      </div>
+
       <span class="badge inline-block text-xs font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wider uppercase">AI-Powered Engineering</span>
       <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6">
         Build <span class="gradient-text">Faster.</span><br/>
