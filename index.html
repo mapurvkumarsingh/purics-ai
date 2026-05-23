@@ -15,7 +15,7 @@
         extend: {
           fontFamily: { sans: ['Inter', 'sans-serif'] },
           colors: {
-            brand: { blue: '#4F8EF7', purple: '#8B5CF6', dark: '#0a0f1e', card: '#111827' },
+            brand: { gold: '#C8A26A', sienna: '#8B5E34', dark: '#0D0A07', card: '#1A1208' },
           },
           animation: {
             'fade-up': 'fadeUp 0.6s ease-out forwards',
@@ -29,17 +29,17 @@
     };
   </script>
   <style>
-    body { background: #0a0f1e; font-family: 'Inter', sans-serif; }
-    .gradient-text { background: linear-gradient(135deg, #4F8EF7 0%, #8B5CF6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .gradient-bg { background: linear-gradient(135deg, #4F8EF7 0%, #8B5CF6 100%); }
+    body { background: #0D0A07; font-family: 'Inter', sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #E8C48A 0%, #C8A26A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-bg { background: linear-gradient(135deg, #8B5E34 0%, #C8A26A 100%); }
     .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
     .glass-hover { transition: all 0.3s ease; }
-    .glass-hover:hover { background: rgba(255,255,255,0.07); border-color: rgba(79,142,247,0.3); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(79,142,247,0.1); }
-    .glow { box-shadow: 0 0 40px rgba(79,142,247,0.15), 0 0 80px rgba(139,92,246,0.08); }
-    .hero-grid { background-image: radial-gradient(rgba(79,142,247,0.08) 1px, transparent 1px); background-size: 40px 40px; }
-    .nav-blur { background: rgba(10,15,30,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); }
-    .badge { background: rgba(79,142,247,0.12); border: 1px solid rgba(79,142,247,0.25); color: #4F8EF7; }
-    .popular-badge { background: linear-gradient(135deg, #4F8EF7, #8B5CF6); }
+    .glass-hover:hover { background: rgba(255,255,255,0.07); border-color: rgba(200,162,106,0.3); transform: translateY(-4px); box-shadow: 0 20px 40px rgba(200,162,106,0.1); }
+    .glow { box-shadow: 0 0 40px rgba(200,162,106,0.18), 0 0 80px rgba(107,68,35,0.14); }
+    .hero-grid { background-image: radial-gradient(rgba(200,162,106,0.06) 1px, transparent 1px); background-size: 40px 40px; }
+    .nav-blur { background: rgba(13,10,7,0.88); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(200,162,106,0.08); }
+    .badge { background: rgba(200,162,106,0.12); border: 1px solid rgba(200,162,106,0.28); color: #C8A26A; }
+    .popular-badge { background: linear-gradient(135deg, #8B5E34, #C8A26A); }
     .check-icon::before { content: '✓'; }
     @media (prefers-reduced-motion: reduce) { .glass-hover:hover { transform: none; } }
     /* ── Calendly premium dark-brown CTA ── */
@@ -74,6 +74,11 @@
 </head>
 <body class="text-white antialiased">
 
+  <!-- SHOOTING STARS CANVAS -->
+  <canvas id="starfield" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;" aria-hidden="true"></canvas>
+  <!-- All page content sits above the canvas -->
+  <div style="position:relative;z-index:1;">
+
   <!-- NAV -->
   <nav class="nav-blur fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
@@ -96,8 +101,8 @@
   <!-- HERO -->
   <section class="hero-grid min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
     <div class="absolute inset-0 pointer-events-none">
-      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-900/10 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-yellow-900/10 rounded-full blur-3xl"></div>
     </div>
     <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
       <span class="badge inline-block text-xs font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wider uppercase">AI-Powered Engineering</span>
@@ -156,7 +161,7 @@
           <h3 class="font-bold text-lg mb-2">Cloud & DevOps</h3>
           <p class="text-gray-400 text-sm leading-relaxed">CI/CD pipelines, Kubernetes, infrastructure-as-code, and multi-cloud deployments engineered for reliability.</p>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6 border border-purple-500/20">
+        <div class="glass glass-hover rounded-2xl p-6" style="border:1px solid rgba(200,162,106,0.2);">
           <div class="text-3xl mb-4">🤖</div>
           <h3 class="font-bold text-lg mb-2">AI Agent Development</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Custom AI agents, RAG systems, LLM integrations, and intelligent automation tailored to your business workflows.</p>
@@ -203,7 +208,7 @@
               <span class="text-5xl font-black">$999</span>
               <span class="text-gray-400 mb-2">/month</span>
             </div>
-            <p class="text-blue-400 text-sm font-semibold">8 Hours / Month</p>
+            <p class="text-sm font-semibold" style="color:#C8A26A;">8 Hours / Month</p>
           </div>
           <p class="text-gray-400 text-sm mb-6">Best for small teams needing reliable maintenance and technical guidance without the full-time overhead.</p>
           <ul class="space-y-3 text-sm mb-8 flex-1">
@@ -220,8 +225,8 @@
         </div>
 
         <!-- Growth - Popular -->
-        <div class="rounded-2xl p-px glow relative" style="background: linear-gradient(135deg, #4F8EF7, #8B5CF6);">
-          <div class="bg-brand-card rounded-2xl p-8 h-full flex flex-col" style="background: #111827;">
+        <div class="rounded-2xl p-px glow relative" style="background: linear-gradient(135deg, #8B5E34, #C8A26A);">
+          <div class="bg-brand-card rounded-2xl p-8 h-full flex flex-col" style="background: #1A1208;">
             <div class="popular-badge text-white text-xs font-bold px-3 py-1 rounded-full w-fit mb-4">⭐ Most Popular</div>
             <div class="mb-6">
               <p class="text-gray-400 text-sm font-medium mb-1">Growth Support</p>
@@ -229,7 +234,7 @@
                 <span class="text-5xl font-black">$1,599</span>
                 <span class="text-gray-400 mb-2">/month</span>
               </div>
-              <p class="text-blue-400 text-sm font-semibold">8 Hours / Week</p>
+              <p class="text-sm font-semibold" style="color:#C8A26A;">8 Hours / Week</p>
             </div>
             <p class="text-gray-400 text-sm mb-6">For startups and growing products that need consistent weekly velocity and agile feature delivery.</p>
             <ul class="space-y-3 text-sm mb-8 flex-1">
@@ -255,7 +260,7 @@
               <span class="text-5xl font-black">$2,999</span>
               <span class="text-gray-400 mb-2">/month</span>
             </div>
-            <p class="text-purple-400 text-sm font-semibold">Flexible Daily Support</p>
+            <p class="text-sm font-semibold" style="color:#C8A26A;">Flexible Daily Support</p>
           </div>
           <p class="text-gray-400 text-sm mb-6">For companies serious about AI — dedicated engineering with full AI development capabilities.</p>
           <ul class="space-y-3 text-sm mb-8 flex-1">
@@ -313,7 +318,7 @@
         </div>
       </div>
       <!-- AI Capabilities Highlight -->
-      <div class="glass rounded-2xl p-8 md:p-12" style="background: linear-gradient(135deg, rgba(79,142,247,0.06), rgba(139,92,246,0.06));">
+      <div class="glass rounded-2xl p-8 md:p-12" style="background: linear-gradient(135deg, rgba(107,68,35,0.10), rgba(200,162,106,0.06));">
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <span class="badge inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 tracking-wider uppercase">AI-Powered</span>
@@ -397,7 +402,7 @@
         <p class="text-gray-400 max-w-xl mx-auto">Secure checkout via Razorpay. Pick your plan, pay, and our onboarding team connects with you immediately.</p>
       </div>
       <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="glass rounded-2xl p-8" style="background: linear-gradient(135deg, rgba(79,142,247,0.06), rgba(139,92,246,0.06));">
+        <div class="glass rounded-2xl p-8" style="background: linear-gradient(135deg, rgba(107,68,35,0.10), rgba(200,162,106,0.06));">
           <h3 class="text-xl font-black mb-6">Supported Payment Methods</h3>
           <div class="grid grid-cols-2 gap-4 mb-8">
             <div class="glass rounded-xl p-4 flex items-center gap-3">
@@ -435,18 +440,18 @@
             </div>
             <div class="text-right">
               <div class="text-2xl font-black gradient-text">$999</div>
-              <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="text-blue-400 text-xs hover:underline bg-transparent border-0 cursor-pointer p-0">Get Started &rarr;</button>
+              <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="text-xs hover:underline bg-transparent border-0 cursor-pointer p-0" style="color:#C8A26A;">Get Started &rarr;</button>
             </div>
           </div>
-          <div class="rounded-2xl p-px" style="background: linear-gradient(135deg, #4F8EF7, #8B5CF6);">
-            <div class="rounded-2xl p-6 flex items-center justify-between" style="background: #111827;">
+          <div class="rounded-2xl p-px" style="background: linear-gradient(135deg, #8B5E34, #C8A26A);">
+            <div class="rounded-2xl p-6 flex items-center justify-between" style="background: #1A1208;">
               <div>
                 <div class="font-bold">Growth Support <span class="popular-badge text-white text-xs font-bold px-2 py-0.5 rounded-full ml-2">Popular</span></div>
                 <div class="text-gray-400 text-sm">8 hrs / week · Ongoing agile delivery</div>
               </div>
               <div class="text-right">
                 <div class="text-2xl font-black gradient-text">$1,599</div>
-                <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="text-blue-400 text-xs hover:underline bg-transparent border-0 cursor-pointer p-0">Get Started &rarr;</button>
+                <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="text-xs hover:underline bg-transparent border-0 cursor-pointer p-0" style="color:#C8A26A;">Get Started &rarr;</button>
               </div>
             </div>
           </div>
@@ -457,7 +462,7 @@
             </div>
             <div class="text-right">
               <div class="text-2xl font-black gradient-text">$2,999</div>
-              <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="text-purple-400 text-xs hover:underline bg-transparent border-0 cursor-pointer p-0">Get Started &rarr;</button>
+              <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="text-xs hover:underline bg-transparent border-0 cursor-pointer p-0" style="color:#C8A26A;">Get Started &rarr;</button>
             </div>
           </div>
           <p class="text-gray-500 text-xs px-1">After payment, our onboarding team will reach out within 24 hours to initiate your engagement.</p>
@@ -497,7 +502,7 @@
         </div>
       </div>
       <!-- Commitment strip -->
-      <div class="glass rounded-2xl p-8 md:p-10 text-center" style="background: linear-gradient(135deg, rgba(79,142,247,0.06), rgba(139,92,246,0.06));">
+      <div class="glass rounded-2xl p-8 md:p-10 text-center" style="background: linear-gradient(135deg, rgba(107,68,35,0.10), rgba(200,162,106,0.06));">
         <h3 class="text-2xl font-black mb-4">Our <span class="gradient-text">Commitment</span></h3>
         <p class="text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">Great software is built through trust, transparency, and technical excellence. Purics AI combines experienced developers with AI-powered workflows to ensure clients receive scalable, reliable, and future-ready solutions.</p>
         <div class="flex flex-wrap justify-center gap-3">
@@ -626,7 +631,7 @@
   <section id="consult" class="py-24 px-4">
     <div class="max-w-4xl mx-auto text-center">
       <div class="glass rounded-3xl p-12 md:p-16 glow relative overflow-hidden">
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-amber-900/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="relative z-10">
           <span class="badge inline-block text-xs font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wider uppercase">Start Today</span>
           <h2 class="text-4xl sm:text-5xl font-black mb-4">First Consultation <span class="gradient-text">is Free</span></h2>
@@ -680,8 +685,149 @@
       </div>
     </div>
   </footer>
+  </div><!-- /content wrapper -->
+
   <!-- Calendly popup widget -->
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <!-- SHOOTING STARS ANIMATION -->
+  <script>
+  (function () {
+    'use strict';
+    const canvas = document.getElementById('starfield');
+    const ctx    = canvas.getContext('2d');
+
+    // ── Palette aligned with the dark-brown theme ──────────────────────────
+    const STAR_COLORS   = ['#FFFFFF','#FFF8EE','#F5EFE6','#E8C48A','#C8A26A'];
+    const SHOOT_COLORS  = ['#FFFFFF','#FFF8EE','#E8C48A','#C8A26A'];
+    const BG_STAR_COUNT = 220;   // static twinkling stars
+    const MAX_SHOOTERS  = 4;     // max simultaneous shooting stars
+    const SPAWN_INTERVAL_MS = [1800, 4500]; // random ms between spawns
+
+    let W, H, bgStars = [], shooters = [], nextSpawn = 0, rafId;
+
+    // ── Resize ────────────────────────────────────────────────────────────
+    function resize() {
+      W = canvas.width  = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+      buildBgStars();
+    }
+
+    // ── Static background stars ───────────────────────────────────────────
+    function buildBgStars() {
+      bgStars = [];
+      for (let i = 0; i < BG_STAR_COUNT; i++) {
+        bgStars.push({
+          x:       Math.random() * W,
+          y:       Math.random() * H,
+          r:       Math.random() * 1.1 + 0.2,
+          alpha:   Math.random() * 0.6 + 0.15,
+          delta:   (Math.random() * 0.004 + 0.001) * (Math.random() < 0.5 ? 1 : -1),
+          color:   STAR_COLORS[Math.floor(Math.random() * STAR_COLORS.length)],
+        });
+      }
+    }
+
+    // ── Spawn a single shooting star ──────────────────────────────────────
+    function spawnShooter() {
+      // Start along the top or left edge; aim diagonally downward
+      const fromTop  = Math.random() < 0.65;
+      const angle    = (Math.random() * 28 + 20) * (Math.PI / 180); // 20°–48°
+      const speed    = Math.random() * 7 + 5;
+      const length   = Math.random() * 180 + 90;
+      const color    = SHOOT_COLORS[Math.floor(Math.random() * SHOOT_COLORS.length)];
+      const x        = fromTop  ? Math.random() * W * 1.4 - W * 0.2 : -length;
+      const y        = fromTop  ? -length : Math.random() * H * 0.5;
+
+      shooters.push({ x, y,
+        vx:    Math.cos(angle) * speed,
+        vy:    Math.sin(angle) * speed,
+        length, color,
+        alpha: 0,        // fade in
+        life:  0,        // 0→1 progress
+        dead:  false,
+      });
+    }
+
+    function randBetween(lo, hi) { return Math.random() * (hi - lo) + lo; }
+
+    // ── Draw one frame ────────────────────────────────────────────────────
+    function draw(ts) {
+      ctx.clearRect(0, 0, W, H);
+
+      // — Twinkling background stars —
+      for (const s of bgStars) {
+        s.alpha += s.delta;
+        if (s.alpha > 0.75 || s.alpha < 0.1) s.delta *= -1;
+        ctx.globalAlpha = s.alpha;
+        ctx.fillStyle   = s.color;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // — Spawn new shooters on schedule —
+      if (ts >= nextSpawn && shooters.length < MAX_SHOOTERS) {
+        spawnShooter();
+        nextSpawn = ts + randBetween(SPAWN_INTERVAL_MS[0], SPAWN_INTERVAL_MS[1]);
+      }
+
+      // — Draw & advance shooting stars —
+      shooters = shooters.filter(s => !s.dead);
+      for (const s of shooters) {
+        // Fade in over first 15 % of life, fade out over last 25 %
+        s.life += 0.012;
+        if      (s.life < 0.15) s.alpha = s.life / 0.15;
+        else if (s.life > 0.75) s.alpha = 1 - (s.life - 0.75) / 0.25;
+        else                    s.alpha = 1;
+        if (s.life >= 1)        s.dead  = true;
+
+        const tailX = s.x - Math.cos(Math.atan2(s.vy, s.vx)) * s.length;
+        const tailY = s.y - Math.sin(Math.atan2(s.vy, s.vx)) * s.length;
+
+        const grad = ctx.createLinearGradient(tailX, tailY, s.x, s.y);
+        grad.addColorStop(0, 'transparent');
+        grad.addColorStop(0.6, `${s.color}33`);
+        grad.addColorStop(1,   s.color);
+
+        ctx.globalAlpha = s.alpha * 0.88;
+        ctx.strokeStyle = grad;
+        ctx.lineWidth   = 1.8;
+        ctx.lineCap     = 'round';
+        ctx.beginPath();
+        ctx.moveTo(tailX, tailY);
+        ctx.lineTo(s.x, s.y);
+        ctx.stroke();
+
+        // Bright head dot
+        ctx.globalAlpha = s.alpha;
+        ctx.fillStyle   = '#FFFFFF';
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, 1.5, 0, Math.PI * 2);
+        ctx.fill();
+
+        s.x += s.vx;
+        s.y += s.vy;
+
+        if (s.x > W + 50 || s.y > H + 50) s.dead = true;
+      }
+
+      ctx.globalAlpha = 1;
+      rafId = requestAnimationFrame(draw);
+    }
+
+    // ── Pause when tab hidden (battery-friendly) ─────────────────────────
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) { cancelAnimationFrame(rafId); }
+      else                 { rafId = requestAnimationFrame(draw); }
+    });
+
+    window.addEventListener('resize', resize);
+    resize();
+    nextSpawn = performance.now() + 800;
+    rafId = requestAnimationFrame(draw);
+  }());
+  </script>
 
 </body>
 </html>
