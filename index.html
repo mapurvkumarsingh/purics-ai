@@ -333,6 +333,59 @@
       animation: svgReveal 1s cubic-bezier(0.22,1,0.36,1) 0.3s both;
       overflow: visible;
     }
+
+    /* ── Our Work section ── */
+    .work-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1),
+                  border-color 0.3s ease,
+                  box-shadow 0.3s ease;
+    }
+    .work-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(79,142,247,0.35);
+      box-shadow: 0 20px 60px rgba(79,142,247,0.12), 0 0 0 1px rgba(79,142,247,0.1);
+    }
+    .work-preview {
+      background: #060c18;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+      line-height: 0;
+    }
+    .work-preview svg { display: block; width: 100%; height: auto; }
+    .cat-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(79,142,247,0.12);
+      border: 1px solid rgba(79,142,247,0.3);
+      color: #7AABFF;
+    }
+    .tech-pill {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #9ca3af;
+    }
+    .cs-link {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #4F8EF7;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .cs-link:hover { color: #7AABFF; }
   </style>
 </head>
 <body class="text-white antialiased">
@@ -350,6 +403,7 @@
       </a>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
         <a href="#services" class="hover:text-white transition-colors">Services</a>
+        <a href="#work" class="hover:text-white transition-colors">Our Work</a>
         <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
         <a href="#why" class="hover:text-white transition-colors">Why Us</a>
         <a href="#support" class="hover:text-white transition-colors">Support</a>
@@ -545,6 +599,425 @@
           <p class="text-gray-400 text-sm leading-relaxed">Strategic guidance on technology choices, AI strategy, product decisions, and technical planning sessions.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- OUR WORK -->
+  <section id="work" aria-label="Purics AI project portfolio and case studies" class="py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <span class="badge inline-block text-xs font-semibold px-4 py-1.5 rounded-full mb-4 tracking-wider uppercase">Our Work</span>
+        <h2 class="text-4xl sm:text-5xl font-black mb-4">Built by Us. <span class="gradient-text">Shipped for Real.</span></h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">A selection of AI systems, automation pipelines, SaaS platforms, and enterprise applications we’ve engineered for clients across industries.</p>
+      </div>
+
+      <!-- Featured (2-col) -->
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+
+        <!-- Featured 1: AI Ops Platform -->
+        <div class="work-card">
+          <div class="work-preview">
+            <svg viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4F8EF7"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient>
+                <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4F8EF7" stop-opacity="0.5"/><stop offset="100%" stop-color="#4F8EF7" stop-opacity="0"/></linearGradient>
+                <linearGradient id="purpFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.4"/><stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/></linearGradient>
+                <filter id="glow1"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <rect width="680" height="300" fill="#060c18"/>
+              <!-- Sidebar -->
+              <rect x="0" y="0" width="130" height="300" fill="#0a1120"/>
+              <rect x="0" y="0" width="130" height="300" fill="url(#blueGrad)" opacity="0.04"/>
+              <rect x="18" y="22" width="92" height="28" rx="6" fill="rgba(79,142,247,0.12)" stroke="rgba(79,142,247,0.25)" stroke-width="1"/>
+              <text x="36" y="41" fill="#7AABFF" font-size="9" font-family="monospace">AI OPS PLATFORM</text>
+              <rect x="18" y="66" width="92" height="22" rx="5" fill="rgba(255,255,255,0.05)"/>
+              <circle cx="30" cy="77" r="4" fill="#4F8EF7"/><text x="40" y="81" fill="#d1d5db" font-size="8">Dashboard</text>
+              <rect x="18" y="94" width="92" height="22" rx="5" fill="rgba(79,142,247,0.1)"/>
+              <circle cx="30" cy="105" r="4" fill="#8B5CF6"/><text x="40" y="109" fill="#e5e7eb" font-size="8">AI Agents</text>
+              <rect x="18" y="122" width="92" height="22" rx="5"/>
+              <circle cx="30" cy="133" r="4" fill="#6b7280"/><text x="40" y="137" fill="#9ca3af" font-size="8">Pipelines</text>
+              <rect x="18" y="150" width="92" height="22" rx="5"/>
+              <circle cx="30" cy="161" r="4" fill="#6b7280"/><text x="40" y="165" fill="#9ca3af" font-size="8">Analytics</text>
+              <rect x="18" y="178" width="92" height="22" rx="5"/>
+              <circle cx="30" cy="189" r="4" fill="#6b7280"/><text x="40" y="193" fill="#9ca3af" font-size="8">Monitoring</text>
+              <!-- KPI row -->
+              <rect x="148" y="16" width="150" height="56" rx="8" fill="#0d1827" stroke="rgba(79,142,247,0.2)" stroke-width="1"/>
+              <text x="164" y="36" fill="#6b7280" font-size="7" font-family="monospace">TASKS / DAY</text>
+              <text x="164" y="56" fill="#4F8EF7" font-size="20" font-weight="bold" filter="url(#glow1)">847K</text>
+              <rect x="310" y="16" width="150" height="56" rx="8" fill="#0d1827" stroke="rgba(139,92,246,0.2)" stroke-width="1"/>
+              <text x="326" y="36" fill="#6b7280" font-size="7" font-family="monospace">ACCURACY</text>
+              <text x="326" y="56" fill="#8B5CF6" font-size="20" font-weight="bold" filter="url(#glow1)">98.4%</text>
+              <rect x="472" y="16" width="190" height="56" rx="8" fill="#0d1827" stroke="rgba(79,142,247,0.15)" stroke-width="1"/>
+              <text x="488" y="36" fill="#6b7280" font-size="7" font-family="monospace">AVG LATENCY</text>
+              <text x="488" y="56" fill="#e5e7eb" font-size="20" font-weight="bold">142ms</text>
+              <!-- Chart -->
+              <rect x="148" y="88" width="516" height="196" rx="8" fill="#0a1120" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <text x="164" y="108" fill="#6b7280" font-size="7" font-family="monospace">THROUGHPUT — LAST 30 DAYS</text>
+              <!-- Grid lines -->
+              <line x1="148" y1="140" x2="664" y2="140" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+              <line x1="148" y1="170" x2="664" y2="170" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+              <line x1="148" y1="200" x2="664" y2="200" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+              <line x1="148" y1="230" x2="664" y2="230" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+              <!-- Chart fill area -->
+              <path d="M164,240 L196,210 L228,220 L260,180 L292,190 L324,155 L356,160 L388,130 L420,140 L452,110 L484,120 L516,95 L548,100 L580,82 L612,88 L644,74 L644,268 L164,268 Z" fill="url(#chartFill)"/>
+              <path d="M164,240 L196,210 L228,220 L260,180 L292,190 L324,155 L356,160 L388,130 L420,140 L452,110 L484,120 L516,95 L548,100 L580,82 L612,88 L644,74" fill="none" stroke="#4F8EF7" stroke-width="2" filter="url(#glow1)"/>
+              <!-- Second line (purple) -->
+              <path d="M164,260 L196,248 L228,252 L260,238 L292,244 L324,228 L356,232 L388,218 L420,225 L452,208 L484,215 L516,200 L548,205 L580,192 L612,198 L644,185" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="4 2" opacity="0.7"/>
+              <!-- Dot highlight -->
+              <circle cx="644" cy="74" r="4" fill="#4F8EF7" filter="url(#glow1)"/>
+              <rect x="620" y="56" width="56" height="16" rx="4" fill="rgba(79,142,247,0.2)"/>
+              <text x="628" y="68" fill="#7AABFF" font-size="8">+12.4%</text>
+            </svg>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <div>
+                <span class="cat-tag">Enterprise Platform</span>
+                <h3 class="font-black text-lg mt-2">AI Operations Command Centre</h3>
+              </div>
+              <a href="#consult" class="cs-link whitespace-nowrap mt-1">View Case Study →</a>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4">End-to-end AI orchestration platform handling 847K tasks/day across 14 enterprise workflows. Real-time monitoring, agent coordination, and adaptive load balancing built on a microservices backbone.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-pill">LangChain</span><span class="tech-pill">FastAPI</span><span class="tech-pill">Kafka</span><span class="tech-pill">PostgreSQL</span><span class="tech-pill">React</span><span class="tech-pill">Redis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured 2: Predictive Commerce Engine -->
+        <div class="work-card">
+          <div class="work-preview">
+            <svg viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4F8EF7"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient>
+                <linearGradient id="barGrad2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#4F8EF7" stop-opacity="0.5"/></linearGradient>
+                <filter id="glow2"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <rect width="680" height="300" fill="#060c18"/>
+              <!-- Top KPI strip -->
+              <rect x="16" y="14" width="148" height="52" rx="7" fill="#0d1827" stroke="rgba(79,142,247,0.2)" stroke-width="1"/>
+              <text x="30" y="33" fill="#6b7280" font-size="7" font-family="monospace">REVENUE LIFT</text>
+              <text x="30" y="52" fill="#4F8EF7" font-size="18" font-weight="bold" filter="url(#glow2)">+31.7%</text>
+              <rect x="178" y="14" width="148" height="52" rx="7" fill="#0d1827" stroke="rgba(139,92,246,0.2)" stroke-width="1"/>
+              <text x="192" y="33" fill="#6b7280" font-size="7" font-family="monospace">FORECAST ACCURACY</text>
+              <text x="192" y="52" fill="#8B5CF6" font-size="18" font-weight="bold" filter="url(#glow2)">94.2%</text>
+              <rect x="340" y="14" width="148" height="52" rx="7" fill="#0d1827" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+              <text x="354" y="33" fill="#6b7280" font-size="7" font-family="monospace">INVENTORY WASTE</text>
+              <text x="354" y="52" fill="#4ade80" font-size="18" font-weight="bold">−18.3%</text>
+              <rect x="502" y="14" width="162" height="52" rx="7" fill="#0d1827" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+              <text x="516" y="33" fill="#6b7280" font-size="7" font-family="monospace">SKUS TRACKED</text>
+              <text x="516" y="52" fill="#e5e7eb" font-size="18" font-weight="bold">2.4M</text>
+              <!-- Bar chart -->
+              <rect x="16" y="82" width="648" height="200" rx="8" fill="#0a1120" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+              <text x="32" y="102" fill="#6b7280" font-size="7" font-family="monospace">DEMAND FORECAST vs ACTUAL — Q4</text>
+              <!-- Bars -->
+              <rect x="48"  y="138" width="30" height="122" rx="3" fill="url(#barGrad)" opacity="0.85"/>
+              <rect x="96"  y="118" width="30" height="142" rx="3" fill="url(#barGrad)" opacity="0.85"/>
+              <rect x="144" y="128" width="30" height="132" rx="3" fill="url(#barGrad)" opacity="0.85"/>
+              <rect x="192" y="108" width="30" height="152" rx="3" fill="url(#barGrad)" opacity="0.85"/>
+              <rect x="240" y="125" width="30" height="135" rx="3" fill="url(#barGrad)" opacity="0.85"/>
+              <rect x="288" y="100" width="30" height="160" rx="3" fill="url(#barGrad)" opacity="0.85"/>
+              <rect x="336" y="115" width="30" height="145" rx="3" fill="url(#barGrad)" opacity="0.85"/>
+              <rect x="384" y="95"  width="30" height="165" rx="3" fill="url(#barGrad)" opacity="0.85"/>
+              <!-- Actual overlay bars (semi-transparent purple) -->
+              <rect x="55"  y="150" width="16" height="110" rx="2" fill="url(#barGrad2)" opacity="0.6"/>
+              <rect x="103" y="130" width="16" height="130" rx="2" fill="url(#barGrad2)" opacity="0.6"/>
+              <rect x="151" y="140" width="16" height="120" rx="2" fill="url(#barGrad2)" opacity="0.6"/>
+              <rect x="199" y="120" width="16" height="140" rx="2" fill="url(#barGrad2)" opacity="0.6"/>
+              <rect x="247" y="135" width="16" height="125" rx="2" fill="url(#barGrad2)" opacity="0.6"/>
+              <rect x="295" y="112" width="16" height="148" rx="2" fill="url(#barGrad2)" opacity="0.6"/>
+              <rect x="343" y="125" width="16" height="135" rx="2" fill="url(#barGrad2)" opacity="0.6"/>
+              <rect x="391" y="105" width="16" height="155" rx="2" fill="url(#barGrad2)" opacity="0.6"/>
+              <!-- Trend line -->
+              <polyline points="63,145 111,126 159,136 207,113 255,128 303,104 351,118 399,97" fill="none" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6 3" filter="url(#glow2)" opacity="0.9"/>
+              <!-- Right side: mini heatmap -->
+              <rect x="448" y="98" width="200" height="168" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <text x="460" y="116" fill="#6b7280" font-size="7" font-family="monospace">CATEGORY PERFORMANCE</text>
+              <!-- Heatmap cells -->
+              <rect x="460" y="124" width="40" height="28" rx="3" fill="rgba(79,142,247,0.6)"/><text x="467" y="143" fill="#fff" font-size="7">Electronics</text>
+              <rect x="506" y="124" width="40" height="28" rx="3" fill="rgba(79,142,247,0.85)"/><text x="513" y="143" fill="#fff" font-size="7">Fashion</text>
+              <rect x="552" y="124" width="40" height="28" rx="3" fill="rgba(79,142,247,0.35)"/><text x="559" y="143" fill="#aaa" font-size="7">Home</text>
+              <rect x="598" y="124" width="44" height="28" rx="3" fill="rgba(139,92,246,0.7)"/><text x="605" y="143" fill="#fff" font-size="7">Sports</text>
+              <rect x="460" y="158" width="40" height="28" rx="3" fill="rgba(139,92,246,0.4)"/><text x="467" y="177" fill="#ccc" font-size="7">Beauty</text>
+              <rect x="506" y="158" width="40" height="28" rx="3" fill="rgba(79,142,247,0.9)"/><text x="513" y="177" fill="#fff" font-size="7">Books</text>
+              <rect x="552" y="158" width="40" height="28" rx="3" fill="rgba(139,92,246,0.55)"/><text x="559" y="177" fill="#ddd" font-size="7">Garden</text>
+              <rect x="598" y="158" width="44" height="28" rx="3" fill="rgba(79,142,247,0.45)"/><text x="605" y="177" fill="#bbb" font-size="7">Pets</text>
+              <rect x="460" y="192" width="40" height="28" rx="3" fill="rgba(79,142,247,0.75)"/><text x="467" y="211" fill="#fff" font-size="7">Toys</text>
+              <rect x="506" y="192" width="40" height="28" rx="3" fill="rgba(139,92,246,0.3)"/><text x="513" y="211" fill="#bbb" font-size="7">Auto</text>
+              <rect x="552" y="192" width="40" height="28" rx="3" fill="rgba(79,142,247,0.5)"/><text x="559" y="211" fill="#ccc" font-size="7">Music</text>
+              <rect x="598" y="192" width="44" height="28" rx="3" fill="rgba(139,92,246,0.8)"/><text x="605" y="211" fill="#fff" font-size="7">Office</text>
+            </svg>
+          </div>
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <div>
+                <span class="cat-tag">AI Analytics</span>
+                <h3 class="font-black text-lg mt-2">Predictive Commerce Engine</h3>
+              </div>
+              <a href="#consult" class="cs-link whitespace-nowrap mt-1">View Case Study →</a>
+            </div>
+            <p class="text-gray-400 text-sm leading-relaxed mb-4">ML-powered demand forecasting system tracking 2.4M SKUs across 12 product categories. Delivered +31.7% revenue lift and −18.3% inventory waste through real-time adaptive reordering.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tech-pill">PyTorch</span><span class="tech-pill">Apache Spark</span><span class="tech-pill">Kafka</span><span class="tech-pill">Next.js</span><span class="tech-pill">ClickHouse</span>
+            </div>
+          </div>
+        </div>
+      </div><!-- /featured grid -->
+
+      <!-- 6-card grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- Card 3: AI Support Agent -->
+        <div class="work-card">
+          <div class="work-preview">
+            <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+              <defs><filter id="g3"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+              <rect width="400" height="200" fill="#060c18"/>
+              <!-- Header bar -->
+              <rect x="0" y="0" width="400" height="36" fill="#0a1120"/>
+              <circle cx="20" cy="18" r="7" fill="rgba(79,142,247,0.2)" stroke="rgba(79,142,247,0.4)" stroke-width="1"/>
+              <text x="35" y="22" fill="#7AABFF" font-size="8" font-weight="bold">Purics AI Support Agent</text>
+              <circle cx="374" cy="18" r="5" fill="#4ade80" filter="url(#g3)"/>
+              <text x="348" y="22" fill="#4ade80" font-size="7">live</text>
+              <!-- Messages -->
+              <rect x="40" y="48" width="200" height="26" rx="13" fill="rgba(255,255,255,0.06)"/>
+              <text x="56" y="65" fill="#d1d5db" font-size="8">How do I integrate your AI agent?</text>
+              <rect x="120" y="84" width="256" height="26" rx="13" fill="rgba(79,142,247,0.2)" stroke="rgba(79,142,247,0.3)" stroke-width="1"/>
+              <text x="136" y="101" fill="#e5e7eb" font-size="8">Sure! Here’s the REST endpoint setup …</text>
+              <rect x="40" y="120" width="175" height="26" rx="13" fill="rgba(255,255,255,0.06)"/>
+              <text x="56" y="137" fill="#d1d5db" font-size="8">Can it handle 10K concurrent users?</text>
+              <rect x="150" y="156" width="226" height="26" rx="13" fill="rgba(79,142,247,0.2)" stroke="rgba(79,142,247,0.3)" stroke-width="1"/>
+              <text x="166" y="173" fill="#e5e7eb" font-size="8">Yes — auto-scales via Kubernetes ❤</text>
+              <!-- Typing indicator -->
+              <circle cx="22" cy="179" r="3" fill="#4F8EF7" opacity="0.5"/>
+              <circle cx="32" cy="179" r="3" fill="#4F8EF7" opacity="0.7"/>
+              <circle cx="42" cy="179" r="3" fill="#4F8EF7" opacity="0.9"/>
+            </svg>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2"><span class="cat-tag">AI Agent</span><a href="#consult" class="cs-link">Case Study →</a></div>
+            <h3 class="font-bold mb-2">Intelligent Support Agent</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-3">GPT-4 powered agent resolving 78% of support tickets autonomously. Context-aware, multi-turn with escalation routing and real-time sentiment analysis.</p>
+            <div class="flex flex-wrap gap-1.5"><span class="tech-pill">GPT-4</span><span class="tech-pill">LangGraph</span><span class="tech-pill">Redis</span><span class="tech-pill">Node.js</span></div>
+          </div>
+        </div>
+
+        <!-- Card 4: Document AI Pipeline -->
+        <div class="work-card">
+          <div class="work-preview">
+            <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+              <defs><linearGradient id="pipeGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4F8EF7"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient></defs>
+              <rect width="400" height="200" fill="#060c18"/>
+              <text x="20" y="26" fill="#6b7280" font-size="7" font-family="monospace">DOCUMENT AI PIPELINE</text>
+              <!-- Pipeline nodes -->
+              <rect x="14" y="48" width="62" height="44" rx="7" fill="#0d1827" stroke="rgba(79,142,247,0.3)" stroke-width="1"/>
+              <text x="20" y="66" fill="#7AABFF" font-size="7">Ingest</text><text x="20" y="80" fill="#6b7280" font-size="6">S3 / Email</text>
+              <line x1="76" y1="70" x2="98" y2="70" stroke="url(#pipeGrad)" stroke-width="1.5"/><polygon points="98,66 106,70 98,74" fill="#4F8EF7"/>
+              <rect x="106" y="48" width="62" height="44" rx="7" fill="#0d1827" stroke="rgba(79,142,247,0.3)" stroke-width="1"/>
+              <text x="112" y="66" fill="#7AABFF" font-size="7">Extract</text><text x="112" y="80" fill="#6b7280" font-size="6">Textract</text>
+              <line x1="168" y1="70" x2="190" y2="70" stroke="url(#pipeGrad)" stroke-width="1.5"/><polygon points="190,66 198,70 190,74" fill="#8B5CF6"/>
+              <rect x="198" y="48" width="62" height="44" rx="7" fill="#0d1827" stroke="rgba(139,92,246,0.3)" stroke-width="1"/>
+              <text x="204" y="66" fill="#c084fc" font-size="7">Classify</text><text x="204" y="80" fill="#6b7280" font-size="6">OpenAI</text>
+              <line x1="260" y1="70" x2="282" y2="70" stroke="url(#pipeGrad)" stroke-width="1.5"/><polygon points="282,66 290,70 282,74" fill="#8B5CF6"/>
+              <rect x="290" y="48" width="62" height="44" rx="7" fill="#0d1827" stroke="rgba(139,92,246,0.3)" stroke-width="1"/>
+              <text x="296" y="66" fill="#c084fc" font-size="7">Validate</text><text x="296" y="80" fill="#6b7280" font-size="6">Rules + AI</text>
+              <line x1="352" y1="70" x2="372" y2="70" stroke="url(#pipeGrad)" stroke-width="1.5"/><polygon points="372,66 380,70 372,74" fill="#4F8EF7"/>
+              <rect x="358" y="48" width="32" height="44" rx="7" fill="rgba(79,142,247,0.15)" stroke="rgba(79,142,247,0.4)" stroke-width="1"/>
+              <text x="362" y="74" fill="#7AABFF" font-size="7">DB</text>
+              <!-- Stats row -->
+              <rect x="14" y="114" width="110" height="38" rx="6" fill="#0a1120" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <text x="26" y="130" fill="#6b7280" font-size="6" font-family="monospace">DOCS PROCESSED</text>
+              <text x="26" y="146" fill="#4F8EF7" font-size="14" font-weight="bold">1.2M+</text>
+              <rect x="136" y="114" width="110" height="38" rx="6" fill="#0a1120" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <text x="148" y="130" fill="#6b7280" font-size="6" font-family="monospace">ACCURACY</text>
+              <text x="148" y="146" fill="#8B5CF6" font-size="14" font-weight="bold">99.1%</text>
+              <rect x="258" y="114" width="124" height="38" rx="6" fill="#0a1120" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <text x="270" y="130" fill="#6b7280" font-size="6" font-family="monospace">AVG PROCESS TIME</text>
+              <text x="270" y="146" fill="#e5e7eb" font-size="14" font-weight="bold">340ms</text>
+              <!-- Category pills row -->
+              <rect x="14" y="165" width="50" height="18" rx="5" fill="rgba(79,142,247,0.15)"/><text x="19" y="178" fill="#7AABFF" font-size="7">Invoice</text>
+              <rect x="72" y="165" width="56" height="18" rx="5" fill="rgba(139,92,246,0.15)"/><text x="77" y="178" fill="#c084fc" font-size="7">Contract</text>
+              <rect x="136" y="165" width="44" height="18" rx="5" fill="rgba(79,142,247,0.15)"/><text x="141" y="178" fill="#7AABFF" font-size="7">Medical</text>
+              <rect x="188" y="165" width="42" height="18" rx="5" fill="rgba(139,92,246,0.15)"/><text x="193" y="178" fill="#c084fc" font-size="7">Legal</text>
+              <rect x="238" y="165" width="38" height="18" rx="5" fill="rgba(79,142,247,0.15)"/><text x="243" y="178" fill="#7AABFF" font-size="7">HR</text>
+            </svg>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2"><span class="cat-tag">Automation</span><a href="#consult" class="cs-link">Case Study →</a></div>
+            <h3 class="font-bold mb-2">Document AI Pipeline</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-3">Serverless pipeline that ingests, classifies, and validates 1.2M+ documents/month across 5 document types with 99.1% accuracy.</p>
+            <div class="flex flex-wrap gap-1.5"><span class="tech-pill">Textract</span><span class="tech-pill">OpenAI</span><span class="tech-pill">Lambda</span><span class="tech-pill">S3</span><span class="tech-pill">Python</span></div>
+          </div>
+        </div>
+
+        <!-- Card 5: SaaS Metrics Dashboard -->
+        <div class="work-card">
+          <div class="work-preview">
+            <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="mrrGrad" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#4F8EF7" stop-opacity="0"/><stop offset="100%" stop-color="#4F8EF7" stop-opacity="0.6"/></linearGradient>
+                <filter id="g5"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <rect width="400" height="200" fill="#060c18"/>
+              <!-- 3 donut rings (simplified arcs) -->
+              <circle cx="54" cy="78" r="30" fill="none" stroke="#0d1827" stroke-width="12"/>
+              <circle cx="54" cy="78" r="30" fill="none" stroke="#4F8EF7" stroke-width="12" stroke-dasharray="132 188" stroke-dashoffset="47" filter="url(#g5)"/>
+              <text x="54" y="75" fill="#e5e7eb" font-size="9" font-weight="bold" text-anchor="middle">NPS</text>
+              <text x="54" y="88" fill="#4F8EF7" font-size="10" font-weight="bold" text-anchor="middle" filter="url(#g5)">72</text>
+              <circle cx="136" cy="78" r="30" fill="none" stroke="#0d1827" stroke-width="12"/>
+              <circle cx="136" cy="78" r="30" fill="none" stroke="#8B5CF6" stroke-width="12" stroke-dasharray="160 188" stroke-dashoffset="47" filter="url(#g5)"/>
+              <text x="136" y="75" fill="#e5e7eb" font-size="9" font-weight="bold" text-anchor="middle">Ret.</text>
+              <text x="136" y="88" fill="#8B5CF6" font-size="10" font-weight="bold" text-anchor="middle" filter="url(#g5)">85%</text>
+              <circle cx="218" cy="78" r="30" fill="none" stroke="#0d1827" stroke-width="12"/>
+              <circle cx="218" cy="78" r="30" fill="none" stroke="#4ade80" stroke-width="12" stroke-dasharray="148 188" stroke-dashoffset="47" filter="url(#g5)"/>
+              <text x="218" y="75" fill="#e5e7eb" font-size="9" font-weight="bold" text-anchor="middle">CAC</text>
+              <text x="218" y="88" fill="#4ade80" font-size="10" font-weight="bold" text-anchor="middle" filter="url(#g5)">↓ 22%</text>
+              <!-- MRR card -->
+              <rect x="264" y="14" width="122" height="140" rx="8" fill="#0d1827" stroke="rgba(79,142,247,0.2)" stroke-width="1"/>
+              <text x="276" y="34" fill="#6b7280" font-size="7" font-family="monospace">MRR GROWTH</text>
+              <text x="276" y="56" fill="#4F8EF7" font-size="18" font-weight="bold" filter="url(#g5)">$284K</text>
+              <polyline points="276,136 295,122 314,128 333,108 352,114 371,95" fill="none" stroke="#4F8EF7" stroke-width="2" filter="url(#g5)"/>
+              <path d="M276,136 L295,122 L314,128 L333,108 L352,114 L371,95 L371,140 L276,140 Z" fill="url(#mrrGrad)"/>
+              <!-- Bottom labels -->
+              <text x="16" y="120" fill="#6b7280" font-size="7" font-family="monospace">TOP SEGMENTS</text>
+              <rect x="16" y="128" width="56" height="16" rx="4" fill="rgba(79,142,247,0.15)"/><text x="22" y="140" fill="#7AABFF" font-size="7">Enterprise</text>
+              <rect x="80" y="128" width="44" height="16" rx="4" fill="rgba(139,92,246,0.15)"/><text x="86" y="140" fill="#c084fc" font-size="7">Startup</text>
+              <rect x="132" y="128" width="40" height="16" rx="4" fill="rgba(74,222,128,0.1)"/><text x="138" y="140" fill="#4ade80" font-size="7">SMB</text>
+              <text x="16" y="170" fill="#6b7280" font-size="7">Churn rate  </text><text x="70" y="170" fill="#f87171" font-size="7">1.8% ↓ 0.4%</text>
+              <text x="16" y="185" fill="#6b7280" font-size="7">Expansion rev </text><text x="88" y="185" fill="#4ade80" font-size="7">+$41K MoM</text>
+            </svg>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2"><span class="cat-tag">Dashboard</span><a href="#consult" class="cs-link">Case Study →</a></div>
+            <h3 class="font-bold mb-2">SaaS Metrics Command Centre</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-3">Real-time growth dashboard tracking MRR, churn, NPS, and CAC across customer segments with automated anomaly alerts.</p>
+            <div class="flex flex-wrap gap-1.5"><span class="tech-pill">ClickHouse</span><span class="tech-pill">React</span><span class="tech-pill">D3.js</span><span class="tech-pill">Grafana</span></div>
+          </div>
+        </div>
+
+        <!-- Card 6: FinTech Mobile App -->
+        <div class="work-card">
+          <div class="work-preview">
+            <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+              <defs><filter id="g6"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+              <rect width="400" height="200" fill="#060c18"/>
+              <!-- Phone frame -->
+              <rect x="130" y="8" width="140" height="184" rx="16" fill="#0a1120" stroke="rgba(79,142,247,0.3)" stroke-width="1.5"/>
+              <rect x="155" y="4" width="90" height="10" rx="5" fill="#0d1827"/>
+              <!-- Screen content -->
+              <rect x="138" y="22" width="124" height="164" rx="10" fill="#060c18"/>
+              <!-- Balance header -->
+              <text x="200" y="48" fill="#6b7280" font-size="7" text-anchor="middle" font-family="monospace">TOTAL BALANCE</text>
+              <text x="200" y="66" fill="#e5e7eb" font-size="16" font-weight="bold" text-anchor="middle" filter="url(#g6)">$48,291</text>
+              <text x="200" y="80" fill="#4ade80" font-size="8" text-anchor="middle">▲ +2.4% this week</text>
+              <!-- Mini spark line -->
+              <polyline points="148,105 158,100 168,102 178,94 188,97 198,89 208,92 218,85 228,88 238,82 248,85 258,78" fill="none" stroke="#4F8EF7" stroke-width="1.5" filter="url(#g6)"/>
+              <!-- Action buttons -->
+              <rect x="148" y="116" width="40" height="24" rx="6" fill="rgba(79,142,247,0.2)" stroke="rgba(79,142,247,0.3)" stroke-width="1"/>
+              <text x="168" y="132" fill="#7AABFF" font-size="7" text-anchor="middle">Send</text>
+              <rect x="194" y="116" width="40" height="24" rx="6" fill="rgba(139,92,246,0.2)" stroke="rgba(139,92,246,0.3)" stroke-width="1"/>
+              <text x="214" y="132" fill="#c084fc" font-size="7" text-anchor="middle">Invest</text>
+              <rect x="240" y="116" width="32" height="24" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+              <text x="256" y="132" fill="#9ca3af" font-size="7" text-anchor="middle">AI</text>
+              <!-- Transactions -->
+              <rect x="140" y="148" width="120" height="14" rx="4" fill="rgba(255,255,255,0.04)"/>
+              <text x="148" y="159" fill="#d1d5db" font-size="6">Netflix — $15.99</text>
+              <rect x="140" y="166" width="120" height="14" rx="4" fill="rgba(255,255,255,0.04)"/>
+              <text x="148" y="177" fill="#d1d5db" font-size="6">Salary +$6,400</text>
+              <!-- Side stats -->
+              <rect x="16" y="40" width="100" height="52" rx="7" fill="#0d1827" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <text x="28" y="58" fill="#6b7280" font-size="7" font-family="monospace">ACTIVE USERS</text>
+              <text x="28" y="76" fill="#4F8EF7" font-size="16" font-weight="bold" filter="url(#g6)">84K</text>
+              <rect x="16" y="102" width="100" height="52" rx="7" fill="#0d1827" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <text x="28" y="120" fill="#6b7280" font-size="7" font-family="monospace">TRANSACTIONS</text>
+              <text x="28" y="138" fill="#8B5CF6" font-size="16" font-weight="bold" filter="url(#g6)">3.2M</text>
+            </svg>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2"><span class="cat-tag">Mobile App</span><a href="#consult" class="cs-link">Case Study →</a></div>
+            <h3 class="font-bold mb-2">FinTech Wealth App</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-3">Cross-platform personal finance app with AI-powered spending insights, portfolio tracking, and predictive budgeting for 84K active users.</p>
+            <div class="flex flex-wrap gap-1.5"><span class="tech-pill">React Native</span><span class="tech-pill">Plaid</span><span class="tech-pill">Node.js</span><span class="tech-pill">MongoDB</span></div>
+          </div>
+        </div>
+
+        <!-- Card 7: Healthcare Platform -->
+        <div class="work-card">
+          <div class="work-preview">
+            <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+              <defs><filter id="g7"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <linearGradient id="hcGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4F8EF7" stop-opacity="0.5"/><stop offset="100%" stop-color="#4F8EF7" stop-opacity="0"/></linearGradient></defs>
+              <rect width="400" height="200" fill="#060c18"/>
+              <text x="16" y="22" fill="#6b7280" font-size="7" font-family="monospace">HEALTHCARE ANALYTICS PLATFORM — HIPAA COMPLIANT</text>
+              <!-- ECG-style line -->
+              <polyline points="16,80 50,80 60,50 70,110 80,80 120,80 130,45 140,115 150,80 200,80 210,52 220,108 230,80 280,80 290,48 300,112 310,80 350,80 360,50 370,110 380,80 400,80" fill="none" stroke="#4F8EF7" stroke-width="1.5" filter="url(#g7)"/>
+              <path d="M16,80 L50,80 L60,50 L70,110 L80,80 L120,80 L130,45 L140,115 L150,80 L200,80 L210,52 L220,108 L230,80 L280,80 L290,48 L300,112 L310,80 L350,80 L360,50 L370,110 L380,80 L400,80 L400,200 L16,200 Z" fill="url(#hcGrad)"/>
+              <!-- Stat cards -->
+              <rect x="16" y="120" width="84" height="52" rx="7" fill="#0d1827" stroke="rgba(79,142,247,0.2)" stroke-width="1"/>
+              <text x="28" y="140" fill="#6b7280" font-size="7" font-family="monospace">PATIENTS</text>
+              <text x="28" y="158" fill="#4F8EF7" font-size="16" font-weight="bold" filter="url(#g7)">240K</text>
+              <rect x="112" y="120" width="84" height="52" rx="7" fill="#0d1827" stroke="rgba(139,92,246,0.2)" stroke-width="1"/>
+              <text x="124" y="140" fill="#6b7280" font-size="7" font-family="monospace">DATA SOURCES</text>
+              <text x="124" y="158" fill="#8B5CF6" font-size="16" font-weight="bold" filter="url(#g7)">18</text>
+              <rect x="208" y="120" width="84" height="52" rx="7" fill="#0d1827" stroke="rgba(74,222,128,0.2)" stroke-width="1"/>
+              <text x="220" y="140" fill="#6b7280" font-size="7" font-family="monospace">AI DIAGNOSES</text>
+              <text x="220" y="158" fill="#4ade80" font-size="16" font-weight="bold" filter="url(#g7)">97.3%</text>
+              <rect x="304" y="120" width="80" height="52" rx="7" fill="#0d1827" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+              <text x="316" y="140" fill="#6b7280" font-size="7" font-family="monospace">UPTIME</text>
+              <text x="316" y="158" fill="#e5e7eb" font-size="16" font-weight="bold">99.99%</text>
+            </svg>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2"><span class="cat-tag">Enterprise Platform</span><a href="#consult" class="cs-link">Case Study →</a></div>
+            <h3 class="font-bold mb-2">Healthcare Data Platform</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-3">HIPAA-compliant analytics platform unifying 18 data sources for 240K patients. AI-assisted diagnostic suggestions with 97.3% match rate.</p>
+            <div class="flex flex-wrap gap-1.5"><span class="tech-pill">FHIR</span><span class="tech-pill">PostgreSQL</span><span class="tech-pill">Python</span><span class="tech-pill">AWS</span><span class="tech-pill">TensorFlow</span></div>
+          </div>
+        </div>
+
+        <!-- Card 8: Integration Orchestration -->
+        <div class="work-card">
+          <div class="work-preview">
+            <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+              <defs><filter id="g8"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <linearGradient id="edgeGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4F8EF7"/><stop offset="100%" stop-color="#8B5CF6"/></linearGradient></defs>
+              <rect width="400" height="200" fill="#060c18"/>
+              <text x="16" y="20" fill="#6b7280" font-size="7" font-family="monospace">INTEGRATION ARCHITECTURE</text>
+              <!-- Central hub -->
+              <circle cx="200" cy="105" r="26" fill="rgba(79,142,247,0.1)" stroke="rgba(79,142,247,0.4)" stroke-width="1.5" filter="url(#g8)"/>
+              <text x="200" y="101" fill="#7AABFF" font-size="7" font-weight="bold" text-anchor="middle">EVENT</text>
+              <text x="200" y="113" fill="#7AABFF" font-size="7" font-weight="bold" text-anchor="middle">BUS</text>
+              <!-- Surrounding service nodes -->
+              <rect x="16" y="34" width="60" height="30" rx="6" fill="#0d1827" stroke="rgba(139,92,246,0.3)" stroke-width="1"/><text x="46" y="54" fill="#c084fc" font-size="7" text-anchor="middle">Salesforce</text>
+              <rect x="170" y="28" width="60" height="30" rx="6" fill="#0d1827" stroke="rgba(79,142,247,0.3)" stroke-width="1"/><text x="200" y="48" fill="#7AABFF" font-size="7" text-anchor="middle">Stripe</text>
+              <rect x="324" y="34" width="60" height="30" rx="6" fill="#0d1827" stroke="rgba(139,92,246,0.3)" stroke-width="1"/><text x="354" y="54" fill="#c084fc" font-size="7" text-anchor="middle">HubSpot</text>
+              <rect x="16" y="148" width="60" height="30" rx="6" fill="#0d1827" stroke="rgba(79,142,247,0.3)" stroke-width="1"/><text x="46" y="168" fill="#7AABFF" font-size="7" text-anchor="middle">Postgres</text>
+              <rect x="170" y="156" width="60" height="30" rx="6" fill="#0d1827" stroke="rgba(139,92,246,0.3)" stroke-width="1"/><text x="200" y="176" fill="#c084fc" font-size="7" text-anchor="middle">Twilio</text>
+              <rect x="324" y="148" width="60" height="30" rx="6" fill="#0d1827" stroke="rgba(79,142,247,0.3)" stroke-width="1"/><text x="354" y="168" fill="#7AABFF" font-size="7" text-anchor="middle">Slack API</text>
+              <!-- Edges -->
+              <line x1="76" y1="55" x2="176" y2="98" stroke="url(#edgeGrad)" stroke-width="1" opacity="0.6"/>
+              <line x1="200" y1="58" x2="200" y2="79" stroke="url(#edgeGrad)" stroke-width="1" opacity="0.6"/>
+              <line x1="324" y1="58" x2="224" y2="98" stroke="url(#edgeGrad)" stroke-width="1" opacity="0.6"/>
+              <line x1="76" y1="158" x2="175" y2="124" stroke="url(#edgeGrad)" stroke-width="1" opacity="0.6"/>
+              <line x1="200" y1="156" x2="200" y2="131" stroke="url(#edgeGrad)" stroke-width="1" opacity="0.6"/>
+              <line x1="324" y1="158" x2="225" y2="124" stroke="url(#edgeGrad)" stroke-width="1" opacity="0.6"/>
+              <!-- Pulse dots on edges -->
+              <circle cx="126" cy="77" r="3" fill="#4F8EF7" filter="url(#g8)" opacity="0.9"/>
+              <circle cx="200" cy="68" r="3" fill="#8B5CF6" filter="url(#g8)" opacity="0.9"/>
+              <circle cx="274" cy="77" r="3" fill="#4F8EF7" filter="url(#g8)" opacity="0.9"/>
+            </svg>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2"><span class="cat-tag">System Architecture</span><a href="#consult" class="cs-link">Case Study →</a></div>
+            <h3 class="font-bold mb-2">Integration Orchestration Hub</h3>
+            <p class="text-gray-400 text-sm leading-relaxed mb-3">Event-driven integration layer connecting Salesforce, Stripe, HubSpot, Twilio, Slack, and internal databases — processing 4M events/day with zero message loss.</p>
+            <div class="flex flex-wrap gap-1.5"><span class="tech-pill">Kafka</span><span class="tech-pill">Go</span><span class="tech-pill">Kubernetes</span><span class="tech-pill">Terraform</span></div>
+          </div>
+        </div>
+
+      </div><!-- /6-card grid -->
     </div>
   </section>
 
@@ -836,6 +1309,7 @@
         </div>
         <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
           <a href="#services" class="hover:text-white transition-colors">Services</a>
+          <a href="#work" class="hover:text-white transition-colors">Our Work</a>
           <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
           <a href="#consult" class="hover:text-white transition-colors">Free Consultation</a>
           <a href="#why" class="hover:text-white transition-colors">Why Us</a>
