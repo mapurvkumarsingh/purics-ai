@@ -7,43 +7,29 @@
   <link rel="shortcut icon" href="favicon.ico" />
   <title>Purics AI — Engineering Powered by AI</title>
   <meta name="description" content="AI-Powered Software Development & Flexible Engineering Support. Build Faster. Scale Smarter. Stay Supported." />
-  <!-- Preconnect to font CDN first so the TCP handshake is already done -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Only 3 weights instead of 7; font-display=swap keeps text visible instantly -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
-  <!-- Local purged CSS — replaces 360 KB Tailwind JIT CDN script -->
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Calendly CSS loaded lazily on first button click, not at page load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    window._calendlyReady = false;
-    function _loadCalendly() {
-      if (window._calendlyReady) return;
-      window._calendlyReady = true;
-      const css = document.createElement('link');
-      css.rel = 'stylesheet';
-      css.href = 'https://assets.calendly.com/assets/external/widget.css';
-      document.head.appendChild(css);
-      const js = document.createElement('script');
-      js.src = 'https://assets.calendly.com/assets/external/widget.js';
-      js.onload = () => { /* widget.js is now ready */ };
-      document.body.appendChild(js);
-    }
-    // Shimmed so existing onclick handlers don't break before JS loads
-    function Calendly(){ _loadCalendly(); }
-    Calendly.initPopupWidget = function(opts) {
-      _loadCalendly();
-      // Retry until widget library registers itself
-      const poll = setInterval(() => {
-        if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function'
-            && window.Calendly.initPopupWidget !== Calendly.initPopupWidget) {
-          clearInterval(poll);
-          window.Calendly.initPopupWidget(opts);
-        }
-      }, 80);
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: {
+            brand: { blue: '#4F8EF7', purple: '#8B5CF6', dark: '#0a0f1e', card: '#111827' },
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.6s ease-out forwards',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            fadeUp: { '0%': { opacity: 0, transform: 'translateY(24px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+          },
+        },
+      },
     };
   </script>
-  <!-- custom tokens live in <style> below -->
   <style>
     body { background: #0a0f1e; font-family: 'Inter', sans-serif; }
     .gradient-text { background: linear-gradient(135deg, #4F8EF7 0%, #8B5CF6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -685,7 +671,8 @@
   </footer>
   </div><!-- /content wrapper -->
 
-  <!-- Calendly loaded lazily on first button click — see _loadCalendly() in <head> -->
+  <!-- Calendly popup widget -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
   <!-- CONSTELLATION ANIMATION -->
   <script>
