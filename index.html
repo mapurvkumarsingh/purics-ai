@@ -45,6 +45,12 @@
     })();
   </script>
   <style>
+    /* Scroll snap: sections glide into view one at a time as you scroll down.
+       'proximity' = snaps when you're near a boundary, but lets you scroll
+       freely within a section taller than the viewport. Zero JS, zero extra load. */
+    html { scroll-snap-type: y proximity; }
+    section, footer { scroll-snap-align: start; }
+
     body { background: #0a0f1e; font-family: 'Inter', sans-serif; }
     .gradient-text { background: linear-gradient(135deg, #4F8EF7 0%, #8B5CF6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .gradient-bg { background: linear-gradient(135deg, #4F8EF7 0%, #8B5CF6 100%); }
@@ -407,7 +413,7 @@
             <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Code reviews</li>
             <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Hour-wise work tracking</li>
           </ul>
-          <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Interested in: Starter Support Plan – $999/month · 8 hrs/month'}},utm:{utmSource:'pricing_page',utmCampaign:'starter_support',utmContent:'999_per_month'}});return false;" class="book-call-btn w-full" style="border-radius:12px;">
+          <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/purics-ai-starter-support-call-30-min',prefill:{customAnswers:{a1:'Interested in: Starter Support Plan – $999/month · 8 hrs/month'}},utm:{utmSource:'pricing_page',utmCampaign:'starter_support',utmContent:'999_per_month'}});return false;" class="book-call-btn w-full" style="border-radius:12px;">
             Get Started
           </button>
         </div>
@@ -434,7 +440,7 @@
               <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Weekly feedback sessions</li>
               <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Transparent work tracking</li>
             </ul>
-            <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Interested in: Growth Support Plan – $1,599/month · 8 hrs/week'}},utm:{utmSource:'pricing_page',utmCampaign:'growth_support',utmContent:'1599_per_month'}});return false;" class="book-call-btn w-full" style="border-radius:12px;">
+            <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/purics-ai-growth-support-call-30-min',prefill:{customAnswers:{a1:'Interested in: Growth Support Plan – $1,599/month · 8 hrs/week'}},utm:{utmSource:'pricing_page',utmCampaign:'growth_support',utmContent:'1599_per_month'}});return false;" class="book-call-btn w-full" style="border-radius:12px;">
               Get Started →
             </button>
           </div>
@@ -465,7 +471,7 @@
               <span><span class="font-semibold" style="color:#C8A26A;">24 × 7 dedicated email support</span><br/><span class="text-xs text-gray-400">Response guaranteed within 1 hour</span></span>
             </li>
           </ul>
-          <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Interested in: AI & Dedicated Engineering – $2,999/month · Full daily AI support'}},utm:{utmSource:'pricing_page',utmCampaign:'ai_dedicated',utmContent:'2999_per_month'}});return false;" class="book-call-btn w-full" style="border-radius:12px;border-color:#9B72CF;">
+          <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/purics-ai-dedicated-engineering-support-call-45-min',prefill:{customAnswers:{a1:'Interested in: AI & Dedicated Engineering – $2,999/month · Full daily AI support'}},utm:{utmSource:'pricing_page',utmCampaign:'ai_dedicated',utmContent:'2999_per_month'}});return false;" class="book-call-btn w-full" style="border-radius:12px;border-color:#9B72CF;">
             Get Started
           </button>
         </div>
@@ -558,7 +564,7 @@
             <span class="badge inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 tracking-wider uppercase">AI-Powered</span>
             <h3 class="text-3xl font-black mb-4">We Actively Build <span class="gradient-text">AI Systems</span></h3>
             <p class="text-gray-400 mb-6 leading-relaxed">This isn't just buzzword compliance. Our team ships real AI products — agents, pipelines, and intelligent automation that solves actual business problems.</p>
-            <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Support Enquiry – AI & Dedicated Engineering · 24/7 dedicated support'}},utm:{utmSource:'support_page',utmCampaign:'ai_dedicated_support',utmContent:'support_schedule_call'}});return false;" class="book-call-btn">
+            <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/purics-ai-dedicated-engineering-support-call-45-min',prefill:{customAnswers:{a1:'Support Enquiry – AI & Dedicated Engineering · 24/7 dedicated support'}},utm:{utmSource:'support_page',utmCampaign:'ai_dedicated_support',utmContent:'support_schedule_call'}});return false;" class="book-call-btn">
               Discuss Your AI Needs →
             </button>
           </div>
@@ -646,7 +652,7 @@
             <p class="text-gray-400 mt-3 text-sm">Email anytime — mornings, nights, weekends, holidays.<br/><span class="text-xs font-semibold" style="color:#C8A26A;">⚡ Response guaranteed within 1 hour, around the clock.</span></p>
             <div class="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <a href="mailto:admin@purics.ai" class="gradient-bg text-white font-bold px-8 py-3 rounded-xl hover:opacity-90 transition-all text-sm">✉️ Email Now</a>
-              <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Support Enquiry – AI & Dedicated Engineering · 24/7 dedicated support'}},utm:{utmSource:'support_page',utmCampaign:'ai_dedicated_support',utmContent:'support_email_card'}});return false;" class="book-call-btn book-call-btn-pill">
+              <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/purics-ai-dedicated-engineering-support-call-45-min',prefill:{customAnswers:{a1:'Support Enquiry – AI & Dedicated Engineering · 24/7 dedicated support'}},utm:{utmSource:'support_page',utmCampaign:'ai_dedicated_support',utmContent:'support_email_card'}});return false;" class="book-call-btn book-call-btn-pill">
                 📅 Schedule a Call
               </button>
             </div>
