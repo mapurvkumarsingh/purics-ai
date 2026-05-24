@@ -7,28 +7,42 @@
   <link rel="shortcut icon" href="favicon.ico" />
   <title>Purics AI — Engineering Powered by AI</title>
   <meta name="description" content="AI-Powered Software Development & Flexible Engineering Support. Build Faster. Scale Smarter. Stay Supported." />
+  <!-- Fonts: preconnect cuts the TCP round-trip before the CSS request fires -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- 3 weights instead of 7; display=swap means text shows immediately in system font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
+  <!-- Tailwind CDN replaced with 13 KB purged build (was 360 KB JIT compiler) -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Calendly: lazy-load on first button click instead of blocking every page load -->
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'sans-serif'] },
-          colors: {
-            brand: { blue: '#4F8EF7', purple: '#8B5CF6', dark: '#0a0f1e', card: '#111827' },
-          },
-          animation: {
-            'fade-up': 'fadeUp 0.6s ease-out forwards',
-            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-          },
-          keyframes: {
-            fadeUp: { '0%': { opacity: 0, transform: 'translateY(24px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
-          },
-        },
-      },
-    };
+    (function () {
+      var loaded = false;
+      function load() {
+        if (loaded) return;
+        loaded = true;
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://assets.calendly.com/assets/external/widget.css';
+        document.head.appendChild(link);
+        var script = document.createElement('script');
+        script.src = 'https://assets.calendly.com/assets/external/widget.js';
+        document.head.appendChild(script);
+      }
+      // Shim so existing onclick="Calendly.initPopupWidget(...)" keep working
+      window.Calendly = {
+        initPopupWidget: function (opts) {
+          load();
+          var iv = setInterval(function () {
+            if (window.Calendly.initPopupWidget !== arguments.callee
+                && typeof window.Calendly.initPopupWidget === 'function') {
+              clearInterval(iv);
+              window.Calendly.initPopupWidget(opts);
+            }
+          }, 50);
+        }
+      };
+    })();
   </script>
   <style>
     body { background: #0a0f1e; font-family: 'Inter', sans-serif; }
@@ -671,8 +685,7 @@
   </footer>
   </div><!-- /content wrapper -->
 
-  <!-- Calendly popup widget -->
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <!-- Calendly loaded on-demand via shim in <head> -->
 
   <!-- CONSTELLATION ANIMATION -->
   <script>
