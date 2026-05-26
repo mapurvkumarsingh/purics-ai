@@ -569,33 +569,33 @@
   <section aria-label="Quality promise" class="py-10 px-4" style="background:linear-gradient(90deg,rgba(79,142,247,0.06),rgba(139,92,246,0.08),rgba(79,142,247,0.06));border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);">
     <div class="max-w-6xl mx-auto">
       <p class="text-center text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">&#x1F4A1; What &ldquo;Not Just Cheap&rdquo; Actually Means</p>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
-        <div class="glass rounded-xl p-4">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center items-stretch">
+        <div class="glass rounded-xl p-4 flex flex-col items-center">
           <div class="text-2xl mb-2">🏅</div>
           <div class="text-xs font-bold text-white mb-1">Senior Talent Only</div>
           <div class="text-xs text-gray-500">Vetted engineers, not fresh grads</div>
         </div>
-        <div class="glass rounded-xl p-4">
+        <div class="glass rounded-xl p-4 flex flex-col items-center">
           <div class="text-2xl mb-2">💰</div>
           <div class="text-xs font-bold text-white mb-1">60–80% Savings</div>
           <div class="text-xs text-gray-500">vs. US or UK agency rates</div>
         </div>
-        <div class="glass rounded-xl p-4">
+        <div class="glass rounded-xl p-4 flex flex-col items-center">
           <div class="text-2xl mb-2">⏰</div>
           <div class="text-xs font-bold text-white mb-1">Hour-by-Hour Tracking</div>
           <div class="text-xs text-gray-500">Every minute accounted for</div>
         </div>
-        <div class="glass rounded-xl p-4">
+        <div class="glass rounded-xl p-4 flex flex-col items-center">
           <div class="text-2xl mb-2">🌍</div>
           <div class="text-xs font-bold text-white mb-1">Global Timezone Cover</div>
           <div class="text-xs text-gray-500">Teams across 15+ countries</div>
         </div>
-        <div class="glass rounded-xl p-4">
+        <div class="glass rounded-xl p-4 flex flex-col items-center">
           <div class="text-2xl mb-2">🔄</div>
           <div class="text-xs font-bold text-white mb-1">Swap Anytime</div>
           <div class="text-xs text-gray-500">Replace devs if not satisfied</div>
         </div>
-        <div class="glass rounded-xl p-4">
+        <div class="glass rounded-xl p-4 flex flex-col items-center">
           <div class="text-2xl mb-2">❌</div>
           <div class="text-xs font-bold text-white mb-1">Zero Lock-in</div>
           <div class="text-xs text-gray-500">Cancel your sub, no hard feelings</div>
@@ -606,132 +606,117 @@
 
   <!-- SOFTWARE LIFECYCLE SECTION -->
   <section id="lifecycle" aria-label="Full software development lifecycle support" class="py-24 px-4">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-6xl mx-auto">
 
-      <div class="text-center mb-16">
+      <div class="text-center mb-14">
         <span class="badge inline-block text-xs font-semibold px-4 py-1.5 rounded-full mb-4 tracking-wider uppercase">End-to-End Coverage</span>
         <h2 class="text-4xl sm:text-5xl font-black mb-4">We Support the <span class="gradient-text">Full Lifecycle</span></h2>
         <p class="text-gray-400 max-w-2xl mx-auto">From the first sketch on a whiteboard to production maintenance years later &mdash; one team, one subscription, zero gaps.</p>
       </div>
 
-      <!-- Lifecycle timeline -->
-      <div class="relative">
+      <!-- Three cards — identical structure, consistent height -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
 
-        <!-- Connector line (desktop only) -->
-        <div class="hidden lg:block absolute top-16 left-0 right-0 h-px" style="background:linear-gradient(90deg,transparent,rgba(79,142,247,0.4) 20%,rgba(139,92,246,0.6) 50%,rgba(79,142,247,0.4) 80%,transparent);top:4.25rem;"></div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-          <!-- Phase 1: Design -->
-          <div class="relative">
-            <!-- Phase number bubble -->
-            <div class="flex justify-center mb-6">
-              <div class="w-14 h-14 rounded-full flex items-center justify-center font-black text-lg gradient-bg relative z-10" style="box-shadow:0 0 0 6px rgba(79,142,247,0.15),0 0 0 12px rgba(79,142,247,0.06);">01</div>
-            </div>
-            <div class="glass rounded-2xl p-8 glass-hover h-full">
-              <div class="text-4xl mb-4 text-center">&#x1F3A8;</div>
-              <h3 class="text-xl font-black text-center mb-2">Design</h3>
-              <p class="text-blue-400 text-xs font-semibold text-center uppercase tracking-wider mb-5">Where every great product starts</p>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3 text-sm text-gray-300">
-                  <span class="gradient-text font-bold mt-0.5">&#10003;</span>
-                  <span><strong>UI &amp; UX Design</strong> &mdash; wireframes, high-fidelity mockups, design systems</span>
-                </li>
-                <li class="flex items-start gap-3 text-sm text-gray-300">
-                  <span class="gradient-text font-bold mt-0.5">&#10003;</span>
-                  <span><strong>System Architecture</strong> &mdash; scalable blueprints before a line of code is written</span>
-                </li>
-                <li class="flex items-start gap-3 text-sm text-gray-300">
-                  <span class="gradient-text font-bold mt-0.5">&#10003;</span>
-                  <span><strong>Prototyping</strong> &mdash; clickable prototypes to validate ideas fast</span>
-                </li>
-                <li class="flex items-start gap-3 text-sm text-gray-300">
-                  <span class="gradient-text font-bold mt-0.5">&#10003;</span>
-                  <span><strong>Technical Roadmaps</strong> &mdash; prioritised feature plans aligned to your budget</span>
-                </li>
-              </ul>
-            </div>
+        <!-- Phase 01: Design -->
+        <div class="glass glass-hover rounded-2xl p-8 flex flex-col">
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-xs font-black tracking-widest" style="color:rgba(255,255,255,0.2);">01</span>
+            <span class="text-3xl">&#x1F3A8;</span>
           </div>
-
-          <!-- Phase 2: Development -->
-          <div class="relative">
-            <div class="flex justify-center mb-6">
-              <div class="w-14 h-14 rounded-full flex items-center justify-center font-black text-lg gradient-bg relative z-10" style="box-shadow:0 0 0 6px rgba(139,92,246,0.15),0 0 0 12px rgba(139,92,246,0.06);">02</div>
-            </div>
-            <div class="rounded-2xl p-px glow" style="background:linear-gradient(135deg,#4F8EF7,#8B5CF6);">
-              <div class="rounded-2xl p-8 h-full" style="background:#111827;">
-                <div class="popular-badge text-white text-xs font-bold px-3 py-1 rounded-full w-fit mb-4 mx-auto" style="display:table;">&#x2B50; Core Phase</div>
-                <div class="text-4xl mb-4 text-center">&#x2699;&#xFE0F;</div>
-                <h3 class="text-xl font-black text-center mb-2">Development</h3>
-                <p class="text-purple-400 text-xs font-semibold text-center uppercase tracking-wider mb-5">Where ideas become products</p>
-                <ul class="space-y-3">
-                  <li class="flex items-start gap-3 text-sm text-gray-300">
-                    <span class="gradient-text font-bold mt-0.5">&#10003;</span>
-                    <span><strong>Full-Stack Engineering</strong> &mdash; web, backend, APIs, databases</span>
-                  </li>
-                  <li class="flex items-start gap-3 text-sm text-gray-300">
-                    <span class="gradient-text font-bold mt-0.5">&#10003;</span>
-                    <span><strong>Mobile Apps</strong> &mdash; iOS, Android, cross-platform</span>
-                  </li>
-                  <li class="flex items-start gap-3 text-sm text-gray-300">
-                    <span class="gradient-text font-bold mt-0.5">&#10003;</span>
-                    <span><strong>AI &amp; ML Development</strong> &mdash; agents, RAG systems, LLM integrations</span>
-                  </li>
-                  <li class="flex items-start gap-3 text-sm text-gray-300">
-                    <span class="gradient-text font-bold mt-0.5">&#10003;</span>
-                    <span><strong>Cloud &amp; DevOps</strong> &mdash; CI/CD, Kubernetes, multi-cloud infra</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Phase 3: Maintenance -->
-          <div class="relative">
-            <div class="flex justify-center mb-6">
-              <div class="w-14 h-14 rounded-full flex items-center justify-center font-black text-lg gradient-bg relative z-10" style="box-shadow:0 0 0 6px rgba(79,142,247,0.15),0 0 0 12px rgba(79,142,247,0.06);">03</div>
-            </div>
-            <div class="glass rounded-2xl p-8 glass-hover h-full">
-              <div class="text-4xl mb-4 text-center">&#x1F527;</div>
-              <h3 class="text-xl font-black text-center mb-2">Maintenance</h3>
-              <p class="text-blue-400 text-xs font-semibold text-center uppercase tracking-wider mb-5">We stay long after launch</p>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3 text-sm text-gray-300">
-                  <span class="gradient-text font-bold mt-0.5">&#10003;</span>
-                  <span><strong>Bug Fixes &amp; Patches</strong> &mdash; fast turnarounds, no ticket queues</span>
-                </li>
-                <li class="flex items-start gap-3 text-sm text-gray-300">
-                  <span class="gradient-text font-bold mt-0.5">&#10003;</span>
-                  <span><strong>Performance Optimisation</strong> &mdash; speed, scalability, cost reduction</span>
-                </li>
-                <li class="flex items-start gap-3 text-sm text-gray-300">
-                  <span class="gradient-text font-bold mt-0.5">&#10003;</span>
-                  <span><strong>Feature Iterations</strong> &mdash; continuous improvement on live products</span>
-                </li>
-                <li class="flex items-start gap-3 text-sm text-gray-300">
-                  <span class="gradient-text font-bold mt-0.5">&#10003;</span>
-                  <span><strong>24 &times; 7 Support</strong> &mdash; always reachable, always accountable</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-        </div><!-- /grid -->
-      </div><!-- /relative -->
-
-      <!-- Bottom lifecycle tagline -->
-      <div class="mt-14 text-center">
-        <div class="inline-flex flex-wrap justify-center items-center gap-3 text-sm font-semibold text-gray-300">
-          <span class="flex items-center gap-2 glass px-4 py-2 rounded-full">&#x1F3A8; Design</span>
-          <span class="text-gray-600 text-lg">&rarr;</span>
-          <span class="flex items-center gap-2 glass px-4 py-2 rounded-full">&#x2699;&#xFE0F; Development</span>
-          <span class="text-gray-600 text-lg">&rarr;</span>
-          <span class="flex items-center gap-2 glass px-4 py-2 rounded-full">&#x1F527; Maintenance</span>
-          <span class="text-gray-600 text-lg">&rarr;</span>
-          <span class="flex items-center gap-2 px-4 py-2 rounded-full font-bold" style="background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);color:#7AABFF;">&#x267B;&#xFE0F; Repeat &amp; Scale</span>
+          <h3 class="text-xl font-black mb-1">Design</h3>
+          <p class="text-xs font-semibold uppercase tracking-wider mb-6" style="color:#4F8EF7;">Where every great product starts</p>
+          <ul class="space-y-4 flex-1">
+            <li class="flex items-start gap-3 text-sm text-gray-300">
+              <span class="gradient-text font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span><strong>UI &amp; UX Design</strong> &mdash; wireframes, high-fidelity mockups, design systems</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-gray-300">
+              <span class="gradient-text font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span><strong>System Architecture</strong> &mdash; scalable blueprints before a line of code is written</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-gray-300">
+              <span class="gradient-text font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span><strong>Prototyping</strong> &mdash; clickable prototypes to validate ideas fast</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-gray-300">
+              <span class="gradient-text font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span><strong>Technical Roadmaps</strong> &mdash; prioritised feature plans aligned to your budget</span>
+            </li>
+          </ul>
         </div>
-        <p class="text-gray-500 text-sm mt-4">One subscription covers every phase. Upgrade, downgrade, or cancel &mdash; anytime.</p>
+
+        <!-- Phase 02: Development (highlighted) -->
+        <div class="glass glass-hover rounded-2xl p-8 flex flex-col" style="background:#111827;box-shadow:0 0 0 2px #4F8EF7,0 0 40px rgba(79,142,247,0.15);">
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-xs font-black tracking-widest" style="color:rgba(255,255,255,0.2);">02</span>
+            <span class="text-3xl">&#x2699;&#xFE0F;</span>
+          </div>
+          <div class="mb-3">
+            <span class="popular-badge text-white text-xs font-bold px-3 py-1 rounded-full">&#x2B50; Core Phase</span>
+          </div>
+          <h3 class="text-xl font-black mb-1">Development</h3>
+          <p class="text-xs font-semibold uppercase tracking-wider mb-6" style="color:#8B5CF6;">Where ideas become products</p>
+          <ul class="space-y-4 flex-1">
+            <li class="flex items-start gap-3 text-sm text-gray-300">
+              <span class="gradient-text font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span><strong>Full-Stack Engineering</strong> &mdash; web, backend, APIs, databases</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-gray-300">
+              <span class="gradient-text font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span><strong>Mobile Apps</strong> &mdash; iOS, Android, cross-platform</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-gray-300">
+              <span class="gradient-text font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span><strong>AI &amp; ML Development</strong> &mdash; agents, RAG systems, LLM integrations</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-gray-300">
+              <span class="gradient-text font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span><strong>Cloud &amp; DevOps</strong> &mdash; CI/CD, Kubernetes, multi-cloud infra</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Phase 03: Maintenance -->
+        <div class="glass glass-hover rounded-2xl p-8 flex flex-col">
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-xs font-black tracking-widest" style="color:rgba(255,255,255,0.2);">03</span>
+            <span class="text-3xl">&#x1F527;</span>
+          </div>
+          <h3 class="text-xl font-black mb-1">Maintenance</h3>
+          <p class="text-xs font-semibold uppercase tracking-wider mb-6" style="color:#4F8EF7;">We stay long after launch</p>
+          <ul class="space-y-4 flex-1">
+            <li class="flex items-start gap-3 text-sm text-gray-300">
+              <span class="gradient-text font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span><strong>Bug Fixes &amp; Patches</strong> &mdash; fast turnarounds, no ticket queues</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-gray-300">
+              <span class="gradient-text font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span><strong>Performance Optimisation</strong> &mdash; speed, scalability, cost reduction</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-gray-300">
+              <span class="gradient-text font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span><strong>Feature Iterations</strong> &mdash; continuous improvement on live products</span>
+            </li>
+            <li class="flex items-start gap-3 text-sm text-gray-300">
+              <span class="gradient-text font-bold shrink-0 mt-0.5">&#10003;</span>
+              <span><strong>24 &times; 7 Support</strong> &mdash; always reachable, always accountable</span>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /grid -->
+
+      <!-- Bottom flow strip -->
+      <div class="mt-12 flex flex-wrap justify-center items-center gap-3 text-sm font-semibold">
+        <span class="glass px-5 py-2 rounded-full text-gray-300">&#x1F3A8; Design</span>
+        <span class="text-gray-600">&rarr;</span>
+        <span class="glass px-5 py-2 rounded-full text-gray-300">&#x2699;&#xFE0F; Development</span>
+        <span class="text-gray-600">&rarr;</span>
+        <span class="glass px-5 py-2 rounded-full text-gray-300">&#x1F527; Maintenance</span>
+        <span class="text-gray-600">&rarr;</span>
+        <span class="px-5 py-2 rounded-full font-bold" style="background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);color:#7AABFF;">&#x267B;&#xFE0F; Repeat &amp; Scale</span>
       </div>
+      <p class="text-center text-gray-500 text-sm mt-4">One subscription covers every phase. Upgrade, downgrade, or cancel &mdash; anytime.</p>
 
     </div>
   </section>
@@ -744,49 +729,49 @@
         <h2 class="text-4xl sm:text-5xl font-black mb-4">Full-Spectrum <span class="gradient-text">Engineering</span></h2>
         <p class="text-gray-400 max-w-xl mx-auto">Every service you need across the full lifecycle &mdash; Design, Development, and Maintenance &mdash; all under one flexible subscription.</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-stretch">
         <!-- Service cards -->
-        <div class="glass glass-hover rounded-2xl p-6">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col">
           <div class="text-3xl mb-4">🖥️</div>
           <h3 class="font-bold text-lg mb-2">Full Stack Development</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Frontend, backend, databases — we handle the complete stack with modern frameworks and scalable architecture.</p>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col">
           <div class="text-3xl mb-4">⚙️</div>
           <h3 class="font-bold text-lg mb-2">Backend Systems & APIs</h3>
           <p class="text-gray-400 text-sm leading-relaxed">High-performance REST and GraphQL APIs, microservices, event-driven systems, and rock-solid backend infrastructure.</p>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col">
           <div class="text-3xl mb-4">📱</div>
           <h3 class="font-bold text-lg mb-2">Mobile Applications</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Cross-platform and native mobile apps that delight users and scale gracefully with your growth.</p>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col">
           <div class="text-3xl mb-4">☁️</div>
           <h3 class="font-bold text-lg mb-2">Cloud & DevOps</h3>
           <p class="text-gray-400 text-sm leading-relaxed">CI/CD pipelines, Kubernetes, infrastructure-as-code, and multi-cloud deployments engineered for reliability.</p>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6 border border-purple-500/20">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col border border-purple-500/20">
           <div class="text-3xl mb-4">🤖</div>
           <h3 class="font-bold text-lg mb-2">AI Agent Development</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Custom AI agents, RAG systems, LLM integrations, and intelligent automation tailored to your business workflows.</p>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col">
           <div class="text-3xl mb-4">🧠</div>
           <h3 class="font-bold text-lg mb-2">ML Model Deployment</h3>
           <p class="text-gray-400 text-sm leading-relaxed">From research to production — model fine-tuning, serving infrastructure, monitoring, and continuous improvement.</p>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col">
           <div class="text-3xl mb-4">🏗️</div>
           <h3 class="font-bold text-lg mb-2">System Architecture</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Scalable design blueprints, technical roadmaps, and architecture reviews to future-proof your product.</p>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col">
           <div class="text-3xl mb-4">🔧</div>
           <h3 class="font-bold text-lg mb-2">Product Maintenance</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Ongoing support, bug fixes, performance optimization, and scaling assistance as your user base grows.</p>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col">
           <div class="text-3xl mb-4">💡</div>
           <h3 class="font-bold text-lg mb-2">Technical Consulting</h3>
           <p class="text-gray-400 text-sm leading-relaxed">Strategic guidance on technology choices, AI strategy, product decisions, and technical planning sessions.</p>
@@ -955,26 +940,26 @@
       </div>
 
       <!-- World regions grid -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-16">
-        <div class="glass glass-hover rounded-2xl p-6 text-center">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-16 items-stretch">
+        <div class="glass glass-hover rounded-2xl p-6 text-center flex flex-col">
           <div class="text-4xl mb-3">🇮🇳</div>
           <h3 class="font-bold text-sm mb-1">South Asia</h3>
           <p class="text-gray-500 text-xs">India, Pakistan, Bangladesh</p>
           <div class="mt-3 text-xs font-semibold" style="color:#4F8EF7;">Largest Dev Pool</div>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6 text-center">
+        <div class="glass glass-hover rounded-2xl p-6 text-center flex flex-col">
           <div class="text-4xl mb-3">🇵🇭</div>
           <h3 class="font-bold text-sm mb-1">Southeast Asia</h3>
           <p class="text-gray-500 text-xs">Philippines, Vietnam, Indonesia</p>
           <div class="mt-3 text-xs font-semibold" style="color:#4F8EF7;">US Timezone Friendly</div>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6 text-center">
+        <div class="glass glass-hover rounded-2xl p-6 text-center flex flex-col">
           <div class="text-4xl mb-3">🇺🇦</div>
           <h3 class="font-bold text-sm mb-1">Eastern Europe</h3>
           <p class="text-gray-500 text-xs">Ukraine, Poland, Romania</p>
           <div class="mt-3 text-xs font-semibold" style="color:#8B5CF6;">EU Timezone Aligned</div>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6 text-center">
+        <div class="glass glass-hover rounded-2xl p-6 text-center flex flex-col">
           <div class="text-4xl mb-3">🇧🇷</div>
           <h3 class="font-bold text-sm mb-1">Latin America</h3>
           <p class="text-gray-500 text-xs">Brazil, Colombia, Argentina</p>
@@ -1469,13 +1454,13 @@
         <h2 class="text-4xl sm:text-5xl font-black mb-4">Real Teams. <span class="gradient-text">Real Results.</span></h2>
         <p class="text-gray-400 max-w-xl mx-auto">Don’t take our word for it — here’s what founders and CTOs say after working with Purics AI.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
 
-        <div class="glass glass-hover rounded-2xl p-6">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col">
           <div class="flex gap-1 mb-4" aria-label="5 out of 5 stars">
             <span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span>
           </div>
-          <p class="text-gray-300 text-sm leading-relaxed mb-5">“I was skeptical — every ‘affordable dev shop’ I tried before delivered garbage. Purics AI was completely different. Senior engineers, clean code, shipped on time. Genuinely the best value I’ve found in 10 years of building software.”</p>
+          <p class="text-gray-300 text-sm leading-relaxed mb-5 flex-1">“I was skeptical — every ‘affordable dev shop’ I tried before delivered garbage. Purics AI was completely different. Senior engineers, clean code, shipped on time. Genuinely the best value I’ve found in 10 years of building software.”</p>
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm gradient-bg">MJ</div>
             <div>
@@ -1485,11 +1470,11 @@
           </div>
         </div>
 
-        <div class="glass glass-hover rounded-2xl p-6">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col">
           <div class="flex gap-1 mb-4" aria-label="5 out of 5 stars">
             <span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span>
           </div>
-          <p class="text-gray-300 text-sm leading-relaxed mb-5">“We saved $180K in the first year switching our dev budget to Purics AI. The subscription model fits perfectly into our quarterly planning. Quality never dipped — if anything, it improved because we had more budget left over for iteration.”</p>
+          <p class="text-gray-300 text-sm leading-relaxed mb-5 flex-1">“We saved $180K in the first year switching our dev budget to Purics AI. The subscription model fits perfectly into our quarterly planning. Quality never dipped — if anything, it improved because we had more budget left over for iteration.”</p>
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm gradient-bg">PR</div>
             <div>
@@ -1499,11 +1484,11 @@
           </div>
         </div>
 
-        <div class="glass glass-hover rounded-2xl p-6">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col">
           <div class="flex gap-1 mb-4" aria-label="5 out of 5 stars">
             <span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span>
           </div>
-          <p class="text-gray-300 text-sm leading-relaxed mb-5">“The AI & Dedicated plan is wild value. I get a full-stack team, AI engineers, 24/7 support, and hour-by-hour tracking for $2,999 a month. A single senior dev in Berlin would cost 3× that. I’d recommend Purics AI to any founder.”</p>
+          <p class="text-gray-300 text-sm leading-relaxed mb-5 flex-1">“The AI & Dedicated plan is wild value. I get a full-stack team, AI engineers, 24/7 support, and hour-by-hour tracking for $2,999 a month. A single senior dev in Berlin would cost 3× that. I’d recommend Purics AI to any founder.”</p>
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm gradient-bg">TO</div>
             <div>
@@ -1513,11 +1498,11 @@
           </div>
         </div>
 
-        <div class="glass glass-hover rounded-2xl p-6">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col">
           <div class="flex gap-1 mb-4" aria-label="5 out of 5 stars">
             <span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span>
           </div>
-          <p class="text-gray-300 text-sm leading-relaxed mb-5">“Hiring globally sounds risky but Purics AI completely de-risked it. The engineers they matched us with were better than candidates we interviewed locally at 4× the cost. Transparent tracking meant I always knew where my money went.”</p>
+          <p class="text-gray-300 text-sm leading-relaxed mb-5 flex-1">“Hiring globally sounds risky but Purics AI completely de-risked it. The engineers they matched us with were better than candidates we interviewed locally at 4× the cost. Transparent tracking meant I always knew where my money went.”</p>
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm gradient-bg">AL</div>
             <div>
@@ -1527,11 +1512,11 @@
           </div>
         </div>
 
-        <div class="glass glass-hover rounded-2xl p-6">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col">
           <div class="flex gap-1 mb-4" aria-label="5 out of 5 stars">
             <span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span><span style="color:#fbbf24;">&#9733;</span>
           </div>
-          <p class="text-gray-300 text-sm leading-relaxed mb-5">“We spun up an AI agent for our support team in 3 weeks. The team knew LangGraph, LangChain, OpenAI APIs inside out. It handled 78% of tickets day one. There’s no comparison in terms of quality vs. cost at this price point.”</p>
+          <p class="text-gray-300 text-sm leading-relaxed mb-5 flex-1">“We spun up an AI agent for our support team in 3 weeks. The team knew LangGraph, LangChain, OpenAI APIs inside out. It handled 78% of tickets day one. There’s no comparison in terms of quality vs. cost at this price point.”</p>
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm gradient-bg">SK</div>
             <div>
@@ -1541,7 +1526,7 @@
           </div>
         </div>
 
-        <div class="glass glass-hover rounded-2xl p-6" style="background:linear-gradient(135deg,rgba(79,142,247,0.07),rgba(139,92,246,0.07));border:1px solid rgba(79,142,247,0.2);">
+        <div class="glass glass-hover rounded-2xl p-6 flex flex-col" style="background:linear-gradient(135deg,rgba(79,142,247,0.07),rgba(139,92,246,0.07));border:1px solid rgba(79,142,247,0.2);">
           <div class="text-4xl mb-4">📢</div>
           <h3 class="font-black text-lg mb-3">Your story next?</h3>
           <p class="text-gray-400 text-sm leading-relaxed mb-5">Join companies saving 60–80% on engineering while shipping faster and hiring better. First call is on us.</p>
@@ -1562,33 +1547,33 @@
         <h2 class="text-4xl sm:text-5xl font-black mb-4">Quality You <span class="gradient-text">Deserve</span><br/>Price You <span class="gradient-text">Love</span></h2>
         <p class="text-gray-400 max-w-xl mx-auto">We’re not a cheap dev shop — we’re your extended engineering team that happens to cost 80% less than the alternative.</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
-        <div class="glass glass-hover rounded-2xl p-6 text-center">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12 items-stretch">
+        <div class="glass glass-hover rounded-2xl p-6 text-center flex flex-col">
           <div class="text-4xl mb-4">🔍</div>
           <h3 class="font-bold mb-2">Full Transparency</h3>
           <p class="text-gray-400 text-sm">Hour-wise tracking, task updates, pending work visibility — always know exactly what’s happening.</p>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6 text-center">
+        <div class="glass glass-hover rounded-2xl p-6 text-center flex flex-col">
           <div class="text-4xl mb-4">⚡</div>
           <h3 class="font-bold mb-2">Fast Iterative Delivery</h3>
           <p class="text-gray-400 text-sm">Agile sprints, continuous feedback loops, and weekly delivery cycles that actually ship.</p>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6 text-center">
+        <div class="glass glass-hover rounded-2xl p-6 text-center flex flex-col">
           <div class="text-4xl mb-4">👨‍💻</div>
           <h3 class="font-bold mb-2">Dedicated Developers</h3>
           <p class="text-gray-400 text-sm">Domain-matched experts assigned to your project. Request replacements if needed — no hard feelings.</p>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6 text-center">
+        <div class="glass glass-hover rounded-2xl p-6 text-center flex flex-col">
           <div class="text-4xl mb-4">🌍</div>
           <h3 class="font-bold mb-2">Global Talent, Local Standards</h3>
           <p class="text-gray-400 text-sm">Developers across 15+ countries, vetted to the same bar you’d apply to a San Francisco hire. English-fluent. Timezone-aligned.</p>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6 text-center">
+        <div class="glass glass-hover rounded-2xl p-6 text-center flex flex-col">
           <div class="text-4xl mb-4">💰</div>
           <h3 class="font-bold mb-2">Budget-First Model</h3>
           <p class="text-gray-400 text-sm">Our subscription is priced to fit your quarterly plan — not to drain it. Save 60–80% vs. US or UK agencies, zero compromise on quality.</p>
         </div>
-        <div class="glass glass-hover rounded-2xl p-6 text-center">
+        <div class="glass glass-hover rounded-2xl p-6 text-center flex flex-col">
           <div class="text-4xl mb-4">🚀</div>
           <h3 class="font-bold mb-2">Startup to Enterprise</h3>
           <p class="text-gray-400 text-sm">Whether you’re an MVP founder or scaling to millions of users, our plans grow with you.</p>
@@ -1627,9 +1612,9 @@
       </div>
 
       <!-- Tier support comparison -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-14">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-14 items-stretch">
         <!-- Starter -->
-        <div class="glass rounded-2xl p-6 text-center opacity-70">
+        <div class="glass rounded-2xl p-6 text-center opacity-70 flex flex-col">
           <div class="text-2xl mb-3">📋</div>
           <div class="text-sm font-bold text-gray-300 mb-1">Starter Support</div>
           <div class="text-xs text-gray-500 mb-4">$999 / month</div>
@@ -1642,7 +1627,7 @@
           </ul>
         </div>
         <!-- Growth -->
-        <div class="glass rounded-2xl p-6 text-center opacity-80">
+        <div class="glass rounded-2xl p-6 text-center opacity-80 flex flex-col">
           <div class="text-2xl mb-3">📈</div>
           <div class="text-sm font-bold text-gray-300 mb-1">Growth Support</div>
           <div class="text-xs text-gray-500 mb-4">$1,599 / month</div>
@@ -1656,7 +1641,7 @@
         </div>
         <!-- AI & Dedicated — highlighted -->
         <div class="rounded-2xl p-px" style="background:linear-gradient(135deg,#6B4423,#C8A26A);">
-          <div class="rounded-2xl p-6 text-center h-full" style="background:#14100C;">
+          <div class="rounded-2xl p-6 text-center flex flex-col" style="background:#14100C;">
             <div class="text-2xl mb-3">👑</div>
             <div class="text-sm font-bold mb-1" style="color:#C8A26A;">AI &amp; Dedicated Engineering</div>
             <div class="text-xs text-gray-500 mb-4">$2,999 / month</div>
