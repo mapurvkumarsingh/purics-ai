@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="canonical" href="https://purics.ai/data-confidentiality.html" />
+  <title>Data Confidentiality &amp; NDA Policy | Purics AI</title>
+  <meta name="description" content="Purics AI Data Confidentiality commitment — your source code, business data, credentials, and AI prompts are strictly confidential. NDAs available on request." />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    body { background: #0a0f1e; font-family: 'Inter', sans-serif; }
+    .nav-blur { background: rgba(10,15,30,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .gradient-text { background: linear-gradient(135deg, #4F8EF7 0%, #8B5CF6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+    .logo-wrap { display: inline-flex; align-items: center; text-decoration: none; }
+    .logo-img { height: 44px; width: auto; display: block; transition: transform 0.3s ease, filter 0.3s ease; }
+    .logo-wrap:hover .logo-img { transform: scale(1.05); filter: drop-shadow(0 0 8px rgba(79,142,247,0.5)); }
+    .logo-footer { height: 28px; width: auto; display: block; opacity: 0.85; transition: opacity 0.3s ease; }
+    .logo-footer:hover { opacity: 1; }
+    .book-call-btn {
+      background: #6B4423; color: #F5EFE6; border: 1px solid #C8A26A;
+      padding: 14px 28px; border-radius: 12px; font-size: 0.875rem;
+      font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35); display: inline-block;
+      text-decoration: none; letter-spacing: 0.01em;
+    }
+    .book-call-btn:hover { background: #8B5E34; border-color: #D4A96A; transform: translateY(-2px); }
+    .book-call-btn-pill { border-radius: 999px; padding: 8px 20px; font-size: 0.875rem; }
+    .policy-section h2 { font-size: 1.125rem; font-weight: 700; color: #e5e7eb; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .policy-section p, .policy-section li { font-size: 0.9rem; color: #9ca3af; line-height: 1.75; }
+    .policy-section ul { list-style: none; padding-left: 0; margin-top: 0.5rem; }
+    .policy-section ul li { display: flex; align-items: flex-start; gap: 0.625rem; margin-bottom: 0.5rem; }
+    .policy-section ul li::before { content: '✓'; color: #4F8EF7; font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+    .policy-section a { color: #4F8EF7; text-decoration: none; }
+    .policy-section a:hover { color: #7AABFF; text-decoration: underline; }
+    .contact-chip { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(79,142,247,0.08); border: 1px solid rgba(79,142,247,0.2); border-radius: 999px; padding: 6px 14px; font-size: 0.8rem; color: #7AABFF; text-decoration: none; transition: background 0.2s; }
+    .contact-chip:hover { background: rgba(79,142,247,0.14); }
+    .promise-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 1rem; padding: 1.5rem; }
+    .promise-card h3 { font-size: 1rem; font-weight: 700; color: #e5e7eb; margin-bottom: 0.5rem; }
+    .nda-banner { background: linear-gradient(135deg, rgba(107,68,35,0.2), rgba(200,162,106,0.08)); border: 1px solid rgba(200,162,106,0.25); border-radius: 1.25rem; padding: 2rem; }
+    /* Mobile nav */
+    .hamburger-btn { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 40px; height: 40px; gap: 5px; cursor: pointer; background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 10px; transition: background 0.2s, border-color 0.2s; flex-shrink: 0; }
+    .hamburger-btn:hover, .hamburger-btn:focus-visible { background: rgba(255,255,255,0.07); border-color: rgba(79,142,247,0.4); outline: none; }
+    .hamburger-btn .hb { width: 20px; height: 2px; background: #9ca3af; border-radius: 2px; transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s cubic-bezier(0.4,0,0.2,1), background 0.2s; transform-origin: center; }
+    .hamburger-btn[aria-expanded="true"] .hb { background: #fff; }
+    .hamburger-btn[aria-expanded="true"] .hb:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger-btn[aria-expanded="true"] .hb:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger-btn[aria-expanded="true"] .hb:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { position: fixed; top: 64px; left: 0; right: 0; z-index: 49; background: rgba(10,15,30,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; padding: 8px 0 20px; opacity: 0; transform: translateY(-10px); pointer-events: none; transition: opacity 0.22s cubic-bezier(0.22,1,0.36,1), transform 0.22s cubic-bezier(0.22,1,0.36,1); }
+    .mobile-menu.open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .mobile-menu a.mob-link { padding: 13px 24px; font-size: 0.9rem; font-weight: 500; color: #9ca3af; text-decoration: none; transition: color 0.15s, background 0.15s; border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .mobile-menu a.mob-link:hover { color: #fff; background: rgba(79,142,247,0.06); }
+    .mobile-menu .mob-cta-wrap { padding: 16px 24px 0; }
+    .mobile-menu .mob-cta-wrap .book-call-btn { width: 100%; text-align: center; }
+    @media (min-width: 768px) { .hamburger-btn { display: none !important; } .mobile-menu { display: none !important; } }
+  </style>
+  <script>window.Calendly||(function(d){var s=d.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.async=true;d.head.appendChild(s);}(document));</script>
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+</head>
+<body class="text-white antialiased">
+
+  <!-- NAV -->
+  <nav aria-label="Main navigation" class="nav-blur fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="/" class="logo-wrap" aria-label="Purics AI — home">
+        <img src="puricsai.png" alt="Purics AI" class="logo-img" />
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+        <a href="/#services"  class="hover:text-white transition-colors">Services</a>
+        <a href="/#pricing"   class="hover:text-white transition-colors">Pricing</a>
+        <a href="/#global"    class="hover:text-white transition-colors">🌍 Hire Global</a>
+        <a href="/#work"      class="hover:text-white transition-colors">Our Work</a>
+        <a href="/#why"       class="hover:text-white transition-colors">Why Us</a>
+        <a href="mailto:admin@purics.ai" class="hover:text-white transition-colors">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="book-call-btn book-call-btn-pill hidden md:inline-block">
+          Book a Discovery Call →
+        </button>
+        <button id="mob-menu-btn" class="hamburger-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu">
+          <span class="hb"></span><span class="hb"></span><span class="hb"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+      <a href="/#services" class="mob-link" onclick="closeMobMenu()">Services</a>
+      <a href="/#pricing"  class="mob-link" onclick="closeMobMenu()">Pricing</a>
+      <a href="/#global"   class="mob-link" onclick="closeMobMenu()">🌍 Hire Global</a>
+      <a href="/#work"     class="mob-link" onclick="closeMobMenu()">Our Work</a>
+      <a href="/#why"      class="mob-link" onclick="closeMobMenu()">Why Us</a>
+      <a href="mailto:admin@purics.ai" class="mob-link">Contact</a>
+      <div class="mob-cta-wrap">
+        <button onclick="closeMobMenu(); Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="book-call-btn">
+          Book a Discovery Call →
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-16">
+
+    <!-- Page hero -->
+    <section class="py-16 px-4 text-center" style="background: linear-gradient(180deg, rgba(79,142,247,0.05) 0%, transparent 100%);">
+      <div class="max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold px-4 py-1.5 rounded-full mb-6" style="background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.25);color:#7AABFF;">
+          🛡️ Enterprise Trust
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-black tracking-tight mb-4">
+          Data <span class="gradient-text">Confidentiality</span>
+        </h1>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          Your code, data, ideas, and credentials are yours — always. Here is our ironclad commitment to protecting everything you share with us.
+        </p>
+        <p class="text-gray-600 text-sm mt-4">Effective date: June 1, 2025 &nbsp;·&nbsp; NDA available on request</p>
+
+        <!-- Trust badges -->
+        <div class="flex flex-wrap justify-center gap-3 mt-8">
+          <span class="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style="background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);color:#7AABFF;">🔒 NDA Friendly</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style="background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);color:#7AABFF;">🛡️ Enterprise Confidentiality</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style="background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);color:#7AABFF;">⚖️ Client IP Protected</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full" style="background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.2);color:#7AABFF;">🔐 Access-Controlled Delivery</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core promise -->
+    <section class="py-8 px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="rounded-2xl p-px" style="background:linear-gradient(135deg,#4F8EF7,#8B5CF6);">
+          <div class="rounded-2xl p-8 text-center" style="background:#0d1325;">
+            <p class="text-xl font-bold text-white leading-relaxed">
+              "Your Data Stays Yours — Always."
+            </p>
+            <p class="text-gray-400 mt-3 text-sm leading-relaxed">
+              At Purics AI, all client information is treated as strictly confidential. We do not sell, share, disclose, or expose client data, source code, business documents, credentials, AI prompts, architecture diagrams, or internal communications to any third party without explicit written consent.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Commitment detail -->
+    <section class="py-10 px-4">
+      <div class="max-w-3xl mx-auto space-y-10 policy-section">
+
+        <!-- 1 -->
+        <div>
+          <h2>1. What We Keep Confidential</h2>
+          <p>Everything you share with us in the course of a project engagement is treated as confidential, including but not limited to:</p>
+          <ul>
+            <li>Source code, repositories, and proprietary software</li>
+            <li>Business documents, product roadmaps, and strategy decks</li>
+            <li>API keys, credentials, secrets, and system access details</li>
+            <li>AI prompts, fine-tuned models, and training datasets</li>
+            <li>Architecture diagrams, infrastructure configurations, and system designs</li>
+            <li>Internal communications, meeting notes, and project briefs</li>
+            <li>Financial data, customer lists, and business metrics</li>
+            <li>Any other information marked confidential or that is obviously proprietary in nature</li>
+          </ul>
+        </div>
+
+        <!-- 2 -->
+        <div>
+          <h2>2. What We Will Never Do</h2>
+          <ul>
+            <li>Sell, license, or transfer your data or code to any third party</li>
+            <li>Use your data to train or fine-tune public or shared AI models without your explicit written approval</li>
+            <li>Disclose your project details, technical architecture, or business information publicly</li>
+            <li>Share access credentials or system access beyond the authorized personnel assigned to your project</li>
+            <li>Retain copies of client data beyond the engagement period, unless legally required or you request otherwise</li>
+          </ul>
+        </div>
+
+        <!-- 3 -->
+        <div>
+          <h2>3. Access Controls</h2>
+          <p>We operate on a strict need-to-know basis:</p>
+          <ul>
+            <li>Access to client systems, repositories, and data is granted <strong style="color:#e5e7eb;">only</strong> to engineers directly assigned to your project</li>
+            <li>All team members sign internal confidentiality agreements as a condition of employment</li>
+            <li>Access is revoked immediately upon project completion or team changes</li>
+            <li>We use role-based access controls and audit logs for all production system access</li>
+            <li>Temporary credentials are rotated and deleted upon project offboarding</li>
+          </ul>
+        </div>
+
+        <!-- 4 -->
+        <div>
+          <h2>4. Secure Development Practices</h2>
+          <ul>
+            <li>Code is worked on in isolated, access-controlled development environments</li>
+            <li>All data in transit is encrypted via TLS/HTTPS</li>
+            <li>Sensitive credentials are stored using secret management tools — never in plain text or version control</li>
+            <li>We do not fork, clone, or retain client repositories beyond the agreed project scope</li>
+            <li>Security incidents (if any) are disclosed to the client promptly and transparently</li>
+          </ul>
+        </div>
+
+        <!-- 5 — AI specific -->
+        <div>
+          <h2>5. AI &amp; Model Usage Policy</h2>
+          <div class="rounded-xl p-5 mt-2" style="background:rgba(79,142,247,0.05);border:1px solid rgba(79,142,247,0.15);">
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Client data, source code, prompts, or any information submitted to Purics AI is
+              <strong style="color:#7AABFF;">never used to train, fine-tune, or benchmark any public AI model</strong>
+              unless you have explicitly approved this in writing.
+            </p>
+            <p class="text-sm text-gray-400 leading-relaxed mt-3">
+              When AI tools are used during project delivery (e.g., code assistants, analysis tools), we ensure:
+            </p>
+            <ul class="mt-2">
+              <li>Enterprise-tier, privacy-preserving configurations are used where available</li>
+              <li>Client data is not submitted to AI services in identifiable form without approval</li>
+              <li>Any AI tool used is disclosed to the client on request</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div>
+          <h2>6. Intellectual Property</h2>
+          <p>
+            Unless otherwise agreed in writing, all custom software, code, designs, and deliverables created specifically for you under a paid engagement are assigned to you upon full payment. Purics AI does not retain ownership or licensing rights over client-specific work product.
+          </p>
+          <p class="mt-3">
+            We may retain rights to general-purpose tooling, frameworks, or libraries we develop independently that are not specific to your project — these are always negotiated transparently before project start.
+          </p>
+        </div>
+
+        <!-- 7 — NDA -->
+        <div>
+          <h2>7. Non-Disclosure Agreements (NDAs)</h2>
+          <div class="nda-banner">
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">🔒</span>
+              <div>
+                <h3 class="text-base font-bold text-white mb-2">We Are NDA-Ready</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                  We welcome and actively encourage formal NDAs for enterprise and sensitive engagements. Our standard mutual NDA is available immediately upon request and can be countersigned before any project scoping or discovery conversation begins.
+                </p>
+                <p class="text-sm text-gray-400 leading-relaxed mt-3">
+                  If you have a preferred NDA template, we are happy to review and sign yours instead.
+                </p>
+                <div class="flex flex-wrap gap-3 mt-4">
+                  <a href="mailto:legal@purics.ai?subject=NDA%20Request%20-%20Purics%20AI" class="contact-chip">⚖️ Request NDA — legal@purics.ai</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div>
+          <h2>8. Data Retention &amp; Deletion</h2>
+          <ul>
+            <li>Client data is retained only for the duration of the active engagement plus a reasonable handover period (typically 30 days after project close)</li>
+            <li>Upon written request, we will securely delete or return all client data and confirm deletion in writing</li>
+            <li>Backups containing client data are purged on the same schedule</li>
+          </ul>
+        </div>
+
+        <!-- 9 -->
+        <div>
+          <h2>9. Reporting a Concern</h2>
+          <p class="mb-4">If you believe your confidential information has been mishandled or you have a privacy concern, please contact us immediately:</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="mailto:privacy@purics.ai" class="contact-chip">🔒 privacy@purics.ai</a>
+            <a href="mailto:legal@purics.ai"   class="contact-chip">⚖️ legal@purics.ai</a>
+            <a href="mailto:admin@purics.ai"   class="contact-chip">✉️ admin@purics.ai</a>
+          </div>
+          <p class="mt-4 text-sm text-gray-500">We aim to acknowledge all security or confidentiality concerns within 24 hours.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Promise cards -->
+    <section class="py-10 px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-xl font-bold text-white mb-6 text-center">Our Confidentiality Promise in Plain English</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="promise-card">
+            <h3>🔐 Your Code is Your Code</h3>
+            <p class="text-sm text-gray-400">We write it for you. You own it entirely. We don't keep copies, sell it, or reuse it for other clients.</p>
+          </div>
+          <div class="promise-card">
+            <h3>🤫 What You Share Stays Internal</h3>
+            <p class="text-sm text-gray-400">Business plans, credentials, architecture — shared with us in confidence, stays in confidence.</p>
+          </div>
+          <div class="promise-card">
+            <h3>🤖 No Secret AI Training</h3>
+            <p class="text-sm text-gray-400">Your data is never fed into AI training pipelines without explicit written approval. Full stop.</p>
+          </div>
+          <div class="promise-card">
+            <h3>📋 NDA On Day One</h3>
+            <p class="text-sm text-gray-400">Need a formal NDA before the first call? Done. Just ask. We sign yours or share ours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related links -->
+    <section class="py-10 px-4 border-t border-white/5">
+      <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-gray-500 text-sm">Also see our other legal documents:</p>
+        <div class="flex flex-wrap gap-4 text-sm">
+          <a href="/privacy-policy.html" class="text-blue-400 hover:text-white transition-colors">Privacy Policy →</a>
+          <a href="/terms.html"          class="text-blue-400 hover:text-white transition-colors">Terms of Service →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 py-10 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div>
+          <a href="/"><img src="puricsai.png" alt="Purics AI" class="logo-footer" /></a>
+          <p class="text-gray-500 text-sm mt-1">Not Just Cheap. Actually Great.</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-5 text-sm text-gray-500">
+          <a href="/#services"  class="hover:text-white transition-colors">Services</a>
+          <a href="/#pricing"   class="hover:text-white transition-colors">Pricing</a>
+          <a href="/#global"    class="hover:text-white transition-colors">Hire Global</a>
+          <a href="/#work"      class="hover:text-white transition-colors">Our Work</a>
+          <a href="/privacy-policy.html"       class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="/terms.html"                class="hover:text-white transition-colors">Terms</a>
+          <a href="/data-confidentiality.html" class="hover:text-white transition-colors">Data Confidentiality</a>
+        </div>
+        <div class="text-gray-600 text-xs text-center md:text-right">
+          <p>🔒 Client data is never shared or sold.</p>
+          <p class="mt-1">✉️ <a href="mailto:admin@purics.ai" class="hover:text-white transition-colors font-semibold">admin@purics.ai</a></p>
+          <p class="mt-1">© 2025 Purics AI. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    'use strict';
+    const btn  = document.getElementById('mob-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    function openMobMenu() {
+      menu.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-label', 'Close navigation menu');
+      document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleOutside, true);
+    }
+    window.closeMobMenu = function () {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Open navigation menu');
+      document.removeEventListener('keydown', handleKey);
+      document.removeEventListener('click', handleOutside, true);
+    };
+    function handleKey(e) { if (e.key === 'Escape') { closeMobMenu(); btn.focus(); } }
+    function handleOutside(e) { if (!menu.contains(e.target) && !btn.contains(e.target)) closeMobMenu(); }
+    btn.addEventListener('click', function () {
+      btn.getAttribute('aria-expanded') === 'true' ? closeMobMenu() : openMobMenu();
+    });
+    window.addEventListener('resize', function () { if (window.innerWidth >= 768) closeMobMenu(); });
+  }());
+  </script>
+
+</body>
+</html>

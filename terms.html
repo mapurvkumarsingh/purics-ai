@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="canonical" href="https://purics.ai/terms.html" />
+  <title>Terms of Service | Purics AI</title>
+  <meta name="description" content="Purics AI Terms of Service — the rules and agreements governing use of our software engineering and AI services." />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    body { background: #0a0f1e; font-family: 'Inter', sans-serif; }
+    .nav-blur { background: rgba(10,15,30,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .gradient-text { background: linear-gradient(135deg, #4F8EF7 0%, #8B5CF6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .logo-wrap { display: inline-flex; align-items: center; text-decoration: none; }
+    .logo-img { height: 44px; width: auto; display: block; transition: transform 0.3s ease, filter 0.3s ease; }
+    .logo-wrap:hover .logo-img { transform: scale(1.05); filter: drop-shadow(0 0 8px rgba(79,142,247,0.5)); }
+    .logo-footer { height: 28px; width: auto; display: block; opacity: 0.85; transition: opacity 0.3s ease; }
+    .logo-footer:hover { opacity: 1; }
+    .book-call-btn {
+      background: #6B4423; color: #F5EFE6; border: 1px solid #C8A26A;
+      padding: 14px 28px; border-radius: 12px; font-size: 0.875rem;
+      font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35); display: inline-block;
+      text-decoration: none; letter-spacing: 0.01em;
+    }
+    .book-call-btn:hover { background: #8B5E34; border-color: #D4A96A; transform: translateY(-2px); }
+    .book-call-btn-pill { border-radius: 999px; padding: 8px 20px; font-size: 0.875rem; }
+    .policy-section h2 { font-size: 1.125rem; font-weight: 700; color: #e5e7eb; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .policy-section p, .policy-section li { font-size: 0.9rem; color: #9ca3af; line-height: 1.75; }
+    .policy-section ul { list-style: disc; padding-left: 1.5rem; margin-top: 0.5rem; }
+    .policy-section ul li { margin-bottom: 0.375rem; }
+    .policy-section ol { padding-left: 1.5rem; margin-top: 0.5rem; list-style: decimal; }
+    .policy-section ol li { margin-bottom: 0.375rem; }
+    .policy-section a { color: #4F8EF7; text-decoration: none; }
+    .policy-section a:hover { color: #7AABFF; text-decoration: underline; }
+    .contact-chip { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(79,142,247,0.08); border: 1px solid rgba(79,142,247,0.2); border-radius: 999px; padding: 6px 14px; font-size: 0.8rem; color: #7AABFF; text-decoration: none; transition: background 0.2s; }
+    .contact-chip:hover { background: rgba(79,142,247,0.14); }
+    .info-box { background: rgba(79,142,247,0.05); border: 1px solid rgba(79,142,247,0.15); border-radius: 0.75rem; padding: 1rem 1.25rem; margin-top: 0.75rem; }
+    /* Mobile nav */
+    .hamburger-btn { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 40px; height: 40px; gap: 5px; cursor: pointer; background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 10px; transition: background 0.2s, border-color 0.2s; flex-shrink: 0; }
+    .hamburger-btn:hover, .hamburger-btn:focus-visible { background: rgba(255,255,255,0.07); border-color: rgba(79,142,247,0.4); outline: none; }
+    .hamburger-btn .hb { width: 20px; height: 2px; background: #9ca3af; border-radius: 2px; transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s cubic-bezier(0.4,0,0.2,1), background 0.2s; transform-origin: center; }
+    .hamburger-btn[aria-expanded="true"] .hb { background: #fff; }
+    .hamburger-btn[aria-expanded="true"] .hb:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger-btn[aria-expanded="true"] .hb:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger-btn[aria-expanded="true"] .hb:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { position: fixed; top: 64px; left: 0; right: 0; z-index: 49; background: rgba(10,15,30,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; padding: 8px 0 20px; opacity: 0; transform: translateY(-10px); pointer-events: none; transition: opacity 0.22s cubic-bezier(0.22,1,0.36,1), transform 0.22s cubic-bezier(0.22,1,0.36,1); }
+    .mobile-menu.open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .mobile-menu a.mob-link { padding: 13px 24px; font-size: 0.9rem; font-weight: 500; color: #9ca3af; text-decoration: none; transition: color 0.15s, background 0.15s; border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .mobile-menu a.mob-link:hover { color: #fff; background: rgba(79,142,247,0.06); }
+    .mobile-menu .mob-cta-wrap { padding: 16px 24px 0; }
+    .mobile-menu .mob-cta-wrap .book-call-btn { width: 100%; text-align: center; }
+    @media (min-width: 768px) { .hamburger-btn { display: none !important; } .mobile-menu { display: none !important; } }
+  </style>
+  <script>window.Calendly||(function(d){var s=d.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.async=true;d.head.appendChild(s);}(document));</script>
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+</head>
+<body class="text-white antialiased">
+
+  <!-- NAV -->
+  <nav aria-label="Main navigation" class="nav-blur fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="/" class="logo-wrap" aria-label="Purics AI — home">
+        <img src="puricsai.png" alt="Purics AI" class="logo-img" />
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+        <a href="/#services"  class="hover:text-white transition-colors">Services</a>
+        <a href="/#pricing"   class="hover:text-white transition-colors">Pricing</a>
+        <a href="/#global"    class="hover:text-white transition-colors">🌍 Hire Global</a>
+        <a href="/#work"      class="hover:text-white transition-colors">Our Work</a>
+        <a href="/#why"       class="hover:text-white transition-colors">Why Us</a>
+        <a href="mailto:admin@purics.ai" class="hover:text-white transition-colors">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="book-call-btn book-call-btn-pill hidden md:inline-block">
+          Book a Discovery Call →
+        </button>
+        <button id="mob-menu-btn" class="hamburger-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu">
+          <span class="hb"></span><span class="hb"></span><span class="hb"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+      <a href="/#services" class="mob-link" onclick="closeMobMenu()">Services</a>
+      <a href="/#pricing"  class="mob-link" onclick="closeMobMenu()">Pricing</a>
+      <a href="/#global"   class="mob-link" onclick="closeMobMenu()">🌍 Hire Global</a>
+      <a href="/#work"     class="mob-link" onclick="closeMobMenu()">Our Work</a>
+      <a href="/#why"      class="mob-link" onclick="closeMobMenu()">Why Us</a>
+      <a href="mailto:admin@purics.ai" class="mob-link">Contact</a>
+      <div class="mob-cta-wrap">
+        <button onclick="closeMobMenu(); Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="book-call-btn">
+          Book a Discovery Call →
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-16">
+
+    <!-- Page hero -->
+    <section class="py-16 px-4 text-center" style="background: linear-gradient(180deg, rgba(79,142,247,0.05) 0%, transparent 100%);">
+      <div class="max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold px-4 py-1.5 rounded-full mb-6" style="background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.25);color:#7AABFF;">
+          ⚖️ Legal
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-black tracking-tight mb-4">
+          Terms of <span class="gradient-text">Service</span>
+        </h1>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          Clear, fair, and human-readable. These terms govern how we work with you — no legal traps, just transparency.
+        </p>
+        <p class="text-gray-600 text-sm mt-4">Effective date: June 1, 2025 &nbsp;·&nbsp; Last updated: June 1, 2025</p>
+      </div>
+    </section>
+
+    <!-- Terms content -->
+    <section class="py-12 px-4">
+      <div class="max-w-3xl mx-auto space-y-10 policy-section">
+
+        <!-- 1 -->
+        <div>
+          <h2>1. Acceptance of Terms</h2>
+          <p>
+            By engaging Purics AI for any service — whether through our website, email, discovery call, signed agreement, or subscription purchase — you ("Client", "you") agree to be bound by these Terms of Service. If you are entering into this agreement on behalf of a company or organisation, you represent that you have authority to do so.
+          </p>
+        </div>
+
+        <!-- 2 -->
+        <div>
+          <h2>2. Services Provided</h2>
+          <p>Purics AI provides software engineering, AI development, and related technology services, including but not limited to:</p>
+          <ul>
+            <li>Full-stack web and backend development</li>
+            <li>Mobile application development (iOS and Android)</li>
+            <li>AI agent development and ML model deployment</li>
+            <li>Cloud infrastructure and DevOps</li>
+            <li>Software maintenance, bug fixes, and technical support</li>
+            <li>Architecture design and technical consulting</li>
+          </ul>
+          <p class="mt-3">Specific scope, deliverables, timelines, and pricing are agreed separately in writing for each engagement (via a project brief, SOW, or subscription plan confirmation).</p>
+        </div>
+
+        <!-- 3 -->
+        <div>
+          <h2>3. Subscription Plans &amp; Payment</h2>
+          <ul>
+            <li>Subscription plans are billed monthly in advance.</li>
+            <li>Payments are processed securely via Razorpay. By subscribing, you authorise recurring charges.</li>
+            <li>All prices are in USD unless stated otherwise. Taxes (GST, VAT, etc.) may apply based on your jurisdiction.</li>
+            <li>Invoices are issued at the start of each billing cycle. Payment is due on receipt.</li>
+            <li>Late payments may result in a pause of services after a 7-day grace period, following written notice.</li>
+            <li>Plan upgrades take effect immediately; downgrades at the next billing cycle.</li>
+          </ul>
+        </div>
+
+        <!-- 4 -->
+        <div>
+          <h2>4. Cancellation &amp; Refunds</h2>
+          <ul>
+            <li>You may cancel your subscription at any time by providing written notice to <a href="mailto:admin@purics.ai">admin@purics.ai</a> at least 14 days before your next billing date.</li>
+            <li>Subscription fees already paid are non-refundable, except where required by applicable law or in the event of Purics AI failing to deliver agreed services.</li>
+            <li>For project-based engagements, cancellation terms are outlined in the individual project agreement.</li>
+            <li>If you are unsatisfied with any deliverable, contact us at <a href="mailto:admin@purics.ai">admin@purics.ai</a> — we will work with you to resolve the issue fairly.</li>
+          </ul>
+        </div>
+
+        <!-- 5 -->
+        <div>
+          <h2>5. Intellectual Property &amp; Ownership</h2>
+          <ul>
+            <li>All custom code, designs, and deliverables created specifically for you under a paid engagement are assigned to you upon receipt of full payment.</li>
+            <li>You grant Purics AI a limited, non-exclusive licence to use your provided materials (logos, content, APIs, etc.) solely to deliver the agreed services.</li>
+            <li>Purics AI retains rights to general-purpose tools, libraries, and frameworks developed independently. We will always be transparent about what is custom vs. reused infrastructure before project start.</li>
+            <li>We will not use your work as a portfolio example or case study without your explicit written permission.</li>
+          </ul>
+        </div>
+
+        <!-- 6 -->
+        <div>
+          <h2>6. Confidentiality</h2>
+          <p>
+            Both parties agree to treat any proprietary or sensitive information shared during the engagement as strictly confidential.
+            Please refer to our <a href="/data-confidentiality.html">Data Confidentiality Policy</a> for full details of our commitments. NDAs are available on request.
+          </p>
+        </div>
+
+        <!-- 7 -->
+        <div>
+          <h2>7. Client Responsibilities</h2>
+          <p>To enable us to deliver high-quality work, you agree to:</p>
+          <ul>
+            <li>Provide timely, accurate, and complete project requirements and feedback</li>
+            <li>Designate a point of contact with authority to make decisions</li>
+            <li>Grant access to systems, repositories, or resources necessary for delivery, as agreed</li>
+            <li>Ensure that any content, data, or materials you provide do not violate any third-party rights or applicable laws</li>
+            <li>Respond to communications within a reasonable timeframe to avoid project delays</li>
+          </ul>
+        </div>
+
+        <!-- 8 -->
+        <div>
+          <h2>8. Acceptable Use</h2>
+          <p>You agree not to use Purics AI's services to:</p>
+          <ul>
+            <li>Build, distribute, or operate any illegal software, service, or application</li>
+            <li>Violate the intellectual property, privacy, or other rights of any third party</li>
+            <li>Engage in deceptive, fraudulent, or harmful activities</li>
+            <li>Develop systems designed to deceive, surveil, or harm individuals without their consent</li>
+          </ul>
+          <p class="mt-3">Purics AI reserves the right to decline or terminate any engagement that violates these terms.</p>
+        </div>
+
+        <!-- 9 -->
+        <div>
+          <h2>9. Limitation of Liability</h2>
+          <div class="info-box">
+            <p>
+              To the maximum extent permitted by applicable law, Purics AI's total liability for any claim arising from our services is limited to the amount paid by you in the three (3) months preceding the claim.
+            </p>
+            <p class="mt-3">
+              We are not liable for indirect, incidental, consequential, or punitive damages, including lost profits, data loss, or business interruption — even if we have been advised of the possibility of such damages.
+            </p>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div>
+          <h2>10. Warranties &amp; Disclaimers</h2>
+          <ul>
+            <li>We warrant that services will be delivered with reasonable skill, care, and professionalism.</li>
+            <li>We do not guarantee that software will be error-free or uninterrupted. Software development inherently involves iteration and bug discovery.</li>
+            <li>Third-party services, APIs, and platforms we integrate with are subject to their own terms and availability — we are not responsible for their downtime or policy changes.</li>
+          </ul>
+        </div>
+
+        <!-- 11 -->
+        <div>
+          <h2>11. Governing Law &amp; Disputes</h2>
+          <p>
+            These Terms are governed by the laws of India (or the jurisdiction mutually agreed in a specific project contract). Any disputes shall first be attempted to be resolved through good-faith negotiation. If unresolved within 30 days, disputes may be referred to mediation or arbitration before litigation.
+          </p>
+        </div>
+
+        <!-- 12 -->
+        <div>
+          <h2>12. Changes to These Terms</h2>
+          <p>
+            We may update these Terms from time to time. Material changes will be communicated to active clients via email at least 14 days before taking effect. Continued use of our services after that date constitutes acceptance of the updated terms.
+          </p>
+        </div>
+
+        <!-- 13 -->
+        <div>
+          <h2>13. Contact &amp; Legal Enquiries</h2>
+          <p class="mb-4">For any questions about these Terms, billing disputes, or legal matters:</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="mailto:legal@purics.ai"  class="contact-chip">⚖️ legal@purics.ai</a>
+            <a href="mailto:admin@purics.ai"  class="contact-chip">✉️ admin@purics.ai</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Related links -->
+    <section class="py-10 px-4 border-t border-white/5">
+      <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-gray-500 text-sm">Also see our other legal documents:</p>
+        <div class="flex flex-wrap gap-4 text-sm">
+          <a href="/privacy-policy.html"       class="text-blue-400 hover:text-white transition-colors">Privacy Policy →</a>
+          <a href="/data-confidentiality.html" class="text-blue-400 hover:text-white transition-colors">Data Confidentiality →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 py-10 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div>
+          <a href="/"><img src="puricsai.png" alt="Purics AI" class="logo-footer" /></a>
+          <p class="text-gray-500 text-sm mt-1">Not Just Cheap. Actually Great.</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-5 text-sm text-gray-500">
+          <a href="/#services"  class="hover:text-white transition-colors">Services</a>
+          <a href="/#pricing"   class="hover:text-white transition-colors">Pricing</a>
+          <a href="/#global"    class="hover:text-white transition-colors">Hire Global</a>
+          <a href="/#work"      class="hover:text-white transition-colors">Our Work</a>
+          <a href="/privacy-policy.html"       class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="/terms.html"                class="hover:text-white transition-colors">Terms</a>
+          <a href="/data-confidentiality.html" class="hover:text-white transition-colors">Data Confidentiality</a>
+        </div>
+        <div class="text-gray-600 text-xs text-center md:text-right">
+          <p>🔒 Client data is never shared or sold.</p>
+          <p class="mt-1">✉️ <a href="mailto:admin@purics.ai" class="hover:text-white transition-colors font-semibold">admin@purics.ai</a></p>
+          <p class="mt-1">© 2025 Purics AI. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    'use strict';
+    const btn  = document.getElementById('mob-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    function openMobMenu() {
+      menu.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-label', 'Close navigation menu');
+      document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleOutside, true);
+    }
+    window.closeMobMenu = function () {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Open navigation menu');
+      document.removeEventListener('keydown', handleKey);
+      document.removeEventListener('click', handleOutside, true);
+    };
+    function handleKey(e) { if (e.key === 'Escape') { closeMobMenu(); btn.focus(); } }
+    function handleOutside(e) { if (!menu.contains(e.target) && !btn.contains(e.target)) closeMobMenu(); }
+    btn.addEventListener('click', function () {
+      btn.getAttribute('aria-expanded') === 'true' ? closeMobMenu() : openMobMenu();
+    });
+    window.addEventListener('resize', function () { if (window.innerWidth >= 768) closeMobMenu(); });
+  }());
+  </script>
+
+</body>
+</html>

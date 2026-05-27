@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="canonical" href="https://purics.ai/privacy-policy.html" />
+  <title>Privacy Policy | Purics AI</title>
+  <meta name="description" content="Purics AI Privacy Policy — how we collect, use, store and protect your personal and business information." />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    body { background: #0a0f1e; font-family: 'Inter', sans-serif; }
+    .nav-blur { background: rgba(10,15,30,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .gradient-text { background: linear-gradient(135deg, #4F8EF7 0%, #8B5CF6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); }
+    .logo-wrap { display: inline-flex; align-items: center; text-decoration: none; }
+    .logo-img { height: 44px; width: auto; display: block; transition: transform 0.3s ease, filter 0.3s ease; }
+    .logo-wrap:hover .logo-img { transform: scale(1.05); filter: drop-shadow(0 0 8px rgba(79,142,247,0.5)); }
+    .logo-footer { height: 28px; width: auto; display: block; opacity: 0.85; transition: opacity 0.3s ease; }
+    .logo-footer:hover { opacity: 1; }
+    .book-call-btn {
+      background: #6B4423; color: #F5EFE6; border: 1px solid #C8A26A;
+      padding: 14px 28px; border-radius: 12px; font-size: 0.875rem;
+      font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35); display: inline-block;
+      text-decoration: none; letter-spacing: 0.01em;
+    }
+    .book-call-btn:hover { background: #8B5E34; border-color: #D4A96A; transform: translateY(-2px); }
+    .book-call-btn-pill { border-radius: 999px; padding: 8px 20px; font-size: 0.875rem; }
+    .policy-hero { background: linear-gradient(180deg, rgba(79,142,247,0.05) 0%, transparent 100%); }
+    .policy-section h2 { font-size: 1.125rem; font-weight: 700; color: #e5e7eb; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .policy-section p, .policy-section li { font-size: 0.9rem; color: #9ca3af; line-height: 1.75; }
+    .policy-section ul { list-style: disc; padding-left: 1.5rem; margin-top: 0.5rem; }
+    .policy-section ul li { margin-bottom: 0.375rem; }
+    .policy-section a { color: #4F8EF7; text-decoration: none; }
+    .policy-section a:hover { color: #7AABFF; text-decoration: underline; }
+    .contact-chip { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(79,142,247,0.08); border: 1px solid rgba(79,142,247,0.2); border-radius: 999px; padding: 6px 14px; font-size: 0.8rem; color: #7AABFF; text-decoration: none; transition: background 0.2s; }
+    .contact-chip:hover { background: rgba(79,142,247,0.14); }
+    /* Mobile nav */
+    .hamburger-btn { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 40px; height: 40px; gap: 5px; cursor: pointer; background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 4px; border-radius: 10px; transition: background 0.2s, border-color 0.2s; flex-shrink: 0; }
+    .hamburger-btn:hover, .hamburger-btn:focus-visible { background: rgba(255,255,255,0.07); border-color: rgba(79,142,247,0.4); outline: none; }
+    .hamburger-btn .hb { width: 20px; height: 2px; background: #9ca3af; border-radius: 2px; transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), opacity 0.3s cubic-bezier(0.4,0,0.2,1), background 0.2s; transform-origin: center; }
+    .hamburger-btn[aria-expanded="true"] .hb { background: #fff; }
+    .hamburger-btn[aria-expanded="true"] .hb:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger-btn[aria-expanded="true"] .hb:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger-btn[aria-expanded="true"] .hb:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { position: fixed; top: 64px; left: 0; right: 0; z-index: 49; background: rgba(10,15,30,0.97); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.07); display: flex; flex-direction: column; padding: 8px 0 20px; opacity: 0; transform: translateY(-10px); pointer-events: none; transition: opacity 0.22s cubic-bezier(0.22,1,0.36,1), transform 0.22s cubic-bezier(0.22,1,0.36,1); }
+    .mobile-menu.open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .mobile-menu a.mob-link { padding: 13px 24px; font-size: 0.9rem; font-weight: 500; color: #9ca3af; text-decoration: none; transition: color 0.15s, background 0.15s; border-bottom: 1px solid rgba(255,255,255,0.03); }
+    .mobile-menu a.mob-link:hover { color: #fff; background: rgba(79,142,247,0.06); }
+    .mobile-menu .mob-cta-wrap { padding: 16px 24px 0; }
+    .mobile-menu .mob-cta-wrap .book-call-btn { width: 100%; text-align: center; }
+    @media (min-width: 768px) { .hamburger-btn { display: none !important; } .mobile-menu { display: none !important; } }
+  </style>
+  <!-- Calendly shim -->
+  <script>window.Calendly||(function(d){var s=d.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.async=true;d.head.appendChild(s);}(document));</script>
+  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+</head>
+<body class="text-white antialiased">
+
+  <!-- NAV -->
+  <nav aria-label="Main navigation" class="nav-blur fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="/" class="logo-wrap" aria-label="Purics AI — home">
+        <img src="puricsai.png" alt="Purics AI" class="logo-img" />
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+        <a href="/#services"  class="hover:text-white transition-colors">Services</a>
+        <a href="/#pricing"   class="hover:text-white transition-colors">Pricing</a>
+        <a href="/#global"    class="hover:text-white transition-colors">🌍 Hire Global</a>
+        <a href="/#work"      class="hover:text-white transition-colors">Our Work</a>
+        <a href="/#why"       class="hover:text-white transition-colors">Why Us</a>
+        <a href="mailto:admin@purics.ai" class="hover:text-white transition-colors">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="book-call-btn book-call-btn-pill hidden md:inline-block">
+          Book a Discovery Call →
+        </button>
+        <button id="mob-menu-btn" class="hamburger-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu">
+          <span class="hb"></span><span class="hb"></span><span class="hb"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+      <a href="/#services"  class="mob-link" onclick="closeMobMenu()">Services</a>
+      <a href="/#pricing"   class="mob-link" onclick="closeMobMenu()">Pricing</a>
+      <a href="/#global"    class="mob-link" onclick="closeMobMenu()">🌍 Hire Global</a>
+      <a href="/#work"      class="mob-link" onclick="closeMobMenu()">Our Work</a>
+      <a href="/#why"       class="mob-link" onclick="closeMobMenu()">Why Us</a>
+      <a href="mailto:admin@purics.ai" class="mob-link">Contact</a>
+      <div class="mob-cta-wrap">
+        <button onclick="closeMobMenu(); Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="book-call-btn">
+          Book a Discovery Call →
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-16">
+
+    <!-- Page hero -->
+    <section class="policy-hero py-16 px-4 text-center">
+      <div class="max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 text-xs font-semibold px-4 py-1.5 rounded-full mb-6" style="background:rgba(79,142,247,0.1);border:1px solid rgba(79,142,247,0.25);color:#7AABFF;">
+          🔒 Legal &amp; Privacy
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-black tracking-tight mb-4">
+          Privacy <span class="gradient-text">Policy</span>
+        </h1>
+        <p class="text-gray-400 text-lg leading-relaxed">
+          We keep it simple: your data is yours. Here is exactly what we collect, why, and how we protect it.
+        </p>
+        <p class="text-gray-600 text-sm mt-4">Effective date: June 1, 2025 &nbsp;·&nbsp; Last updated: June 1, 2025</p>
+      </div>
+    </section>
+
+    <!-- Policy content -->
+    <section class="py-12 px-4">
+      <div class="max-w-3xl mx-auto space-y-10 policy-section">
+
+        <!-- 1 -->
+        <div>
+          <h2>1. Who We Are</h2>
+          <p>
+            Purics AI ("we", "us", "our") is a software engineering and AI services company. Our registered website is
+            <a href="https://purics.ai">purics.ai</a>. For all privacy matters, you may reach us at
+            <a href="mailto:privacy@purics.ai">privacy@purics.ai</a>.
+          </p>
+        </div>
+
+        <!-- 2 -->
+        <div>
+          <h2>2. Information We Collect</h2>
+          <p>We only collect what we genuinely need. This may include:</p>
+          <ul>
+            <li><strong style="color:#e5e7eb;">Contact information</strong> — your name, email address, company name, and phone number when you fill in a contact or booking form.</li>
+            <li><strong style="color:#e5e7eb;">Project &amp; consultation data</strong> — details about your project requirements, technical specifications, or business context shared voluntarily during calls or email threads.</li>
+            <li><strong style="color:#e5e7eb;">Usage data</strong> — basic analytics such as pages visited, referral source, browser type, and approximate geographic location (country level) collected via privacy-respecting analytics tools. No cookies that track you across the web.</li>
+            <li><strong style="color:#e5e7eb;">Payment metadata</strong> — billing details processed securely by our payment partner (Razorpay). We never store raw card numbers on our servers.</li>
+            <li><strong style="color:#e5e7eb;">Communications</strong> — emails, chat messages, or meeting notes exchanged as part of delivering our services.</li>
+          </ul>
+        </div>
+
+        <!-- 3 -->
+        <div>
+          <h2>3. Why We Collect It (Legal Basis)</h2>
+          <ul>
+            <li><strong style="color:#e5e7eb;">Service delivery</strong> — to provide, manage, and support the engineering or AI services you engage us for.</li>
+            <li><strong style="color:#e5e7eb;">Communication</strong> — to respond to enquiries, schedule discovery calls, and keep you updated on project progress.</li>
+            <li><strong style="color:#e5e7eb;">Invoicing &amp; payments</strong> — to generate invoices, process subscription payments, and maintain financial records required by law.</li>
+            <li><strong style="color:#e5e7eb;">Security &amp; fraud prevention</strong> — to detect and prevent misuse of our services.</li>
+            <li><strong style="color:#e5e7eb;">Improvement</strong> — to understand how visitors use our website so we can improve the experience. This is always done in aggregate and never tied to individual profiles.</li>
+          </ul>
+        </div>
+
+        <!-- 4 -->
+        <div>
+          <h2>4. How We Store &amp; Protect Your Data</h2>
+          <ul>
+            <li>All data is stored on access-controlled, industry-standard cloud infrastructure.</li>
+            <li>Data in transit is encrypted via TLS/HTTPS at all times.</li>
+            <li>Access to client data is restricted to authorized Purics AI personnel directly involved in your project — on a strict need-to-know basis.</li>
+            <li>We perform regular security reviews and follow secure development practices.</li>
+            <li>We retain personal data only as long as necessary for the purposes above, or as required by applicable law.</li>
+          </ul>
+        </div>
+
+        <!-- 5 -->
+        <div>
+          <h2>5. Third Parties</h2>
+          <p>We do <strong style="color:#e5e7eb;">not</strong> sell, rent, or trade your personal or business data. We may share limited data with trusted third-party service providers strictly to operate our business:</p>
+          <ul>
+            <li><strong style="color:#e5e7eb;">Calendly</strong> — for scheduling discovery and project calls.</li>
+            <li><strong style="color:#e5e7eb;">Razorpay</strong> — for secure payment processing.</li>
+            <li><strong style="color:#e5e7eb;">Email &amp; productivity tools</strong> — standard business communication platforms used internally.</li>
+            <li><strong style="color:#e5e7eb;">Analytics</strong> — privacy-first, aggregated website analytics (no cross-site tracking).</li>
+          </ul>
+          <p class="mt-3">All third parties are bound by appropriate data processing agreements. We do not allow them to use your data for their own marketing or AI training purposes.</p>
+        </div>
+
+        <!-- 6 -->
+        <div>
+          <h2>6. AI &amp; Model Usage</h2>
+          <p>
+            Client data, source code, documents, prompts, credentials, or any business information submitted to Purics AI is
+            <strong style="color:#e5e7eb;">never used to train public AI models</strong> unless you have explicitly approved this in writing. Any AI tools or models we use during project delivery are selected with enterprise privacy and security in mind.
+          </p>
+        </div>
+
+        <!-- 7 -->
+        <div>
+          <h2>7. Cookies</h2>
+          <p>
+            Our website uses only essential functional cookies required for the site to work correctly (e.g., session state for booking widgets). We do not use advertising, behavioural tracking, or third-party marketing cookies.
+          </p>
+        </div>
+
+        <!-- 8 -->
+        <div>
+          <h2>8. International Transfers</h2>
+          <p>
+            Purics AI operates with a globally distributed team. If your data is processed or stored outside your home country, we ensure appropriate safeguards are in place (such as standard contractual clauses) in compliance with applicable privacy regulations including GDPR.
+          </p>
+        </div>
+
+        <!-- 9 -->
+        <div>
+          <h2>9. Your Rights</h2>
+          <p>You have the right to:</p>
+          <ul>
+            <li><strong style="color:#e5e7eb;">Access</strong> — request a copy of the personal data we hold about you.</li>
+            <li><strong style="color:#e5e7eb;">Correction</strong> — ask us to correct inaccurate or incomplete data.</li>
+            <li><strong style="color:#e5e7eb;">Deletion</strong> — request that we delete your data, subject to legal retention requirements.</li>
+            <li><strong style="color:#e5e7eb;">Portability</strong> — receive your data in a structured, machine-readable format.</li>
+            <li><strong style="color:#e5e7eb;">Objection / Restriction</strong> — object to or restrict certain types of processing.</li>
+            <li><strong style="color:#e5e7eb;">Withdraw consent</strong> — where processing is based on consent, you can withdraw it at any time.</li>
+          </ul>
+          <p class="mt-3">To exercise any of these rights, email us at <a href="mailto:privacy@purics.ai">privacy@purics.ai</a>. We will respond within 30 days.</p>
+        </div>
+
+        <!-- 10 -->
+        <div>
+          <h2>10. Children's Privacy</h2>
+          <p>Our services are intended for businesses and professionals. We do not knowingly collect personal data from individuals under the age of 16.</p>
+        </div>
+
+        <!-- 11 -->
+        <div>
+          <h2>11. Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time. Any material changes will be communicated via email (if you are an active client) or by posting a notice on this page with an updated effective date.</p>
+        </div>
+
+        <!-- 12 -->
+        <div>
+          <h2>12. Contact Us</h2>
+          <p class="mb-4">Questions, concerns, or requests? Reach us through any of the following:</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="mailto:privacy@purics.ai"  class="contact-chip">🔒 privacy@purics.ai</a>
+            <a href="mailto:legal@purics.ai"    class="contact-chip">⚖️ legal@purics.ai</a>
+            <a href="mailto:admin@purics.ai"    class="contact-chip">✉️ admin@purics.ai</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Related links -->
+    <section class="py-10 px-4 border-t border-white/5">
+      <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-gray-500 text-sm">Also see our other legal documents:</p>
+        <div class="flex flex-wrap gap-4 text-sm">
+          <a href="/data-confidentiality.html" class="text-blue-400 hover:text-white transition-colors">Data Confidentiality →</a>
+          <a href="/terms.html"                class="text-blue-400 hover:text-white transition-colors">Terms of Service →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 py-10 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div>
+          <a href="/"><img src="puricsai.png" alt="Purics AI" class="logo-footer" /></a>
+          <p class="text-gray-500 text-sm mt-1">Not Just Cheap. Actually Great.</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-5 text-sm text-gray-500">
+          <a href="/#services"  class="hover:text-white transition-colors">Services</a>
+          <a href="/#pricing"   class="hover:text-white transition-colors">Pricing</a>
+          <a href="/#global"    class="hover:text-white transition-colors">Hire Global</a>
+          <a href="/#work"      class="hover:text-white transition-colors">Our Work</a>
+          <a href="/privacy-policy.html"       class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="/terms.html"                class="hover:text-white transition-colors">Terms</a>
+          <a href="/data-confidentiality.html" class="hover:text-white transition-colors">Data Confidentiality</a>
+        </div>
+        <div class="text-gray-600 text-xs text-center md:text-right">
+          <p>🔒 Client data is never shared or sold.</p>
+          <p class="mt-1">✉️ <a href="mailto:admin@purics.ai" class="hover:text-white transition-colors font-semibold">admin@purics.ai</a></p>
+          <p class="mt-1">© 2025 Purics AI. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    'use strict';
+    const btn  = document.getElementById('mob-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    function openMobMenu() {
+      menu.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-label', 'Close navigation menu');
+      document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleOutside, true);
+    }
+    window.closeMobMenu = function () {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Open navigation menu');
+      document.removeEventListener('keydown', handleKey);
+      document.removeEventListener('click', handleOutside, true);
+    };
+    function handleKey(e) { if (e.key === 'Escape') { closeMobMenu(); btn.focus(); } }
+    function handleOutside(e) { if (!menu.contains(e.target) && !btn.contains(e.target)) closeMobMenu(); }
+    btn.addEventListener('click', function () {
+      btn.getAttribute('aria-expanded') === 'true' ? closeMobMenu() : openMobMenu();
+    });
+    window.addEventListener('resize', function () { if (window.innerWidth >= 768) closeMobMenu(); });
+  }());
+  </script>
+
+</body>
+</html>
