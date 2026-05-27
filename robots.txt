@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block internal/build artefacts — nothing sensitive here but good hygiene
+Disallow: /node_modules/
+
+# Sitemap location — tells crawlers (Google, Bing, etc.) where to find the map
+Sitemap: https://purics.ai/sitemap.xml

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!--
+    Purics AI — single-page application.
+    All content sections live on the root URL via anchor links (#services,
+    #lifecycle, #pricing, #global, #work, #testimonials, #why, #support).
+    Google treats hash fragments as part of the same page, so one <url>
+    entry is correct here. Update <lastmod> whenever content changes.
+  -->
+
+  <url>
+    <loc>https://purics.ai/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+</urlset>
