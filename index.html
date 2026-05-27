@@ -489,9 +489,11 @@
       text-align: center;
     }
     /* hide mobile chrome on desktop */
+    .nav-desktop-cta { display: none !important; }
     @media (min-width: 768px) {
-      .hamburger-btn { display: none !important; }
-      .mobile-menu { display: none !important; }
+      .nav-desktop-cta  { display: inline-block !important; }
+      .hamburger-btn    { display: none !important; }
+      .mobile-menu      { display: none !important; }
     }
   </style>
 </head>
@@ -521,7 +523,7 @@
       </div>
       <!-- Right side: CTA (desktop only) + hamburger (mobile only) -->
       <div class="flex items-center gap-3">
-        <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Free Discovery Call – General Enquiry'}},utm:{utmSource:'website',utmCampaign:'free_discovery',utmContent:'nav_cta'}});return false;" class="book-call-btn book-call-btn-pill hidden md:inline-block">
+        <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Free Discovery Call – General Enquiry'}},utm:{utmSource:'website',utmCampaign:'free_discovery',utmContent:'nav_cta'}});return false;" class="book-call-btn book-call-btn-pill nav-desktop-cta">
           Book a Discovery Call →
         </button>
         <!-- Hamburger: mobile only -->

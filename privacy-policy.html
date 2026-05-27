@@ -55,7 +55,8 @@
     .mobile-menu a.mob-link:hover { color: #fff; background: rgba(79,142,247,0.06); }
     .mobile-menu .mob-cta-wrap { padding: 16px 24px 0; }
     .mobile-menu .mob-cta-wrap .book-call-btn { width: 100%; text-align: center; }
-    @media (min-width: 768px) { .hamburger-btn { display: none !important; } .mobile-menu { display: none !important; } }
+    .nav-desktop-cta { display: none !important; }
+    @media (min-width: 768px) { .nav-desktop-cta { display: inline-block !important; } .hamburger-btn { display: none !important; } .mobile-menu { display: none !important; } }
   </style>
   <!-- Calendly shim -->
   <script>window.Calendly||(function(d){var s=d.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.async=true;d.head.appendChild(s);}(document));</script>
@@ -78,7 +79,7 @@
         <a href="mailto:admin@purics.ai" class="hover:text-white transition-colors">Contact</a>
       </div>
       <div class="flex items-center gap-3">
-        <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="book-call-btn book-call-btn-pill hidden md:inline-block">
+        <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="book-call-btn book-call-btn-pill nav-desktop-cta">
           Book a Discovery Call →
         </button>
         <button id="mob-menu-btn" class="hamburger-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu">
