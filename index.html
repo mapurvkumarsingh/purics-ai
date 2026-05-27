@@ -495,6 +495,37 @@
       .hamburger-btn    { display: none !important; }
       .mobile-menu      { display: none !important; }
     }
+
+    /* ── Sticky mobile bottom CTA ───────────────────────────────── */
+    .mob-sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 47;
+      padding: 12px 16px;
+      padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+      background: linear-gradient(to top, rgba(10,15,30,0.97) 70%, rgba(10,15,30,0));
+      backdrop-filter: blur(10px);
+      transform: translateY(110%);
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+      pointer-events: none;
+    }
+    .mob-sticky-cta.visible {
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .mob-sticky-cta .mob-sticky-btn {
+      width: 100%;
+      text-align: center;
+      display: block;
+      border-radius: 14px;
+      padding: 14px 20px;
+      font-size: 0.95rem;
+    }
+    @media (min-width: 768px) {
+      .mob-sticky-cta { display: none !important; }
+    }
   </style>
 </head>
 <body class="text-white antialiased">
@@ -1865,6 +1896,16 @@
   </footer>
   </div><!-- /content wrapper -->
 
+  <!-- ── Mobile sticky bottom CTA (visible on scroll, mobile only) ──────── -->
+  <div id="mob-sticky-cta" class="mob-sticky-cta" aria-hidden="true">
+    <button
+      class="book-call-btn mob-sticky-btn"
+      onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Free Discovery Call – General Enquiry'}},utm:{utmSource:'website',utmCampaign:'free_discovery',utmContent:'mob_sticky_cta'}});return false;"
+    >
+      📅 Book a Free Discovery Call →
+    </button>
+  </div>
+
   <!-- Calendly loaded on-demand via shim in <head> -->
 
   <!-- ── Mobile menu toggle ───────────────────────────────────────── -->
@@ -1905,6 +1946,36 @@
     /* Close menu on viewport resize to desktop width */
     window.addEventListener('resize', function () {
       if (window.innerWidth >= 768) closeMobMenu();
+    });
+  }());
+  </script>
+
+  <!-- ── Mobile sticky CTA — scroll reveal ─────────────────────────── -->
+  <script>
+  (function () {
+    'use strict';
+    var stickyCta  = document.getElementById('mob-sticky-cta');
+    var menuBtn    = document.getElementById('mob-menu-btn');
+    var THRESHOLD  = 120; // px scrolled before CTA appears
+
+    function update() {
+      var menuOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+      var scrolled = window.scrollY > THRESHOLD;
+      if (scrolled && !menuOpen) {
+        stickyCta.classList.add('visible');
+        stickyCta.setAttribute('aria-hidden', 'false');
+      } else {
+        stickyCta.classList.remove('visible');
+        stickyCta.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+
+    /* Also re-evaluate whenever the mobile menu opens/closes */
+    menuBtn.addEventListener('click', function () {
+      /* Let the menu toggle settle first, then update */
+      setTimeout(update, 10);
     });
   }());
   </script>
