@@ -5,19 +5,32 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
     http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!--
-    Purics AI — single-page application.
-    All content sections live on the root URL via anchor links (#services,
-    #lifecycle, #pricing, #global, #work, #testimonials, #why, #support).
-    Google treats hash fragments as part of the same page, so one <url>
-    entry is correct here. Update <lastmod> whenever content changes.
-  -->
-
   <url>
-    <loc>https://purics.ai/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://www.purics.ai/</loc>
+    <lastmod>2025-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.purics.ai/privacy-policy</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.purics.ai/data-confidentiality</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.purics.ai/terms</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
 </urlset>

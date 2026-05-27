@@ -8,4 +8,4 @@ RUN npm install -g serve
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "serve -s /app -l ${PORT:-8080}"]
+CMD ["sh", "-c", "serve /app -l ${PORT:-8080}"]
