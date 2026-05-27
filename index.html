@@ -403,6 +403,96 @@
       transition: color 0.2s;
     }
     .cs-link:hover { color: #7AABFF; }
+
+    /* ── Mobile hamburger + slide-down menu ──────────────────────────── */
+    .hamburger-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      gap: 5px;
+      cursor: pointer;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 4px;
+      border-radius: 10px;
+      transition: background 0.2s, border-color 0.2s;
+      flex-shrink: 0;
+    }
+    .hamburger-btn:hover,
+    .hamburger-btn:focus-visible {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(79,142,247,0.4);
+      outline: none;
+    }
+    .hamburger-btn .hb {
+      width: 20px;
+      height: 2px;
+      background: #9ca3af;
+      border-radius: 2px;
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1),
+                  opacity   0.3s cubic-bezier(0.4,0,0.2,1),
+                  background 0.2s;
+      transform-origin: center;
+    }
+    .hamburger-btn[aria-expanded="true"] .hb { background: #fff; }
+    .hamburger-btn[aria-expanded="true"] .hb:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger-btn[aria-expanded="true"] .hb:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger-btn[aria-expanded="true"] .hb:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed;
+      top: 64px; /* nav height */
+      left: 0;
+      right: 0;
+      z-index: 49;
+      background: rgba(10,15,30,0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      flex-direction: column;
+      padding: 8px 0 20px;
+      /* hidden state */
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      transition: opacity 0.22s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.22s cubic-bezier(0.22,1,0.36,1);
+    }
+    .mobile-menu.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .mobile-menu a.mob-link {
+      padding: 13px 24px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #9ca3af;
+      text-decoration: none;
+      transition: color 0.15s, background 0.15s;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+    .mobile-menu a.mob-link:hover,
+    .mobile-menu a.mob-link:focus-visible {
+      color: #fff;
+      background: rgba(79,142,247,0.06);
+      outline: none;
+    }
+    .mobile-menu .mob-cta-wrap {
+      padding: 16px 24px 0;
+    }
+    .mobile-menu .mob-cta-wrap .book-call-btn {
+      width: 100%;
+      text-align: center;
+    }
+    /* hide mobile chrome on desktop */
+    @media (min-width: 768px) {
+      .hamburger-btn { display: none !important; }
+      .mobile-menu { display: none !important; }
+    }
   </style>
 </head>
 <body class="text-white antialiased">
@@ -418,6 +508,7 @@
       <a href="#" class="logo-wrap" aria-label="Purics AI — home">
         <img src="puricsai.png" alt="Purics AI" class="logo-img" />
       </a>
+      <!-- Desktop nav links (hidden on mobile) -->
       <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
         <a href="#services" class="hover:text-white transition-colors">Services</a>
         <a href="#lifecycle" class="hover:text-white transition-colors">Lifecycle</a>
@@ -428,9 +519,41 @@
         <a href="#support" class="hover:text-white transition-colors">Support</a>
         <a href="mailto:admin@purics.ai" class="hover:text-white transition-colors">Contact</a>
       </div>
-      <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Free Discovery Call – General Enquiry'}},utm:{utmSource:'website',utmCampaign:'free_discovery',utmContent:'nav_cta'}});return false;" class="book-call-btn book-call-btn-pill">
-        Book a Discovery Call →
-      </button>
+      <!-- Right side: CTA (desktop only) + hamburger (mobile only) -->
+      <div class="flex items-center gap-3">
+        <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Free Discovery Call – General Enquiry'}},utm:{utmSource:'website',utmCampaign:'free_discovery',utmContent:'nav_cta'}});return false;" class="book-call-btn book-call-btn-pill hidden md:inline-block">
+          Book a Discovery Call →
+        </button>
+        <!-- Hamburger: mobile only -->
+        <button
+          id="mob-menu-btn"
+          class="hamburger-btn"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Open navigation menu"
+        >
+          <span class="hb"></span>
+          <span class="hb"></span>
+          <span class="hb"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobile-menu" class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+      <a href="#services"          class="mob-link" onclick="closeMobMenu()">Services</a>
+      <a href="#lifecycle"         class="mob-link" onclick="closeMobMenu()">Lifecycle</a>
+      <a href="#pricing"           class="mob-link" onclick="closeMobMenu()">Pricing</a>
+      <a href="#global"            class="mob-link" onclick="closeMobMenu()">🌍 Hire Global</a>
+      <a href="#work"              class="mob-link" onclick="closeMobMenu()">Our Work</a>
+      <a href="#why"               class="mob-link" onclick="closeMobMenu()">Why Us</a>
+      <a href="#support"           class="mob-link" onclick="closeMobMenu()">Support</a>
+      <a href="mailto:admin@purics.ai" class="mob-link">Contact</a>
+      <div class="mob-cta-wrap">
+        <button onclick="closeMobMenu(); Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Free Discovery Call – General Enquiry'}},utm:{utmSource:'website',utmCampaign:'free_discovery',utmContent:'mob_nav_cta'}});return false;" class="book-call-btn">
+          Book a Discovery Call →
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -1720,6 +1843,48 @@
   </div><!-- /content wrapper -->
 
   <!-- Calendly loaded on-demand via shim in <head> -->
+
+  <!-- ── Mobile menu toggle ───────────────────────────────────────── -->
+  <script>
+  (function () {
+    'use strict';
+    const btn  = document.getElementById('mob-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    function openMobMenu() {
+      menu.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-label', 'Close navigation menu');
+      document.addEventListener('keydown', handleKey);
+      document.addEventListener('click', handleOutside, true);
+    }
+
+    window.closeMobMenu = function () {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Open navigation menu');
+      document.removeEventListener('keydown', handleKey);
+      document.removeEventListener('click', handleOutside, true);
+    };
+
+    function handleKey(e) {
+      if (e.key === 'Escape') { closeMobMenu(); btn.focus(); }
+    }
+
+    function handleOutside(e) {
+      if (!menu.contains(e.target) && !btn.contains(e.target)) closeMobMenu();
+    }
+
+    btn.addEventListener('click', function () {
+      btn.getAttribute('aria-expanded') === 'true' ? closeMobMenu() : openMobMenu();
+    });
+
+    /* Close menu on viewport resize to desktop width */
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 768) closeMobMenu();
+    });
+  }());
+  </script>
 
   <!-- CONSTELLATION ANIMATION -->
   <script>
