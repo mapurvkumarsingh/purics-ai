@@ -194,36 +194,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
   <!-- Tailwind CDN replaced with 13 KB purged build (was 360 KB JIT compiler) -->
   <link rel="stylesheet" href="styles.css" />
-  <!-- Calendly: lazy-load on first button click instead of blocking every page load -->
-  <script>
-    (function () {
-      var loaded = false;
-      function load() {
-        if (loaded) return;
-        loaded = true;
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://assets.calendly.com/assets/external/widget.css';
-        document.head.appendChild(link);
-        var script = document.createElement('script');
-        script.src = 'https://assets.calendly.com/assets/external/widget.js';
-        document.head.appendChild(script);
-      }
-      // Shim so existing onclick="Calendly.initPopupWidget(...)" keep working
-      window.Calendly = {
-        initPopupWidget: function (opts) {
-          load();
-          var iv = setInterval(function () {
-            if (window.Calendly.initPopupWidget !== arguments.callee
-                && typeof window.Calendly.initPopupWidget === 'function') {
-              clearInterval(iv);
-              window.Calendly.initPopupWidget(opts);
-            }
-          }, 50);
-        }
-      };
-    })();
-  </script>
+  <!-- InvitePe booking popup -->
+  <script src="https://www.invitepe.com/invitepe.js"></script>
+
   <style>
     body { background: #0a0f1e; font-family: 'Inter', sans-serif; }
     .gradient-text { background: linear-gradient(135deg, #4F8EF7 0%, #8B5CF6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -238,7 +211,7 @@
     .popular-badge { background: linear-gradient(135deg, #4F8EF7, #8B5CF6); }
     .check-icon::before { content: '✓'; }
     @media (prefers-reduced-motion: reduce) { .glass-hover:hover { transform: none; } }
-    /* ── Calendly premium dark-brown CTA ── */
+    /* ── Book-call CTA ── */
     .book-call-btn {
       background: #6B4423;
       color: #F5EFE6;
@@ -548,7 +521,7 @@
       </div>
       <!-- Right side: CTA (desktop only) + hamburger (mobile only) -->
       <div class="flex items-center gap-3">
-        <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Free Discovery Call – General Enquiry'}},utm:{utmSource:'website',utmCampaign:'free_discovery',utmContent:'nav_cta'}});return false;" class="book-call-btn book-call-btn-pill nav-desktop-cta">
+        <button onclick="invitepe.open('puricsAI/30-minute-meeting'); return false;" class="book-call-btn book-call-btn-pill nav-desktop-cta">
           Book a Discovery Call →
         </button>
         <!-- Hamburger: mobile only -->
@@ -577,7 +550,7 @@
       <a href="#support"           class="mob-link" onclick="closeMobMenu()">Support</a>
       <a href="mailto:admin@purics.ai" class="mob-link">Contact</a>
       <div class="mob-cta-wrap">
-        <button onclick="closeMobMenu(); Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Free Discovery Call – General Enquiry'}},utm:{utmSource:'website',utmCampaign:'free_discovery',utmContent:'mob_nav_cta'}});return false;" class="book-call-btn">
+        <button onclick="closeMobMenu(); invitepe.open('puricsAI/30-minute-meeting'); return false;" class="book-call-btn">
           Book a Discovery Call →
         </button>
       </div>
@@ -700,7 +673,7 @@
       </p>
       <p class="text-sm font-semibold mb-10" style="color:#7AABFF;">Save 60–80% vs. US agency rates &nbsp;·&nbsp; Zero lock-in &nbsp;·&nbsp; Cancel anytime</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Free 30-Min Consultation – First call, no commitment'}},utm:{utmSource:'website',utmCampaign:'free_consultation',utmContent:'consult_section'}});return false;" class="book-call-btn" style="padding:16px 32px;font-size:0.9rem;">
+        <button onclick="invitepe.open('puricsAI/30-minute-meeting'); return false;" class="book-call-btn" style="padding:16px 32px;font-size:0.9rem;">
           📅 Book a Discovery Call
         </button>
         <a href="#pricing" class="glass text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition-all text-sm">
@@ -966,7 +939,7 @@
             <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Code reviews</li>
             <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Hour-wise work tracking</li>
           </ul>
-          <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/purics-ai-starter-support-call-30-min',prefill:{customAnswers:{a1:'Interested in: Starter Support Plan – $999/month · 8 hrs/month'}},utm:{utmSource:'pricing_page',utmCampaign:'starter_support',utmContent:'999_per_month'}});return false;" class="book-call-btn w-full" style="border-radius:12px;">
+          <button onclick="invitepe.open('puricsAI/30-minute-meeting'); return false;" class="book-call-btn w-full" style="border-radius:12px;">
             Get Started
           </button>
         </div>
@@ -993,7 +966,7 @@
               <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Weekly feedback sessions</li>
               <li class="flex items-center gap-3 text-gray-300"><span class="gradient-text font-bold">✓</span> Transparent work tracking</li>
             </ul>
-            <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/purics-ai-growth-support-call-30-min',prefill:{customAnswers:{a1:'Interested in: Growth Support Plan – $1,599/month · 8 hrs/week'}},utm:{utmSource:'pricing_page',utmCampaign:'growth_support',utmContent:'1599_per_month'}});return false;" class="book-call-btn w-full" style="border-radius:12px;">
+            <button onclick="invitepe.open('puricsAI/30-minute-meeting'); return false;" class="book-call-btn w-full" style="border-radius:12px;">
               Get Started →
             </button>
           </div>
@@ -1024,7 +997,7 @@
               <span><span class="font-semibold" style="color:#C8A26A;">24 × 7 dedicated email support</span><br/><span class="text-xs text-gray-400">Response guaranteed within 1 hour</span></span>
             </li>
           </ul>
-          <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/purics-ai-dedicated-engineering-support-call-45-min',prefill:{customAnswers:{a1:'Interested in: AI & Dedicated Engineering – $2,999/month · Full daily AI support'}},utm:{utmSource:'pricing_page',utmCampaign:'ai_dedicated',utmContent:'2999_per_month'}});return false;" class="book-call-btn w-full" style="border-radius:12px;border-color:#9B72CF;">
+          <button onclick="invitepe.open('puricsAI/30-minute-meeting'); return false;" class="book-call-btn w-full" style="border-radius:12px;border-color:#9B72CF;">
             Get Started
           </button>
         </div>
@@ -1055,7 +1028,7 @@
               <li class="flex items-center gap-3 text-sm text-gray-300"><span class="gradient-text font-bold text-base">✓</span> AI integration roadmap</li>
               <li class="flex items-center gap-3 text-sm text-gray-300"><span class="gradient-text font-bold text-base">✓</span> No credit card · No commitment</li>
             </ul>
-            <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Free 30-Min Consultation – First call, no commitment'}},utm:{utmSource:'website',utmCampaign:'free_consultation',utmContent:'consult_cta_button'}});return false;" class="book-call-btn" style="padding:14px 32px;font-size:0.9rem;">
+            <button onclick="invitepe.open('puricsAI/30-minute-meeting'); return false;" class="book-call-btn" style="padding:14px 32px;font-size:0.9rem;">
               📅 Book Free 30-Min Call
             </button>
             <p class="text-gray-600 text-xs mt-4">Need a deeper dive? <span class="text-gray-400">Expert session available for <strong class="text-white">$299</strong> / hr.</span></p>
@@ -1068,7 +1041,7 @@
             </div>
             <div class="glass rounded-2xl p-5 flex items-start gap-4">
               <div class="text-2xl shrink-0">🌍</div>
-              <div><div class="font-semibold text-sm mb-1">Any Timezone</div><div class="text-gray-400 text-xs leading-relaxed">Calendly shows your local time. Morning, evening, weekend — your call.</div></div>
+              <div><div class="font-semibold text-sm mb-1">Any Timezone</div><div class="text-gray-400 text-xs leading-relaxed">InvitePe shows your local time. Morning, evening, weekend — your call.</div></div>
             </div>
             <div class="glass rounded-2xl p-5 flex items-start gap-4">
               <div class="text-2xl shrink-0">⚡</div>
@@ -1169,7 +1142,7 @@
         </div>
         <div class="p-5 text-center border-t border-white/5" style="background:rgba(79,142,247,0.04);">
           <p class="text-xs text-gray-500 mb-3">Same senior quality — dramatically lower cost. Here’s why: we hire globally and pass the savings to you.</p>
-          <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Enquiry – Global Hiring & Cost Savings'}},utm:{utmSource:'global_section',utmCampaign:'hire_globally',utmContent:'cost_table_cta'}});return false;" class="book-call-btn book-call-btn-pill">
+          <button onclick="invitepe.open('puricsAI/30-minute-meeting'); return false;" class="book-call-btn book-call-btn-pill">
             📞 See What You’d Save →
           </button>
         </div>
@@ -1681,7 +1654,7 @@
           <div class="text-4xl mb-4">📢</div>
           <h3 class="font-black text-lg mb-3">Your story next?</h3>
           <p class="text-gray-400 text-sm leading-relaxed mb-5">Join companies saving 60–80% on engineering while shipping faster and hiring better. First call is on us.</p>
-          <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Interested – Free Discovery Call (Testimonials CTA)'}},utm:{utmSource:'testimonials',utmCampaign:'social_proof_cta',utmContent:'testimonials_cta'}});return false;" class="book-call-btn" style="width:100%;border-radius:12px;text-align:center;">
+          <button onclick="invitepe.open('puricsAI/30-minute-meeting'); return false;" class="book-call-btn" style="width:100%;border-radius:12px;text-align:center;">
             📅 Book Free Discovery Call →
           </button>
         </div>
@@ -1737,7 +1710,7 @@
             <span class="badge inline-block text-xs font-semibold px-3 py-1 rounded-full mb-4 tracking-wider uppercase">AI-Powered</span>
             <h3 class="text-3xl font-black mb-4">We Actively Build <span class="gradient-text">AI Systems</span></h3>
             <p class="text-gray-400 mb-6 leading-relaxed">This isn't just buzzword compliance. Our team ships real AI products — agents, pipelines, and intelligent automation that solves actual business problems.</p>
-            <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/purics-ai-dedicated-engineering-support-call-45-min',prefill:{customAnswers:{a1:'Support Enquiry – AI & Dedicated Engineering · 24/7 dedicated support'}},utm:{utmSource:'support_page',utmCampaign:'ai_dedicated_support',utmContent:'support_schedule_call'}});return false;" class="book-call-btn">
+            <button onclick="invitepe.open('puricsAI/30-minute-meeting'); return false;" class="book-call-btn">
               Discuss Your AI Needs →
             </button>
           </div>
@@ -1825,7 +1798,7 @@
             <p class="text-gray-400 mt-3 text-sm">Email anytime — mornings, nights, weekends, holidays.<br/><span class="text-xs font-semibold" style="color:#C8A26A;">⚡ Response guaranteed within 1 hour, around the clock.</span></p>
             <div class="flex flex-col sm:flex-row gap-3 justify-center mt-8">
               <a href="mailto:admin@purics.ai" class="gradient-bg text-white font-bold px-8 py-3 rounded-xl hover:opacity-90 transition-all text-sm">✉️ Email Now</a>
-              <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/purics-ai-dedicated-engineering-support-call-45-min',prefill:{customAnswers:{a1:'Support Enquiry – AI & Dedicated Engineering · 24/7 dedicated support'}},utm:{utmSource:'support_page',utmCampaign:'ai_dedicated_support',utmContent:'support_email_card'}});return false;" class="book-call-btn book-call-btn-pill">
+              <button onclick="invitepe.open('puricsAI/30-minute-meeting'); return false;" class="book-call-btn book-call-btn-pill">
                 📅 Schedule a Call
               </button>
             </div>
@@ -1894,15 +1867,13 @@
   <div id="mob-sticky-cta" class="mob-sticky-cta" aria-hidden="true">
     <button
       class="book-call-btn mob-sticky-btn"
-      onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Free Discovery Call – General Enquiry'}},utm:{utmSource:'website',utmCampaign:'free_discovery',utmContent:'mob_sticky_cta'}});return false;"
+      onclick="invitepe.open('puricsAI/30-minute-meeting'); return false;"
     >
       📅 Book a Free Discovery Call →
     </button>
   </div>
-
-  <!-- Calendly loaded on-demand via shim in <head> -->
-
-  <!-- ── Mobile menu toggle ───────────────────────────────────────── -->
+  <!-- InvitePe loaded via invitepe.js in <head> -->
+<!-- ── Mobile menu toggle ───────────────────────────────────────── -->
   <script>
   (function () {
     'use strict';
