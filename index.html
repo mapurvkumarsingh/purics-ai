@@ -194,8 +194,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
   <!-- Tailwind CDN replaced with 13 KB purged build (was 360 KB JIT compiler) -->
   <link rel="stylesheet" href="styles.css" />
-  <!-- InvitePe booking popup -->
+  <!-- InvitePe booking popup + AI chat widget -->
   <script src="https://www.invitepe.com/invitepe.js"></script>
+  <script
+    src="https://www.invitepe.com/invitepechat.js"
+    data-invitepe-chat-bubble="ipk_Pml3l9S3UpZRpwNkY4Zas9lqq83GcRnjDmKu1GdxreQfh1hZ"
+    data-invitepe-chat-name="Purics AI Support"
+    data-invitepe-chat-context="/company.md"
+    defer></script>
 
   <style>
     body { background: #0a0f1e; font-family: 'Inter', sans-serif; }
@@ -492,6 +498,10 @@
     }
     @media (min-width: 768px) {
       .mob-sticky-cta { display: none !important; }
+    }
+    /* Keep InvitePe chat bubble above the mobile sticky book CTA */
+    @media (max-width: 767px) {
+      body.sticky-cta-visible .__ipc-bubble { bottom: 96px !important; }
     }
   </style>
 </head>
@@ -1872,7 +1882,7 @@
       📅 Book a Free Discovery Call →
     </button>
   </div>
-  <!-- InvitePe loaded via invitepe.js in <head> -->
+  <!-- InvitePe booking + chat widgets loaded in <head> -->
 <!-- ── Mobile menu toggle ───────────────────────────────────────── -->
   <script>
   (function () {
@@ -1929,9 +1939,11 @@
       if (scrolled && !menuOpen) {
         stickyCta.classList.add('visible');
         stickyCta.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('sticky-cta-visible');
       } else {
         stickyCta.classList.remove('visible');
         stickyCta.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('sticky-cta-visible');
       }
     }
 
