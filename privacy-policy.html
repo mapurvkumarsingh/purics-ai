@@ -71,9 +71,14 @@
     .mob-sticky-cta .mob-sticky-btn { width: 100%; text-align: center; display: block; border-radius: 14px; padding: 14px 20px; font-size: 0.95rem; }
     @media (min-width: 768px) { .mob-sticky-cta { display: none !important; } }
   </style>
-  <!-- Calendly shim -->
-  <script>window.Calendly||(function(d){var s=d.createElement('script');s.src='https://assets.calendly.com/assets/external/widget.js';s.async=true;d.head.appendChild(s);}(document));</script>
-  <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" />
+  <!-- InvitePe booking popup + AI chat widget -->
+  <script src="https://www.invitepe.com/invitepe.js"></script>
+  <script
+    src="https://www.invitepe.com/invitepechat.js"
+    data-invitepe-chat-bubble="ipk_Pml3l9S3UpZRpwNkY4Zas9lqq83GcRnjDmKu1GdxreQfh1hZ"
+    data-invitepe-chat-name="Purics AI Support"
+    data-invitepe-chat-context="/company.md"
+    defer></script>
 </head>
 <body class="text-white antialiased">
 
@@ -92,7 +97,7 @@
         <a href="mailto:admin@purics.ai" class="hover:text-white transition-colors">Contact</a>
       </div>
       <div class="flex items-center gap-3">
-        <button onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="book-call-btn book-call-btn-pill nav-desktop-cta">
+        <button onclick="invitepe.open('puricsAI/30-minute-meeting'); return false;" class="book-call-btn book-call-btn-pill nav-desktop-cta">
           Book a Discovery Call →
         </button>
         <button id="mob-menu-btn" class="hamburger-btn" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu">
@@ -108,7 +113,7 @@
       <a href="index.html#why"       class="mob-link" onclick="closeMobMenu()">Why Us</a>
       <a href="mailto:admin@purics.ai" class="mob-link">Contact</a>
       <div class="mob-cta-wrap">
-        <button onclick="closeMobMenu(); Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min'});return false;" class="book-call-btn">
+        <button onclick="closeMobMenu(); invitepe.open('puricsAI/30-minute-meeting'); return false;" class="book-call-btn">
           Book a Discovery Call →
         </button>
       </div>
@@ -141,7 +146,7 @@
         <div>
           <h2>1. Who We Are</h2>
           <p>
-            Purics AI ("we", "us", "our") is a software engineering and AI services company. Our registered website is
+            Purics AI ("we", "us", "our") is a software engineering and analytics company — Pure Analytics — specializing in Big Data and Analytics with AI &amp; ML, while also delivering broader Design, Engineering &amp; Development services. Our registered website is
             <a href="https://www.purics.ai">purics.ai</a>. For all privacy matters, you may reach us at
             <a href="mailto:privacy@purics.ai">privacy@purics.ai</a>.
           </p>
@@ -189,7 +194,7 @@
           <h2>5. Third Parties</h2>
           <p>We do <strong style="color:#e5e7eb;">not</strong> sell, rent, or trade your personal or business data. We may share limited data with trusted third-party service providers strictly to operate our business:</p>
           <ul>
-            <li><strong style="color:#e5e7eb;">Calendly</strong> — for scheduling discovery and project calls.</li>
+            <li><strong style="color:#e5e7eb;">InvitePe</strong> — for scheduling discovery calls and the website AI chat assistant.</li>
             <li><strong style="color:#e5e7eb;">Razorpay</strong> — for secure payment processing.</li>
             <li><strong style="color:#e5e7eb;">Email &amp; productivity tools</strong> — standard business communication platforms used internally.</li>
             <li><strong style="color:#e5e7eb;">Analytics</strong> — privacy-first, aggregated website analytics (no cross-site tracking).</li>
@@ -282,7 +287,7 @@
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
         <div>
           <a href="index.html"><img src="puricsai.png" alt="Purics AI" class="logo-footer" /></a>
-          <p class="text-gray-500 text-sm mt-1">Not Just Cheap. Actually Great.</p>
+          <p class="text-gray-500 text-sm mt-1">Pure Analytics</p>
         </div>
         <div class="flex flex-wrap justify-center gap-5 text-sm text-gray-500">
           <a href="index.html#services"  class="hover:text-white transition-colors">Services</a>
@@ -332,7 +337,7 @@
 
   <!-- Mobile sticky CTA -->
   <div id="mob-sticky-cta" class="mob-sticky-cta" aria-hidden="true">
-    <button class="book-call-btn mob-sticky-btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/hello-purics/30min',prefill:{customAnswers:{a1:'Free Discovery Call – General Enquiry'}},utm:{utmSource:'privacy_page',utmCampaign:'free_discovery',utmContent:'mob_sticky_cta'}});return false;">
+    <button class="book-call-btn mob-sticky-btn" onclick="invitepe.open('puricsAI/30-minute-meeting'); return false;">
       📅 Book a Free Discovery Call →
     </button>
   </div>
